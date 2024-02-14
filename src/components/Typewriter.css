@@ -1,0 +1,25 @@
+/* Typewriter.css */
+.my-custom-class {
+    border-right: 2px solid transparent; /* Add a cursor effect */
+    animation: typing 2s steps(20, end), blink-caret 0.5s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #000;
+    }
+  }
+  
