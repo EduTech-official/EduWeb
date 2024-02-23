@@ -1,9 +1,10 @@
 
 import TeamCards from "../components/TeamCards";
 import "./../components/Scroll.css";
+import teams from "../Config/Team";
 
 const Team = () => {
-  const peeps = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  // const peeps = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
     <div className="m-5 p-1">
       <div className="container mx-6">
@@ -23,14 +24,29 @@ const Team = () => {
         <div className="field m-auto -translate-y-32">
           {/* <div class="mouse"></div> */}
           <a href="#Team">
-            <div className="scroll"></div></a>
+            <div className="scroll"></div>
+          </a>
           {/* <div class="arrow"></div> */}
         </div>
       </div>
       <div id="Team" className=" my-4 flex flex-wrap justify-center ">
-        {peeps.map((peep) => (
-          <div key={peep} className="p-4 ">
-            <TeamCards />
+        {teams.map((team) => (
+          <div key={team.teamName} className="">
+            <h1 className="text-white text-2xl font-mono left-0 ">
+              {team.teamName}
+            </h1>
+            <div className="flex flex-wrap m-4 gap-3">
+              {team.members.map((member) => (
+                <TeamCards
+                  key={member.name}
+                  PicLink={member.picLink}
+                  Name={member.name}
+                  Position={member.position}
+                  InstaLink={member.instagram}
+                  LinkdLink={member.linkedin}
+                />
+              ))}
+            </div>
           </div>
         ))}
       </div>

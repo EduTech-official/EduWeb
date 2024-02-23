@@ -20,7 +20,7 @@ function HamburgerMenu() {
                     <div className="absolute top-0 right-0 h-screen w-screen bg-black bg-opacity-50 flex items-center justify-center">
                         <div className="space-y-4 flex flex-col items-center text-white">
                             <a href="/">Home</a>
-                            <a href="/eduminerva">Eduminerva</a>
+                            <a href="/aboutus">Eduminerva</a>
                             <a href="/team">Team</a>
                             <a href="/events">Events</a>
                             <a href="/gallery">Gallery</a>

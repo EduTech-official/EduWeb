@@ -6,6 +6,8 @@ import InfoCard from "../components/InfoCard";
 
 // import { IMG, IMG2, logo, Team } from "./../assets/index";
 import { Team } from "./../assets/index";
+import "../components/Content_index";
+import topics from "../components/Content_index";
 
 const AboutUs = () => {
   return (
@@ -16,11 +18,26 @@ const AboutUs = () => {
             ABOUT US
           </h1>
           <p className="text-stone-100 font-thin text-sm minmd:text-xs tracking-tighter text-left h-auto">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
-            veritatis fuga exercitationem nostrum repudiandae dolor et ducimus
-            possimus temporibus omnis rerum vel officia quaerat, facere cum? A
-            laudantium expedita assumenda.
+            EduMinerva, founded in 2019, is a society of Bharati Vidyapeeth&apos;s
+            College of Engineering, assisting students by providing
+            opportunities to explore different career fields and co-curricular
+            activities by organising various webinars and workshops. EduMinerva
+            focuses on providing a holistic development to anyone who&apos;s
+            dedicated and has a will to improve.
           </p>
+          {/* <p className="text-stone-100 font-thin text-sm minmd:text-xs tracking-tighter text-left h-auto">
+            EduTech, founded in 2022, is a technical subchapter of EduMinerva
+            society of Bharati Vidyapeeth's College of Engineering, New Delhi.
+            The main purpose of EduTech is to guide and educate students more in
+            this vast world of technology. We aim to provide new and fascinating
+            content, such as workshops, quizes, facts, study material etc., on a
+            regular basis.EduTech, founded in 2022, is a technical subchapter of
+            EduMinerva society of Bharati Vidyapeeth's College of Engineering,
+            New Delhi. The main purpose of EduTech is to guide and educate
+            students more in this vast world of technology. We aim to provide
+            new and fascinating content, such as workshops, quizes, facts, study
+            material etc., on a regular basis.
+          </p> */}
         </div>
 
         <img
@@ -28,10 +45,15 @@ const AboutUs = () => {
           className="col-span-2  my-auto rounded-2xl shadow-2xl aspect-video object-fill"
         />
       </div>
-      <div className="grid m-5 p-4 gap-4 child grid-cols-3">
-        <InfoCard />
-        <InfoCard />
-        <InfoCard />
+      <div className="grid m-5 p-4 gap-4 h-full child grid-cols-3">
+        {topics.map((topic, index) => (
+          <InfoCard
+            key={index}
+            Topic={topic.Topic}
+            Content={topic.Content}
+            links={topic.links}
+          />
+        ))}
       </div>
       <div className=" mb-32 grid ">
         <h1 className="text-4xl bg-gradient-to-r brightness-150 font-semibold tracking-tight from-[#0CF996]  to-[#E61AA1] bg-clip-text text-transparent my-3">
@@ -42,7 +64,7 @@ const AboutUs = () => {
             <img
               src={Team}
               alt=""
-              style={{height: '100%'}}
+              style={{ height: "100%" }}
               className="rounded-xl h-fit object-cover m-auto"
             />
           </div>

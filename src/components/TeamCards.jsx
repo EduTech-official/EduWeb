@@ -1,18 +1,17 @@
-import React from "react";
+import PropTypes from "prop-types";
 import Logo from "../assets/logo.jpeg";
 import "./../App.css";
 
 const TeamCards = ({ PicLink, Name, Position, InstaLink, LinkdLink }) => {
-
   return (
-    <div className="">
+    <div className="flex justify-center " style={{ flex: "1 0 20%" }}>
       <div
         id="hove"
-        className=" w-full hover max-w-[14rem]  border border-gray-200 rounded-lg bg-gray-800 bg-opacity-80 hover:bg-opacity-95 hover:brightness-110 dark:border-gray-700 p-4"
+        className="w-full h-full hover max-w-[14rem] border border-gray-200 rounded-lg bg-gray-800 bg-opacity-80 hover:bg-opacity-95 hover:brightness-110 dark:border-gray-700 p-4 flex-4 items-center"
       >
         <a href="#">
           <img
-            className=" rounded-lg "
+            className="rounded-lg"
             src={PicLink ? PicLink : Logo}
             alt="product image"
             loading="lazy"
@@ -21,22 +20,22 @@ const TeamCards = ({ PicLink, Name, Position, InstaLink, LinkdLink }) => {
         <div className="px-2 mt-3">
           <a href="#">
             <h5 className="text-xl pt-3 text-left font-semibold tracking-tight text-gray-900 dark:text-white">
-              Lorem ipsum
+              {Name}
             </h5>
           </a>
 
           <div className="grid grid-cols-4 gap-4 my-3 items-center" id="hove">
             <span className="text-xs col-span-2 my-2 text-left font-bold pr-3 text-gray-900 dark:text-white">
-              Lorem ipsum
+              {Position}
             </span>
 
             <a
-              href="#"
+              href={InstaLink}
               className="h-8 focus:outline-none col-span-1 dark:focus:ring-blue-800"
               id="stuff"
             >
               <svg
-                className="w-12 text-gray-500 dark:text-gray-400 mb-3 "
+                className="w-12 text-gray-500 dark:text-gray-400 mb-3"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -46,7 +45,7 @@ const TeamCards = ({ PicLink, Name, Position, InstaLink, LinkdLink }) => {
               </svg>
             </a>
             <a
-              href="#"
+              href={LinkdLink}
               className="h-8 focus:outline-none col-span-1 dark:focus:ring-blue-800"
               id="stuff"
             >
@@ -65,6 +64,15 @@ const TeamCards = ({ PicLink, Name, Position, InstaLink, LinkdLink }) => {
       </div>
     </div>
   );
+};
+
+TeamCards.propTypes = {
+  PicLink: PropTypes.string,
+  Name: PropTypes.string,
+  Position: PropTypes.string,
+  InstaLink: PropTypes.string,
+  LinkdLink: PropTypes.string,
+  index: PropTypes.number,
 };
 
 export default TeamCards;

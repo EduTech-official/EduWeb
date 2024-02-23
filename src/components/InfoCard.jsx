@@ -1,10 +1,9 @@
-import React from "react";
-
-const InfoCard = ({ Topic, Content }) => {
+// eslint-disable-next-line react/prop-types
+const InfoCard = ({ Topic, Content, links }) => {
   return (
-    <div className="w-full  rounded-xl p-4 col-span-1 minlg:col-span-3 mx-auto aspect-video border-slate-950 bg-slate-800">
+    <div className="w-full h-full rounded-xl p-4 col-span-1 minlg:col-span-3 mx-auto aspect-video border-slate-950  text-gray-900 dark:text-white  bg-slate-800 hover:bg-green-400 transition-colors hover:text-black">
       <svg
-        className="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3 mx-auto"
+        className="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3 mx-auto transition-colors"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
@@ -14,18 +13,21 @@ const InfoCard = ({ Topic, Content }) => {
       </svg>
       <a href="#">
         <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          Ideology
+          {Topic}
         </h5>
       </a>
-      <p className="mb-3 text-sm font-normal text-gray-500 dark:text-gray-400">
-        Eduminerva belives in that the right guidance and exposure provided at
-        thr right time can help students achieve their dreams.
+
+      <p
+        className="mb-3 text-sm font-normal text-gray-500 dark:text-gray-400"
+        style={{ color: "inherit" }}
+      >
+        {Content}
       </p>
       <a
         href="#"
         className="inline-flex items-center text-blue-600 hover:underline"
       >
-        See our guideline
+        {links}
       </a>
     </div>
   );
