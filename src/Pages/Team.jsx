@@ -1,4 +1,3 @@
-
 import TeamCards from "../components/TeamCards";
 import "./../components/Scroll.css";
 import teams from "../Config/Team";
@@ -13,11 +12,16 @@ const Team = () => {
           <h1 className="text-6xl minmd:text-xl text-left tracking-widest bg-gradient-to-r  from-[#E61AA1]  to-[#0CF996] to-10% bg-clip-text text-transparent mb-3 mr-auto">
             TEAM
           </h1>
-          <p className="text-stone-500 w-96 text-md minmd:text-sm minmd:w-60">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
-            veritatis fuga exercitationem nostrum repudiandae dolor et ducimus
-            possimus temporibus omnis rerum vel officia quaerat, facere cum? A
-            laudantium expedita assumenda.
+          <p className="text-stone-500 w-96 text-sm minmd:text-sm minmd:w-60">
+            Introducing our EduMinerva team: a visionary leader as President,
+            highly skilled heads, and hardworking executives creating a
+            development-minded environment. The President, highly goal-oriented,
+            encourages everyone with meticulous planning. Vice-Presidents bring
+            vast experience and positive attitudes. Joint Secretaries are gifted
+            individuals with innovative minds. The President of Edu Tech leads
+            by example. Treasurers handle financial affairs perfectly. Technical
+            and Creative leads add crucial dimensions. Department heads,
+            alongside members, work tirelessly to achieve targets.
           </p>
         </div>
         {/* <div className="col-span-2x"></div> */}
@@ -41,9 +45,10 @@ const Team = () => {
                   key={member.name}
                   PicLink={member.picLink}
                   Name={member.name}
-                  Position={member.position}
-                  InstaLink={member.instagram}
-                  LinkdLink={member.linkedin}
+                  Position={member.designation}
+                  // InstaLink={member.instagram}
+                  // LinkdLink={member.linkedin}
+                  // To be uncommented when these are available
                 />
               ))}
             </div>
