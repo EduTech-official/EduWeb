@@ -1,89 +1,1083 @@
 const teams = [
-    {
-        teamName: "Team A",
-        members: [
-            {
-                name: "John Doe",
-                designation: "Software Engineer",
-                linkedin: "https://www.linkedin.com/in/johndoe",
-                instagram: "https://www.instagram.com/johndoe",
-                optionalLink: "https://www.example.com/johndoe",
-                picLink: ""
-            },
-            {
-                name: "Jane Smith",
-                designation: "UI/UX Designer",
-                linkedin: "https://www.linkedin.com/in/janesmith",
-                instagram: "https://www.instagram.com/janesmith",
-                optionalLink: "https://www.example.com/janesmith",
-                picLink: ""
-            },
-            {
-                name: "Jane Smith",
-                designation: "UI/UX Designer",
-                linkedin: "https://www.linkedin.com/in/janesmith",
-                instagram: "https://www.instagram.com/janesmith",
-                optionalLink: "https://www.example.com/janesmith",
-                picLink: ""
-            },
-            {
-                name: "Jane Smith",
-                designation: "UI/UX Designer",
-                linkedin: "https://www.linkedin.com/in/janesmith",
-                instagram: "https://www.instagram.com/janesmith",
-                optionalLink: "https://www.example.com/janesmith",
-                picLink: ""
-            },
-            {
-                name: "Jane Smith",
-                designation: "UI/UX Designer",
-                linkedin: "https://www.linkedin.com/in/janesmith",
-                instagram: "https://www.instagram.com/janesmith",
-                optionalLink: "https://www.example.com/janesmith",
-                picLink: ""
-            },
-            {
-                name: "Jane Smith",
-                designation: "UI/UX Designer",
-                linkedin: "https://www.linkedin.com/in/janesmith",
-                instagram: "https://www.instagram.com/janesmith",
-                optionalLink: "https://www.example.com/janesmith",
-                picLink: ""
-            },
-            {
-                name: "Jane Smith",
-                designation: "UI/UX Designer",
-                linkedin: "https://www.linkedin.com/in/janesmith",
-                instagram: "https://www.instagram.com/janesmith",
-                optionalLink: "https://www.example.com/janesmith",
-                picLink: ""
-            },
-            // Add more members for Team A here...
-        ]
-    },
-    {
-        teamName: "Team B",
-        members: [
-            {
-                name: "Mike Johnson",
-                designation: "Frontend Developer",
-                linkedin: "https://www.linkedin.com/in/mikejohnson",
-                instagram: "https://www.instagram.com/mikejohnson",
-                optionalLink: "https://www.example.com/mikejohnson",
-                picLink: ""
-            },
-            {
-                name: "Sarah Williams",
-                designation: "Backend Developer",
-                linkedin: "https://www.linkedin.com/in/sarahwilliams",
-                instagram: "https://www.instagram.com/sarahwilliams",
-                optionalLink: "https://www.example.com/sarahwilliams",
-                picLink: ""
-            },
-            // Add more members for Team B here...
-        ]
-    },
-    // Add more teams here...
+  {
+    teamName: "Core Team",
+    members: [
+      {
+        name: "Aditya Raghav",
+        designation: "President",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1NGEE0Bvg-aa4XPOzX9dNMXegAnNI5ERl&sz=w1000",
+      },
+      {
+        name: "Yashovardhan Singh",
+        designation: "Vice-President",
+        linkedin: "https://www.linkedin.com/in/janesmith",
+        instagram: "https://www.instagram.com/janesmith",
+        optionalLink: "https://www.example.com/janesmith",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1ewGQZE9cECUebLMzsSG7cT_KdC1rQhCZ&sz=w1000",
+      },
+      {
+        name: "Riya Chauhan",
+        designation: "Vice-President",
+        linkedin: "https://www.linkedin.com/in/janesmith",
+        instagram: "https://www.instagram.com/janesmith",
+        optionalLink: "https://www.example.com/janesmith",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1b7zIIOjSmy0e62iiru8p8EeshwmEyI3U&sz=w1000",
+      },
+      {
+        name: "Vasudev Pant",
+        designation: "President EduTech",
+        linkedin: "https://www.linkedin.com/in/janesmith",
+        instagram: "https://www.instagram.com/janesmith",
+        optionalLink: "https://www.example.com/janesmith",
+        picLink:
+          "https://drive.google.com/thumbnail?id=18bQrrhbq9qb3zOBbYctdbF0Z6Ih4xwv1&sz=w1000",
+      },
+      {
+        name: "Tarushi Mishra",
+        designation: "Creativity Lead",
+        linkedin: "https://www.linkedin.com/in/janesmith",
+        instagram: "https://www.instagram.com/janesmith",
+        optionalLink: "https://www.example.com/janesmith",
+        picLink: "",
+      },
+      {
+        name: "Devansh Singhal",
+        designation: "Joint Secretary",
+        linkedin: "https://www.linkedin.com/in/janesmith",
+        instagram: "https://www.instagram.com/janesmith",
+        optionalLink: "https://www.example.com/janesmith",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1sc0acFWLAFZqhVZHSVvL_vm7Wud6Ixv2&sz=w1000",
+      },
+      {
+        name: "Om Jaiswal",
+        designation: "Joint Secretary",
+        linkedin: "https://www.linkedin.com/in/janesmith",
+        instagram: "https://www.instagram.com/janesmith",
+        optionalLink: "https://www.example.com/janesmith",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1oAxPWzoHAshcla35z14wrtRqf63c70Ui&sz=w1000",
+      },
+      {
+        name: "Bhavya Kumar",
+        designation: "Treasurer",
+        linkedin: "https://www.linkedin.com/in/janesmith",
+        instagram: "https://www.instagram.com/janesmith",
+        optionalLink: "https://www.example.com/janesmith",
+        picLink: "",
+      },
+      {
+        name: "Advait Jain",
+        designation: "Tech Lead",
+        linkedin: "https://www.linkedin.com/in/janesmith",
+        instagram: "https://www.instagram.com/janesmith",
+        optionalLink: "https://www.example.com/janesmith",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1pULI-9JdbmZBU7RwR-vaFeuD_IZJDo9U&sz=w1000",
+      },
+      // Add more members for Team A here...
+    ],
+  },
+  {
+    teamName: "Content and Documentation",
+    members: [
+      {
+        name: "Arnav Goel",
+        designation: "Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=18ISqyDZ2at69yf1f-v2a1HYVVL-dHPNd&sz=w1000",
+      },
+      {
+        name: "Lakshay",
+        designation: "Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Diya Yadav",
+        designation: "Vice-Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=18NSdW-qfAw48IkhSvJY9H9DwpZk7FiIQ&sz=w1000",
+      },
+      {
+        name: "Sneha",
+        designation: "Vice Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Anushka Gupta",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1eODYebK0wS747aC79_RPI6ltOhjS1PMU&sz=w1000",
+      },
+      {
+        name: "Alok Tripathi",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Mohit Lamba",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1RkTBXsUoH6EWqC83y12Wnh90ooHGmfAj&sz=w1000",
+      },
+      {
+        name: "Divyansh Singh",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Manya Sharma",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=16ckv2WjVfxd3S1wj6V9hXwx5NauHAxr_&sz=w1000",
+      },
+      {
+        name: "Harshita Bhasin",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=14TnOHbYuCquaJXeDslfq-mr23euzDuBp&sz=w1000",
+      },
+      {
+        name: "Anukrit Goyal",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1r4ObO8WOHsP3sFkcT2GzrwDzLUomwClV&sz=w1000",
+      },
+      {
+        name: "Krithika Sharma",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Parth Barara",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      // Add more members for Team B here...
+    ],
+  },
+  {
+    teamName: "Social Media and Publicity",
+    members: [
+      {
+        name: "Surbhi Singh",
+        designation: "Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Mohit Bhushan",
+        designation: "Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1kIsCZTwxfbasAEIg9knqEmUXF1qV5I8A&sz=w1000",
+      },
+      {
+        name: "Yatra Jain",
+        designation: "Vice-Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1R8VfGRGB1zoMd6Dn1PpWUnUYg4UDPU5b&sz=w1000",
+      },
+      {
+        name: "Kajal",
+        designation: "Vice Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1cmSYipacFylYwPvY4HVMP9NqcUXfkrHs&sz=w1000",
+      },
+      {
+        name: "Tushar Kumar",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Harshit Agarwal",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Dhruv Agarwal",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1qcrey666Hcs5uT7lIzJ7eRsrh754KPha&sz=w1000",
+      },
+      {
+        name: "Manya Dhingra",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Chaitanya Sharma",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Suyash Sinha",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Umair Ahmad",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Khushi Khanna",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Nidhi Verma",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Shreya Ojha",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Rudra Oberoi",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Suhani",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1iqm6ARl_Sh_E6HhMVlO4xj-jErii3K4v&sz=w1000",
+      },
+      {
+        name: "Sanjana Gupta",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      // Add more members for Team B here...
+    ],
+  },
+  {
+    teamName: "Design and Creativity",
+    members: [
+      {
+        name: "Tushar Mittal",
+        designation: "Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Armaan Jain",
+        designation: "Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1e-WottLxTaSfUEGh3KXVPrnXwGyR62Eh&sz=w1000",
+      },
+      {
+        name: "Kavya Khanna",
+        designation: "Vice-Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Vidit Garg",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1qFUEbP70FNTh2D5PunKvwmx4Qs8KW7Zn&sz=w1000",
+      },
+      {
+        name: "Mansha",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Ravikant Kumar",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Hitesh Verma",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1AhgzFKwe86fC_XgRAsQiO4wbac0o2Y3c&sz=w1000",
+      },
+      {
+        name: "Raj Pandey",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Tushar Kumar",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Kashish Tyagi",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Md Saif",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1D6TS3W2AgUdSLEbYSZmWkX8v5SmbFWBB&sz=w1000",
+      },
+      {
+        name: "Harshit Gupta",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Raghav Gupta",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Sanvi Kataria",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Avinash Gola",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      // Add more members for Team B here...
+    ],
+  },
+  {
+    teamName: "Video Editing",
+    members: [
+      {
+        name: "Kashish Rastogi",
+        designation: "Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1Qs8_kD3gf5HsVAbZL7OQ6c3jzvyIODNT&sz=w1000",
+      },
+      {
+        name: "Samyak Patil",
+        designation: "Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=13iZafbIN_9yD21tRCqiBFOMuO9LgaTH_&sz=w1000",
+      },
+      {
+        name: "Himanshu Gupta",
+        designation: "Vice-Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1W-xVTy--rRgeNv_V5cGOxITYai_sSmkR&sz=w1000",
+      },
+      {
+        name: "Raman Sharma",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Yash Verma",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1NyOv7PI_ocaMU1YIdbHjN-jit495Hdvt&sz=w1000",
+      },
+      {
+        name: "Abhishek Kumar",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Saurabh Kumar",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1fWymHIhlQbPrdpHysWemtcTTaPZRiMpe&sz=w1000",
+      },
+      {
+        name: "Saptarshi Pandit",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Pabitra Mondal",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Nikhil Kaushal",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Lakshay Gupta",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Nikunj",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1SJn9pgT98ndEUCtleft76xc_KVXzBN2R&sz=w1000",
+      },
+      {
+        name: "Rizwan Ali",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      // Add more members for Team B here...
+    ],
+  },
+  {
+    teamName: "Event Management",
+    members: [
+      {
+        name: "Monu Kumar",
+        designation: "Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1v0ELhJBilv1vN-9T2oYQms9eqVJRCwOU&sz=w1000",
+      },
+      {
+        name: "Jasmine",
+        designation: "Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Bhavik Aggarwal",
+        designation: "Vice-Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1_-N5R4yYzcZHMWT8SFv5fXgpDqHv4HiV&sz=w1000",
+      },
+      {
+        name: "Riya Sharma",
+        designation: "Vice-Head",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1WTaAOSVkWy0i3iblS3NstzMiinLe8rMM&sz=w1000",
+      },
+      {
+        name: "Vikalp Yadav",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Riddhi Bansal",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Nishant Kumar",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1bUnvWny4S81NE7vSK-V3HYsTK8I5tZoX&sz=w1000",
+      },
+      {
+        name: "Yashika Gandhi",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Varun Kaushik",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink: "",
+      },
+      {
+        name: "Shaurya Gupta",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1FJHSWachrF6LWFCH1dEENb3RWfsjgdsx&sz=w1000",
+      },
+      {
+        name: "Abhishek Kumar",
+        designation: "Executive",
+        linkedin: "https://www.linkedin.com/in/johndoe",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1cM9_WmuGrTVffGmcqI2Tuhsgz7sgu2al&sz=w1000",
+      },
+      {
+        name: "Taniket Singh",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1sgzrMzQa5bZSzSHp5mMNqIcIJGpuzLeg&sz=w1000",
+      },
+      {
+        name: "Pranav Sharma",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Vishal Bhalla",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Ishika Bindal",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1p41wrTRibFwRvQSnfS5qzJCAVk1WMzqu&sz=w1000",
+      },
+      {
+        name: "Saksham Gulati",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Faraz Ahmed Qureshi",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1E2-s_kiMzBQ1kJ1XskuiYYLxkedmH7LT&sz=w1000",
+      },
+      {
+        name: "Dhruv Gupta",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1g46eLYxMqd-aUv2a-XLAzLwVF2ZVmZra&sz=w1000",
+      },
+      {
+        name: "Rajan Kumar",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1-shvpX79t7Q2nmlSrJjIM250QsFvBewu&sz=w1000",
+      },
+      {
+        name: "Himanshu Kumar",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Vansh Tandon",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1dj2OQO5LP2CL0BOIXEJK39rHNx25Xzje&sz=w1000",
+      },
+      {
+        name: "Sahil Sharma",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Ashutosh Singh",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Mohit Pal",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      // Add more members for Team B here...
+    ],
+  },
+  {
+    teamName: "Technical",
+    members: [
+      {
+        name: "Shivank Aggarwal",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Shreshth Agarwal",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=138ThJQjADNAHBf0e5PapX3cUOF-oENMV&sz=w1000",
+      },
+      {
+        name: "Sanskar Kannaujia",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Kartik Padaliya",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Shashank Gupta",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Raghav Kaushik",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=159BNOhJsOwOq34aeJlQqXZ8f3SUeycal&sz=w1000",
+      },
+      {
+        name: "Crish Sarthak Jiwani",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=18RkBx3g6MMZRu09Oab6q9XMUSkUa0m1p&sz=w1000",
+      },
+      {
+        name: "Shivam Jindal",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1X5Ag66Euv-fJcymxhpHftkmCaiU3WxWk&sz=w1000",
+      },
+      {
+        name: "Daksh Kaushik",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Navin Chandra",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Viresh Singhal",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Ripunjay Sharma",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=12kUB67t6y-MD71ZD0WtXvMNF6kwsE_Rg&sz=w1000",
+      },
+      {
+        name: "Pratham Nahata",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Trijal Singh",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Rishi Kumar Nayak",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Nikunj Budhiraja",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1uXFaGrLw_g4AO1ns0_SrH9PUoC7jZcZF&sz=w1000",
+      },
+      // Add more members for Team B here...
+    ],
+  },
+  {
+    teamName: "Sponsorship and Outreach",
+    members: [
+      {
+        name: "Bhavya",
+        designation: "Head",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Danish",
+        designation: "Head",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Tanishq Jain",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1NM5xg5t66Cx958KakQFSpsubP9CLc7r6&sz=w1000",
+      },
+      {
+        name: "Khushi Agarwal",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Kesar Bansal",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1qoOU5mLGUcvXTFJ2KrEKj8Lap6m7Eo7K&sz=w1000",
+      },
+      {
+        name: "Yash Tharani",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Aditya Yadav",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1VZh4LBzfoub3wWl0BuVtxwwPYPDsETzu&sz=w1000",
+      },
+      {
+        name: "Khushi Nagpal",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Anindita Sinha",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=1i_BXSvj4_Q-JHYAF1q_y0woHdyzuv8BP&sz=w1000",
+      },
+      {
+        name: "Shounak Dua",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=19ijaomzEJc8nxJ80whwqEooPrzUdytVK&sz=w1000",
+      },
+      {
+        name: "Deepak Sharma",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Uday Garg",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Satendra Kumar",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink:
+          "https://drive.google.com/thumbnail?id=16fQ4ddQJSjLq-S1nKD8X9D2IvPxLO0R-&sz=w1000",
+      },
+      {
+        name: "Gaurish Sehgal",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Tanmay Jain",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      // Add more members for Team B here...
+    ],
+  },
+
+  // Add more teams here...
 ];
 
 export default teams;
