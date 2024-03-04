@@ -11,7 +11,7 @@ import topics from "../components/Content_index";
 
 const AboutUs = () => {
   return (
-    <div className="">
+    <div className="m-4">
       <div className="grid grid-cols-3 minlg:grid-cols-1  gap-4 py-5 md:py-0 h-max my-5">
         <div className="my-5 py-4 text-left pr-4">
           <h1 className="tracking-normal text-4xl minmd:text-lg minsm:text-3xl bg-gradient-to-r font-bold  from-[#E61AA1]  to-[#0CF996] to-55% bg-clip-text text-transparent my-3">

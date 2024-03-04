@@ -5,14 +5,14 @@ import teams from "../Config/Team";
 const Team = () => {
   // const peeps = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
-    <div className="m-5 p-1">
+    <div className="m-5 minmd:m-0 ">
       <div className="container mx-6">
         <div className="col-span-3 text-left h-[80vh] my-10">
           <h2 className="text-md text-left text-white">DREAM</h2>
           <h1 className="text-6xl minmd:text-xl text-left tracking-widest bg-gradient-to-r  from-[#E61AA1]  to-[#0CF996] to-10% bg-clip-text text-transparent mb-3 mr-auto">
             TEAM
           </h1>
-          <p className="text-stone-500 w-96 text-sm minmd:text-sm minmd:w-60">
+          <p className="text-stone-500 w-96 text-sm minmd:text-[3.5vw] p-3   minmd:w-60 overflow-x-auto">
             Introducing our EduMinerva team: a visionary leader as President,
             highly skilled heads, and hardworking executives creating a
             development-minded environment. The President, highly goal-oriented,
@@ -21,7 +21,7 @@ const Team = () => {
             individuals with innovative minds. The President of Edu Tech leads
             by example. Treasurers handle financial affairs perfectly. Technical
             and Creative leads add crucial dimensions. Department heads,
-            alongside members, work tirelessly to achieve targets.
+            alongside members, work tirelessly to achieve targets.
           </p>
         </div>
         {/* <div className="col-span-2x"></div> */}
@@ -39,6 +39,7 @@ const Team = () => {
             <h1 className="text-white text-2xl font-mono left-0 ">
               {team.teamName}
             </h1>
+
             <div className="flex flex-wrap m-4 gap-3">
               {team.members.map((member) => (
                 <TeamCards
@@ -46,12 +47,13 @@ const Team = () => {
                   PicLink={member.picLink}
                   Name={member.name}
                   Position={member.designation}
-                  // InstaLink={member.instagram}
-                  // LinkdLink={member.linkedin}
+                  InstaLink={member.instagram}
+                  LinkdLink={member.linkedin}
                   // To be uncommented when these are available
                 />
               ))}
             </div>
+            <br />
           </div>
         ))}
       </div>

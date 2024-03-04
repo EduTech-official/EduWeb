@@ -7,11 +7,11 @@ const TeamCards = ({ PicLink, Name, Position, InstaLink, LinkdLink }) => {
     <div className="flex justify-center " style={{ flex: "1 0 20%" }}>
       <div
         id="hove"
-        className="w-full h-full hover max-w-[14rem] border border-gray-200 rounded-lg bg-gray-800 bg-opacity-80 hover:bg-opacity-95 hover:brightness-110 dark:border-gray-700 p-4 flex-4 items-center"
+        className="w-full h-full hover max-w-[16rem] min-w-[10rem] border border-gray-200 rounded-lg bg-gray-800 bg-opacity-80 hover:bg-opacity-95 hover:brightness-110 dark:border-gray-700 p-4 flex-4 items-center"
       >
         <a href="#">
           <img
-            className="rounded-lg"
+            className="rounded-lg object-cover"
             src={PicLink ? PicLink : Logo}
             alt="product image"
             loading="lazy"
@@ -29,7 +29,7 @@ const TeamCards = ({ PicLink, Name, Position, InstaLink, LinkdLink }) => {
             <span className="text-xs col-span-2 my-2 text-left font-bold pr-3 text-gray-900 dark:text-white">
               {Position}
             </span>
-            {/*
+            
             <a
               href={InstaLink}
               className="h-8 focus:outline-none col-span-1 dark:focus:ring-blue-800"
@@ -60,8 +60,6 @@ const TeamCards = ({ PicLink, Name, Position, InstaLink, LinkdLink }) => {
                 <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"></path>
               </svg>
             </a>
-            To be removed once available
-            */}
           </div>
         </div>
       </div>
