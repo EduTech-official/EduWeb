@@ -5,7 +5,7 @@ const teams = [
       {
         name: "Aditya Raghav",
         designation: "President",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -65,11 +65,11 @@ const teams = [
           "https://drive.google.com/thumbnail?id=1oAxPWzoHAshcla35z14wrtRqf63c70Ui&sz=w1000",
       },
       {
-        name: "Bhavya Kumar",
+        name: "Jasmine",
         designation: "Treasurer",
-        linkedin: "https://www.linkedin.com/in/janesmith",
-        instagram: "https://www.instagram.com/janesmith",
-        optionalLink: "https://www.example.com/janesmith",
+        linkedin: "",
+        instagram: "https://www.instagram.com/johndoe",
+        optionalLink: "https://www.example.com/johndoe",
         picLink: "",
       },
       {
@@ -90,7 +90,7 @@ const teams = [
       {
         name: "Arnav Goel",
         designation: "Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -99,7 +99,7 @@ const teams = [
       {
         name: "Lakshay",
         designation: "Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -107,7 +107,7 @@ const teams = [
       {
         name: "Diya Yadav",
         designation: "Vice-Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -116,7 +116,7 @@ const teams = [
       {
         name: "Sneha",
         designation: "Vice Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -124,7 +124,7 @@ const teams = [
       {
         name: "Anushka Gupta",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -133,7 +133,7 @@ const teams = [
       {
         name: "Alok Tripathi",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -141,7 +141,7 @@ const teams = [
       {
         name: "Mohit Lamba",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -150,7 +150,7 @@ const teams = [
       {
         name: "Divyansh Singh",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -158,7 +158,7 @@ const teams = [
       {
         name: "Manya Sharma",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -167,7 +167,7 @@ const teams = [
       {
         name: "Harshita Bhasin",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -176,7 +176,7 @@ const teams = [
       {
         name: "Anukrit Goyal",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -185,7 +185,7 @@ const teams = [
       {
         name: "Krithika Sharma",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -193,7 +193,7 @@ const teams = [
       {
         name: "Parth Barara",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -207,7 +207,7 @@ const teams = [
       {
         name: "Surbhi Singh",
         designation: "Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -215,7 +215,7 @@ const teams = [
       {
         name: "Mohit Bhushan",
         designation: "Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -224,7 +224,7 @@ const teams = [
       {
         name: "Yatra Jain",
         designation: "Vice-Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -233,7 +233,7 @@ const teams = [
       {
         name: "Kajal",
         designation: "Vice Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -242,7 +242,7 @@ const teams = [
       {
         name: "Tushar Kumar",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -250,7 +250,7 @@ const teams = [
       {
         name: "Harshit Agarwal",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -258,7 +258,7 @@ const teams = [
       {
         name: "Dhruv Agarwal",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -267,7 +267,7 @@ const teams = [
       {
         name: "Manya Dhingra",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -275,7 +275,7 @@ const teams = [
       {
         name: "Chaitanya Sharma",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -283,7 +283,7 @@ const teams = [
       {
         name: "Suyash Sinha",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -291,7 +291,7 @@ const teams = [
       {
         name: "Umair Ahmad",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -299,7 +299,7 @@ const teams = [
       {
         name: "Khushi Khanna",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -307,7 +307,7 @@ const teams = [
       {
         name: "Nidhi Verma",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -315,7 +315,7 @@ const teams = [
       {
         name: "Shreya Ojha",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -323,7 +323,7 @@ const teams = [
       {
         name: "Rudra Oberoi",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -331,7 +331,7 @@ const teams = [
       {
         name: "Suhani",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -340,7 +340,7 @@ const teams = [
       {
         name: "Sanjana Gupta",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -354,7 +354,7 @@ const teams = [
       {
         name: "Tushar Mittal",
         designation: "Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -362,7 +362,7 @@ const teams = [
       {
         name: "Armaan Jain",
         designation: "Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -371,7 +371,7 @@ const teams = [
       {
         name: "Kavya Khanna",
         designation: "Vice-Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -379,7 +379,7 @@ const teams = [
       {
         name: "Vidit Garg",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -388,7 +388,7 @@ const teams = [
       {
         name: "Mansha",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -396,7 +396,7 @@ const teams = [
       {
         name: "Ravikant Kumar",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -404,7 +404,7 @@ const teams = [
       {
         name: "Hitesh Verma",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -413,7 +413,7 @@ const teams = [
       {
         name: "Raj Pandey",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -421,7 +421,7 @@ const teams = [
       {
         name: "Tushar Kumar",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -429,7 +429,7 @@ const teams = [
       {
         name: "Kashish Tyagi",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -437,7 +437,7 @@ const teams = [
       {
         name: "Md Saif",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -446,7 +446,7 @@ const teams = [
       {
         name: "Harshit Gupta",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -454,7 +454,7 @@ const teams = [
       {
         name: "Raghav Gupta",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -462,7 +462,7 @@ const teams = [
       {
         name: "Sanvi Kataria",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -470,7 +470,7 @@ const teams = [
       {
         name: "Avinash Gola",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -484,7 +484,7 @@ const teams = [
       {
         name: "Kashish Rastogi",
         designation: "Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -493,7 +493,7 @@ const teams = [
       {
         name: "Samyak Patil",
         designation: "Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -502,7 +502,7 @@ const teams = [
       {
         name: "Himanshu Gupta",
         designation: "Vice-Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -511,7 +511,7 @@ const teams = [
       {
         name: "Raman Sharma",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -519,7 +519,7 @@ const teams = [
       {
         name: "Yash Verma",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -528,7 +528,7 @@ const teams = [
       {
         name: "Abhishek Kumar",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -536,7 +536,7 @@ const teams = [
       {
         name: "Saurabh Kumar",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -545,7 +545,7 @@ const teams = [
       {
         name: "Saptarshi Pandit",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -553,7 +553,7 @@ const teams = [
       {
         name: "Pabitra Mondal",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -561,7 +561,7 @@ const teams = [
       {
         name: "Nikhil Kaushal",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -569,7 +569,7 @@ const teams = [
       {
         name: "Lakshay Gupta",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -577,7 +577,7 @@ const teams = [
       {
         name: "Nikunj",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -586,7 +586,7 @@ const teams = [
       {
         name: "Rizwan Ali",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -600,24 +600,17 @@ const teams = [
       {
         name: "Monu Kumar",
         designation: "Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
           "https://drive.google.com/thumbnail?id=1v0ELhJBilv1vN-9T2oYQms9eqVJRCwOU&sz=w1000",
       },
-      {
-        name: "Jasmine",
-        designation: "Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
-        instagram: "https://www.instagram.com/johndoe",
-        optionalLink: "https://www.example.com/johndoe",
-        picLink: "",
-      },
+
       {
         name: "Bhavik Aggarwal",
         designation: "Vice-Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -626,7 +619,7 @@ const teams = [
       {
         name: "Riya Sharma",
         designation: "Vice-Head",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -635,7 +628,7 @@ const teams = [
       {
         name: "Vikalp Yadav",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -643,7 +636,7 @@ const teams = [
       {
         name: "Riddhi Bansal",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -651,7 +644,7 @@ const teams = [
       {
         name: "Nishant Kumar",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -660,7 +653,7 @@ const teams = [
       {
         name: "Yashika Gandhi",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -668,7 +661,7 @@ const teams = [
       {
         name: "Varun Kaushik",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink: "",
@@ -676,7 +669,7 @@ const teams = [
       {
         name: "Shaurya Gupta",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
@@ -685,7 +678,7 @@ const teams = [
       {
         name: "Abhishek Kumar",
         designation: "Executive",
-        linkedin: "https://www.linkedin.com/in/johndoe",
+        linkedin: "",
         instagram: "https://www.instagram.com/johndoe",
         optionalLink: "https://www.example.com/johndoe",
         picLink:
