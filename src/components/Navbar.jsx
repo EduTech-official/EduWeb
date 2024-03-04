@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import Logo from "../assets/logo.jpeg";
+import { useState } from "react";
+// import Logo from "../assets/logo.jpeg";
 import Logo2 from "../assets/Vector.png";
-import { Outlet, Link } from "react-router-dom";
+// import { Outlet, Link } from "react-router-dom";
 import HamburgerMenu from "./HambergerMenu";
 
 const Navbar = () => {
@@ -23,7 +23,10 @@ const Navbar = () => {
           </div>
           <ul className="flex pt-4">
             <li className="pr-5 m2xl:pr-9 text-[15px]">
-              <a href="/" className="text-blue-500 hover:underline">
+              <a
+                href="/"
+                className="text-blue-500 hover:underline hover:text-blue-200"
+              >
                 Home
               </a>
             </li>
