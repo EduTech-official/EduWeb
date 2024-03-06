@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.jpeg";
-import logo2 from "../assets/logot.png"
-import logo3 from "../assets/Vector.png"
+import logo2 from "../assets/logot.png";
+import logo3 from "../assets/Vector.png";
 
 import TypewriterText from "./TyperWriterAnimate";
 
 const Hero = () => {
   const [isAnimating, setIsAnimating] = useState(false);
+
+  // make a timeout that automatically send the user to the next page after 5 seconds
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      // Redirect to the next page
+      window.location.href = "/aboutus";
+    }, 10000);
+    return () => clearTimeout(timeout);
+  }, []);
 
   useEffect(() => {
     // Trigger animation after a delay
