@@ -24,14 +24,14 @@ const Events = () => {
 
   return (
     <>
-      <div className="grid grid-cols-3 minlg:grid-cols-1 gap-4 mx-5 mt-10">
+      <div className="grid items-center grid-cols-3 minlg:grid-cols-1 gap-4 mx-5 mt-10">
         <div className="col-span-1 minmd:col-span-3">
-          <h1 className="text-4xl bg-gradient-to-r brightness-150 flex justify-center from-[#0CF996]  to-[#E61AA1] bg-clip-text text-transparent mt-3">
+          <h1 className="text-4xl bg-gradient-to-r brightness-150 font-semibold flex justify-center from-[#0CF996]  to-[#E61AA1] bg-clip-text text-transparent mt-3">
             Events
           </h1>
           <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10]  bg-slate-800 rounded-xl">
             <img
-              className="object-cover w-full h-full rounded-xl"
+              className="my-auto object-cover w-full h-full rounded-xl"
               src={
                 selectedEvent.image
                   ? selectedEvent.image
@@ -40,19 +40,23 @@ const Events = () => {
               alt="photo"
             />
           </div>
+
           <p className="text-left p-4 text-white minxl:text-xs">
             {selectedEvent.description}
           </p>
-
-          <a
-            href={selectedEvent.links[1].url}
-            className="inline-block bg-gray-200 rounded-full px-6 py-3 text-lg font-semibold text-gray-700 mr-2 mb-2"
-          >
-            {selectedEvent.links[1].name}
-          </a>
+          {selectedEvent.tags[0] == "MAIN" ? (
+            ""
+          ) : (
+            <a
+              href={selectedEvent.links[1].url}
+              className="inline-block bg-gray-200 rounded-full px-6 py-3 text-lg font-semibold text-gray-700 mr-2 mb-2"
+            >
+              {selectedEvent.links[1].name}
+            </a>
+          )}
 
           {/* toogle events Logic */}
-          <div className=" p-3 flex  flex-col items-center">
+          <div className=" p-3 z-10 flex  flex-col items-center">
             <button
               onClick={toggleOptions}
               className="flex flex-row justify-between w-full max-w-[15rem] px-2 py-2 text-white bg-slate-600 bg-opacity-75  border-2 border-slate-500 rounded-md shadow focus:outline-none focus:border-blue-600"
@@ -109,9 +113,9 @@ const Events = () => {
           </div>
         </div>
 
-        <div className="minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 rounded-xl">
+        <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl">
           <img
-            className="object-cover w-full h-full rounded-xl"
+            className="object-contain w-full h-full rounded-xl"
             src={selectedEvent.image}
             alt="photo"
           />
