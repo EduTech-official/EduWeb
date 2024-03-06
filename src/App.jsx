@@ -12,6 +12,7 @@ import AboutUs from "./Pages/AboutUs";
 import Gallery from "./Pages/Gallery";
 import Gallery2 from "./Pages/Gallery2";
 import ContactPage from "./Pages/ContactPage";
+import Thanks from "./Pages/Thanks";
 
 import Error from "./Pages/Error";
 
@@ -49,8 +50,12 @@ function App() {
       path: "/contact",
       element: <ContactPage />,
     },
+    {
+      path: "/Thanks",
+      element: <Thanks />,
+    },
   ]);
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   return (
     <div className="minlg:mx-6 mx-4 minsm:mx-1">

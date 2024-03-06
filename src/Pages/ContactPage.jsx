@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import Globe from "../components/Gloabe";
 
 const ContactPage = () => {
@@ -13,11 +13,17 @@ const ContactPage = () => {
             Got a issue? Want to send feedback about an Event ? Need details
             about our plan? Let us know.
           </p>
-          <form action="#" className="space-y-4">
+          <form
+            method="POST"
+            action="https://formsubmit.co/eduminerva.bvcoe@gmail.com"
+            className="space-y-4"
+          >
             <div>
+              {/* <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html"> */}
               <input
                 type="email"
                 id="email"
+                name="email"
                 className="block p-3 w-full text-sm bg-opacity-10 text-white bg-gray-50 rounded-lg border border-gray-300 shadow-sm"
                 placeholder="Email"
                 required
@@ -27,6 +33,7 @@ const ContactPage = () => {
               <input
                 type="text"
                 id="name"
+                name="name"
                 className="block p-3 w-full text-sm bg-opacity-10 text-white bg-gray-50 rounded-lg border border-gray-300 shadow-sm"
                 placeholder="Let us know how we can help you"
                 required
@@ -35,6 +42,7 @@ const ContactPage = () => {
             <div className="minsm:col-span-2">
               <textarea
                 id="message"
+                name="message"
                 rows="6"
                 className="block p-2.5 h-1/6 w-full text-sm bg-opacity-10 text-white bg-gray-50 rounded-lg shadow-sm border border-gray-300 placeholder:text-zinc-400"
                 placeholder="Leave a comment..."

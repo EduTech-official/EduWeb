@@ -31,6 +31,7 @@ const Gallery2 = () => {
                 className="h-auto max-w-full rounded-lg"
                 src={image}
                 alt=""
+                loading="lazy"
               />
             </div>
           ))}
