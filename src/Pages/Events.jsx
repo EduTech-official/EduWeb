@@ -74,7 +74,7 @@ const Events = () => {
                   : ` hidden max-w-[15rem] w-full py-2 mt-2 bg-slate-600 bg-opacity-50 rounded-lg shadow-xl`
               }
             >
-              {events.map((event, index) => (
+              {events.slice(1).map((event, index) => (
                 <a
                   href="#"
                   key={index}
@@ -100,7 +100,8 @@ const Events = () => {
         Past Events
       </h1>
       <div className="col-span-1 minmd:col-span-3 flex gap-4 flex-wrap justify-center">
-        {events.map((event, index) => (
+        {/* first event contains the title and description of /events page.Skip it. */}
+        {events.slice(1).map((event, index) => (
           <div key={index} className="py-7">
             <EventsCard events={event} />
           </div>
