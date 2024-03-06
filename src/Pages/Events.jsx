@@ -1,9 +1,10 @@
 import { useState } from "react";
 // import photo from "../assets/IMG.png";
-import photo1 from "../assets/IMG_6961.png";
+// import photo1 from "../assets/IMG_6961.png";
 // import Cards from "../components/Cards";
 // import InfoCard from "../components/InfoCard";
 import events from "../Config/Events";
+import upcomingEvents from "../Config/Events/upcoming.index";
 import EventsCard from "../components/Events.past";
 
 const Events = () => {
@@ -11,6 +12,12 @@ const Events = () => {
   const toggleOptions = () => {
     setToggle(!toggle);
     console.log("clicked");
+  };
+
+  const [selectedEvent, setSelectedEvent] = useState(events[0]);
+  const EventToggle = ({ eventDetils }) => {
+    setSelectedEvent(eventDetils);
+    console.log(selectedEvent);
   };
 
   // const EventList = ["Event 1", "Event 2", "Event 3", "Event 4"];
@@ -25,13 +32,24 @@ const Events = () => {
           <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10]  bg-slate-800 rounded-xl">
             <img
               className="object-cover w-full h-full rounded-xl"
-              src={photo1}
+              src={
+                selectedEvent.image
+                  ? selectedEvent.image
+                  : upcomingEvents[0].image
+              }
               alt="photo"
             />
           </div>
           <p className="text-left p-4 text-white minxl:text-xs">
-            {events[0].description}
+            {selectedEvent.description}
           </p>
+
+          <a
+            href={selectedEvent.links[1].url}
+            className="inline-block bg-gray-200 rounded-full px-6 py-3 text-lg font-semibold text-gray-700 mr-2 mb-2"
+          >
+            {selectedEvent.links[1].name}
+          </a>
 
           {/* toogle events Logic */}
           <div className=" p-3 flex  flex-col items-center">
@@ -74,12 +92,15 @@ const Events = () => {
                   : ` hidden max-w-[15rem] w-full py-2 mt-2 bg-slate-600 bg-opacity-50 rounded-lg shadow-xl`
               }
             >
-              {events.slice(1).map((event, index) => (
+              {upcomingEvents.map((event, index) => (
                 <a
                   href="#"
                   key={index}
                   className="block z-1 px-4 py-2 text-stone-200 hover:bg-indigo-500 hover:text-white"
-                  onClick={toggleOptions}
+                  onClick={() => {
+                    EventToggle({ eventDetils: event });
+                    toggleOptions();
+                  }}
                 >
                   {event.title}
                 </a>
@@ -91,7 +112,7 @@ const Events = () => {
         <div className="minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 rounded-xl">
           <img
             className="object-cover w-full h-full rounded-xl"
-            src={photo1}
+            src={selectedEvent.image}
             alt="photo"
           />
         </div>
