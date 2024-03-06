@@ -25,33 +25,48 @@ const Navbar = () => {
             <li className="pr-5 m2xl:pr-9 text-[15px]">
               <a
                 href="/"
-                className="text-blue-500 hover:underline hover:text-blue-200"
+                className="text-blue-500 hover:underline hover:text-blue-200 hover:animate-bounce"
               >
                 Home
               </a>
             </li>
             <li className="pr-5 m2xl:pr-9  text-[15px]">
-              <a href="/aboutus" className="text-blue-500 hover:underline">
+              <a
+                href="/aboutus"
+                className="text-blue-500 hover:underline hover:text-blue-200 hover:animate-bounce"
+              >
                 Eduminerva
               </a>
             </li>
             <li className="pr-5 m2xl:pr-9 text-[15px]">
-              <a href="/team" className="text-blue-500 hover:underline">
+              <a
+                href="/team"
+                className="text-blue-500 hover:underline  hover:text-blue-200 hover:animate-bounce"
+              >
                 Team
               </a>
             </li>
             <li className="pr-5 m2xl:pr-9  text-[15px]">
-              <a href="/events" className="text-blue-500 hover:underline">
+              <a
+                href="/events"
+                className="text-blue-500 hover:underline  hover:text-blue-200 hover:animate-bounce"
+              >
                 Events
               </a>
             </li>
             <li className="pr-5 m2xl:pr-9  text-[15px]">
-              <a href="/gallery2" className="text-blue-500 hover:underline">
+              <a
+                href="/gallery2"
+                className="text-blue-500 hover:underline  hover:text-blue-200 hover:animate-bounce"
+              >
                 Gallery
               </a>
             </li>
             <li className="pr-5 m2xl:pr-9  text-[15px]">
-              <a href="/contact" className="text-blue-500 hover:underline">
+              <a
+                href="/contact"
+                className="text-blue-500 hover:underline  hover:text-blue-200 hover:animate-bounce"
+              >
                 Contact Us
               </a>
             </li>
@@ -61,7 +76,7 @@ const Navbar = () => {
             className="text-blue-500 hover:underline"
           ></button>
         </nav>
-        <nav className=" container hidden minlg:flex minlg:justify-end cursor-pointer pb-3">
+        <nav className=" container hidden minlg:flex minlg:flex-col cursor-pointer pb-3">
           <HamburgerMenu />
         </nav>
       </header>
