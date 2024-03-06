@@ -48,7 +48,7 @@ const AboutUs = () => {
           className="col-span-2  my-auto rounded-2xl shadow-2xl aspect-video object-fill"
         />
       </div>
-      <div className="grid m-5 p-4 gap-4 h-full child grid-cols-3">
+      <div className="grid m-5 p-4 gap-4 minmd:p-0 minmd:m-0 minmd:my-2 h-full child grid-cols-3">
         {topics.map((topic, index) => (
           <InfoCard
             key={index}
@@ -73,7 +73,7 @@ const AboutUs = () => {
           </div>
           <div className="col-span-1 my-auto py-4">
             <h2 className="text-2xl text-left text-stone-50 ">Description</h2>
-            <p className="text-stone-500 text-left text-base">
+            <p className="text-stone-500 text-left text-base minmd:text-xs ">
               {upcomingEvents[0].description}
             </p>
           </div>
@@ -91,7 +91,7 @@ const AboutUs = () => {
         </div>
         <div>
           <a href={upcomingEvents[0].links[1].url}>
-            <h1 className="border-white rounded-3xl border-2 text-4xl mt-8 mx-6 py-1 text-slate-100 hover:bg-slate-200 hover:bg-opacity-20 ">
+            <h1 className="border-white rounded-3xl border-2 text-4xl mt-8 mx-6 py-1 minmd:text-xs text-slate-100 hover:bg-slate-200 hover:bg-opacity-20 hover:animate-bounce ">
               Register Here
             </h1>
           </a>

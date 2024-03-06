@@ -12,7 +12,7 @@ const Team = () => {
           <h1 className="text-6xl minmd:text-xl text-left tracking-widest bg-gradient-to-r  from-[#E61AA1]  to-[#0CF996] to-10% bg-clip-text text-transparent mb-3 mr-auto">
             TEAM
           </h1>
-          <p className="text-stone-500 w-96 text-sm minmd:text-[3.5vw] p-3   minmd:w-60 overflow-x-auto">
+          <p className="text-stone-500 w-96 text-sm minmd:text-clamp p-4 minmd:w-fit mr-4 overflow-x-auto">
             Introducing our EduMinerva team: a visionary leader as President,
             highly skilled heads, and hardworking executives creating a
             development-minded environment. The President, highly goal-oriented,
@@ -25,13 +25,13 @@ const Team = () => {
           </p>
         </div>
         {/* <div className="col-span-2x"></div> */}
-        <div className="field m-auto -translate-y-32">
-          {/* <div class="mouse"></div> */}
-          <a href="#Team">
-            <div className="scroll"></div>
-          </a>
-          {/* <div class="arrow"></div> */}
-        </div>
+      </div>
+      <div className="field m-auto -translate-y-[6rem]">
+        {/* <div class="mouse"></div> */}
+        <a href="#Team">
+          <div className="scroll"></div>
+        </a>
+        {/* <div class="arrow"></div> */}
       </div>
       <div id="Team" className=" my-4 flex flex-wrap justify-center ">
         {teams.map((team) => (
