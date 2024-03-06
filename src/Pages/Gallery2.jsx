@@ -24,7 +24,7 @@ const Gallery2 = () => {
   return (
     <div>
       <div className="pt-8 grid grid-cols-2 md:grid-cols-4 justify-center gap-4 px-4">
-        <div className="grid gap-4 justify-center">
+        <div className="grid gap-y-4 gap-x-2 justify-center">
           {images.slice(0, 4).map((image, index) => (
             <div key={index}>
               <img
