@@ -58,7 +58,7 @@ function App() {
   // const [count, setCount] = useState(0);
 
   return (
-    <div className="minlg:mx-6 mx-4 minsm:mx-1">
+    <div className="minlg:mx-6 mx-4 minsm:mx-1 overflow-x-hidden">
       <BasicComp />
       <RouterProvider router={router} />
     </div>

@@ -11,7 +11,7 @@ export default {
         IBMplex: ['"IBM Plex Sans"', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        clamp: "clamp(0.5rem, 3vw, 3rem)",
+        clamp: "clamp(0.5rem, 4vw, 3rem)",
       },
     },
     screens: {

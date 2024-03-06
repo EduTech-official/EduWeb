@@ -9,10 +9,10 @@ const Team = () => {
       <div className="container mx-6">
         <div className="col-span-3 text-left h-[80vh] my-10">
           <h2 className="text-md text-left text-white">DREAM</h2>
-          <h1 className="text-6xl minmd:text-xl text-left tracking-widest bg-gradient-to-r  from-[#E61AA1]  to-[#0CF996] to-10% bg-clip-text text-transparent mb-3 mr-auto">
+          <h1 className="text-6xl minmd:text-xl font-semibold font-IBMplex text-left tracking-widest bg-gradient-to-r  from-[#E61AA1]  to-[#0CF996] to-10% bg-clip-text text-transparent mb-3 mr-auto">
             TEAM
           </h1>
-          <p className="text-stone-500 w-96 text-sm minmd:text-clamp p-4 minmd:w-fit mr-4 overflow-x-auto">
+          <p className="text-stone-500 w-96 text-sm minmd:text-clamp font-IBMplex p-4 minmd:w-fit mr-4 overflow-x-auto">
             Introducing our EduMinerva team: a visionary leader as President,
             highly skilled heads, and hardworking executives creating a
             development-minded environment. The President, highly goal-oriented,

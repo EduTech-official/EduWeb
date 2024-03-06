@@ -5,7 +5,7 @@ const ContactPage = () => {
   return (
     <div className=" grid grid-cols-2">
       <section className="col-span-1 minlg:col-span-2">
-        <div className="py-8 minlg:py-16 px-8 w-full">
+        <div className="pt-8 minlg:pt-16 px-8 minlg:px-2 w-full">
           <h2 className="mb-4 text-2xl tracking-normal font-extrabold text-center brightness-150 bg-gradient-to-r from-[#0CF996]  to-[#E61AA1] bg-clip-text text-transparent">
             Contact Us
           </h2>
@@ -57,7 +57,7 @@ const ContactPage = () => {
           </form>
         </div>
       </section>
-      <div className="col-span-1 minlg:col-span-2">
+      <div className="col-span-1 min-h-full minlg:col-span-2 minlg:-translate-y-16">
         <Globe />
       </div>
     </div>
