@@ -8,10 +8,10 @@ export default {
     extend: {
       fontFamily: {
         tourney: ['"Tourney"', ...defaultTheme.fontFamily.sans],
-        IBMplex : ['"IBM Plex Sans"', ...defaultTheme.fontFamily.sans],
+        IBMplex: ['"IBM Plex Sans"', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        clamp: "clamp(1rem, 5vw, 3rem)",
+        clamp: "clamp(0.5rem, 3vw, 3rem)",
       },
     },
     screens: {
