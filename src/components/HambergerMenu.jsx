@@ -28,7 +28,7 @@ function HamburgerMenu() {
               <a href="/aboutus">Eduminerva</a>
               <a href="/team">Team</a>
               <a href="/events">Events</a>
-              <a href="/gallery">Gallery</a>
+              <a href="/gallery2">Gallery</a>
               <a href="/contact">Contactus</a>
             </div>
             <div

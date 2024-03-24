@@ -57,7 +57,7 @@ const ContactPage = () => {
           </form>
         </div>
       </section>
-      <div className="col-span-1 min-h-full minlg:col-span-2 minlg:-translate-y-16">
+      <div className="col-span-1 min-h-full minlg:col-span-2 minlg:-translate-y-8">
         <Globe />
       </div>
     </div>
