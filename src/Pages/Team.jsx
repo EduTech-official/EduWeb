@@ -5,14 +5,14 @@ import teams from "../Config/Team";
 const Team = () => {
   // const peeps = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
-    <div className="m-5 minmd:m-0 ">
-      <div className="container mx-6">
+    <div className="m-2 minmd:m-0 ">
+      <div className=" lg:mx-2 minlg:mx-3">
         <div className="col-span-3 text-left h-[80vh] my-10">
           <h2 className="text-md text-left text-white">DREAM</h2>
           <h1 className="text-6xl minmd:text-xl font-semibold font-IBMplex text-left tracking-widest bg-gradient-to-r  from-[#E61AA1]  to-[#0CF996] to-10% bg-clip-text text-transparent mb-3 mr-auto">
             TEAM
           </h1>
-          <p className="text-stone-500 w-96 text-sm minmd:text-clamp font-IBMplex p-4 minmd:w-fit mr-4 overflow-x-auto">
+          <p className="text-stone-500 w-96 text-sm text-clamp font-IBMplex lg:p-4 minmd:w-fit mr-4 overflow-x-auto">
             Introducing our EduMinerva team: a visionary leader as President,
             highly skilled heads, and hardworking executives creating a
             development-minded environment. The President, highly goal-oriented,

@@ -2,10 +2,45 @@ import { useState } from "react";
 // import Logo from "../assets/logo.jpeg";
 import Logo2 from "../assets/Vector.png";
 // import { Outlet, Link } from "react-router-dom";
-import HamburgerMenu from "./HambergerMenu";
+// import HamburgerMenu from "./HambergerMenu";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { SheetClose } from "./ui/sheet";
 
 const Navbar = () => {
   const [showLogo, setShowLogo] = useState(false);
+  const links = [
+    {
+      name: "Home",
+      url: "/",
+    },
+    {
+      name: "About Us",
+      url: "/aboutus",
+    },
+    {
+      name: "Team",
+      url: "/team",
+    },
+    {
+      name: "Events",
+      url: "/events",
+    },
+    {
+      name: "Gallery",
+      url: "/gallery2",
+    },
+    {
+      name: "Contact Us",
+      url: "/contact",
+    },
+  ];
 
   return (
     <div>
@@ -76,8 +111,32 @@ const Navbar = () => {
             className="text-blue-500 hover:underline"
           ></button>
         </nav>
-        <nav className=" container hidden minlg:flex minlg:flex-col cursor-pointer pb-3">
-          <HamburgerMenu />
+        <nav className=" justify-end hidden minlg:flex cursor-pointer text-white pb-3">
+          {/* <HamburgerMenu /> */}
+          <Sheet>
+            <SheetTrigger>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50"
+                width="50px"
+                height="50px"
+                fill="white"
+              >
+                <path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z" />
+              </svg>
+            </SheetTrigger>
+            <SheetContent>
+              <SheetClose></SheetClose>
+              <SheetHeader>
+                <SheetTitle className="text-white" >Menu</SheetTitle>
+                {links.map((link) => (
+                  <a key={link.url} className="text-white" href={link.url}>
+                    {link.name}
+                  </a>
+                ))}
+              </SheetHeader>
+            </SheetContent>
+          </Sheet>
         </nav>
       </header>
       {/* Rest of your website content */}

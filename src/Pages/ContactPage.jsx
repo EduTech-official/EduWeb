@@ -24,7 +24,7 @@ const ContactPage = () => {
                 type="email"
                 id="email"
                 name="email"
-                className="block p-3 w-full text-sm bg-opacity-10 text-white bg-gray-50 rounded-lg border border-gray-300 shadow-sm"
+                className="block p-3 w-full text-sm bg-opacity-10 text-white bg-gray-50 rounded-xl border border-gray-300 shadow-sm"
                 placeholder="Email"
                 required
               />
@@ -34,7 +34,7 @@ const ContactPage = () => {
                 type="text"
                 id="name"
                 name="name"
-                className="block p-3 w-full text-sm bg-opacity-10 text-white bg-gray-50 rounded-lg border border-gray-300 shadow-sm"
+                className="block p-3 w-full text-sm bg-opacity-10 text-white bg-gray-50 rounded-xl border border-gray-300 shadow-sm"
                 placeholder="Let us know how we can help you"
                 required
               />
@@ -44,13 +44,13 @@ const ContactPage = () => {
                 id="message"
                 name="message"
                 rows="6"
-                className="block p-2.5 h-1/6 w-full text-sm bg-opacity-10 text-white bg-gray-50 rounded-lg shadow-sm border border-gray-300 placeholder:text-zinc-400"
+                className="block p-2.5 h-1/6 w-full text-sm bg-opacity-10 text-white bg-gray-50 rounded-xl shadow-sm border border-gray-300 placeholder:text-zinc-400"
                 placeholder="Leave a comment..."
               ></textarea>
             </div>
             <button
               type="submit"
-              className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 minsm:w-fit hover:bg-primary-800 ring-2 ring-black focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              className="py-3 px-5 text-sm font-medium text-center text-white rounded-xl bg-primary-700 minsm:w-fit hover:bg-primary-800 ring-2 ring-black focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             >
               Send message
             </button>

@@ -28,7 +28,7 @@ const Gallery2 = () => {
           {images.slice(0, 4).map((image, index) => (
             <div key={index}>
               <img
-                className="h-auto max-w-full rounded-lg"
+                className="h-auto max-w-full rounded-md"
                 src={image}
                 alt=""
                 loading="lazy"
@@ -40,7 +40,7 @@ const Gallery2 = () => {
           {images.slice(4, 8).map((image, index) => (
             <div key={index}>
               <img
-                className="h-auto max-w-full rounded-lg"
+                className="h-auto max-w-full rounded-md"
                 src={image}
                 alt=""
               />
@@ -51,7 +51,7 @@ const Gallery2 = () => {
           {images.slice(8, 12).map((image, index) => (
             <div key={index}>
               <img
-                className="h-auto max-w-full rounded-lg"
+                className="h-auto max-w-full rounded-md"
                 src={image}
                 alt=""
               />
@@ -62,7 +62,7 @@ const Gallery2 = () => {
           {images.slice(12, 16).map((image, index) => (
             <div key={index}>
               <img
-                className="h-auto max-w-full rounded-lg"
+                className="h-auto max-w-full rounded-md"
                 src={image}
                 alt=""
               />

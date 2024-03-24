@@ -4,10 +4,10 @@ import "./../App.css";
 
 const TeamCards = ({ PicLink, Name, Position, InstaLink, LinkdLink }) => {
   return (
-    <div className="flex justify-center " style={{ flex: "1 0 20%" }}>
+    <div className="flex justify-center  border-none " style={{ flex: "1 0 20%" }}>
       <div
         id="hove"
-        className="w-full h-full hover max-w-[16rem] min-w-[10rem] border border-gray-200 rounded-lg bg-gray-800 bg-opacity-80 hover:bg-opacity-95 hover:brightness-110 dark:border-gray-700 p-4 flex-4 items-center"
+        className="w-full h-full hover max-w-[16rem] min-w-[10rem]  border-gray-200 rounded-xl bg-gray-800 bg-opacity-80 hover:bg-opacity-95 hover:brightness-110 dark:border-gray-700 p-4 flex-4 items-center "
       >
         <a href="#">
           <img
@@ -20,13 +20,13 @@ const TeamCards = ({ PicLink, Name, Position, InstaLink, LinkdLink }) => {
         </a>
         <div className="px-2 mt-3">
           <a href="#">
-            <h5 className="text-xl pt-3 text-left font-semibold tracking-tight text-gray-900 dark:text-white">
+            <h5 className="text-xl pt-3 text-left font-semibold tracking-tight text-white">
               {Name}
             </h5>
           </a>
 
           <div className="grid grid-cols-4 gap-4 my-3 items-center" id="hove">
-            <span className="text-xs col-span-2 my-2 text-left font-bold pr-3 text-gray-900 dark:text-white">
+            <span className="text-xs col-span-2 my-2 text-left font-bold pr-3 text-white">
               {Position}
             </span>
             
