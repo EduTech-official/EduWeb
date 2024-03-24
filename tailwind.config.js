@@ -25,7 +25,7 @@ module.exports = {
         IBMplex: ['"IBM Plex Sans"', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        clamp: "clamp(0.5rem, 4vw, 3rem)",
+        clamp: "clamp(0.5rem, 4vw, 1.5rem)",
       },
       colors: {
         border: "hsl(var(--border))",
