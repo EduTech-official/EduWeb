@@ -67,7 +67,7 @@ const Navbar = () => {
               />
             )}
           </div>
-          <ul className="flex pt-4">
+          <ul className="flex pb-4">
             <li className="pr-5 m2xl:pr-9 text-[15px] hover:animate-bounce ">
               <a
                 href="/"
