@@ -11,6 +11,17 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "./ui/navigation-menu";
 import { SheetClose } from "./ui/sheet";
 
 const Navbar = () => {
@@ -44,10 +55,10 @@ const Navbar = () => {
 
   return (
     <div>
-      <header className=" top-0 bg-transparent z-10 ">
-        <nav className="flex items-end justify-end minlg:hidden ">
-          <div className="flex items-center space-x-4">
-            {showLogo && (
+      <header className=" group/navbar: top-0 bg-transparent z-10 h-6 ">
+        <nav className="flex items-end justify-between minlg:hidden ">
+          <div className="flex items-center justify-between space-x-4">
+            { (
               <img
                 src={Logo2}
                 alt="Logo"
@@ -56,62 +67,58 @@ const Navbar = () => {
               />
             )}
           </div>
-          <ul className="flex pt-4">
-            <li className="pr-5 m2xl:pr-9 text-[15px]">
+          <ul className="flex pb-4">
+            <li className="pr-5 m2xl:pr-9 text-[15px] hover:animate-bounce ">
               <a
                 href="/"
-                className="text-blue-500 hover:underline hover:text-blue-200 hover:animate-bounce"
+                className="text-blue-500 hover:underline hover:text-blue-200 "
               >
                 Home
               </a>
             </li>
-            <li className="pr-5 m2xl:pr-9  text-[15px]">
+            <li className="pr-5 m2xl:pr-9  text-[15px] hover:animate-bounce">
               <a
                 href="/aboutus"
-                className="text-blue-500 hover:underline hover:text-blue-200 hover:animate-bounce"
+                className="text-blue-500 hover:underline hover:text-blue-200 "
               >
-                Eduminerva
+                EduMinerva
               </a>
             </li>
-            <li className="pr-5 m2xl:pr-9 text-[15px]">
+            <li className="pr-5 m2xl:pr-9 text-[15px] hover:animate-bounce">
               <a
                 href="/team"
-                className="text-blue-500 hover:underline  hover:text-blue-200 hover:animate-bounce"
+                className="text-blue-500 hover:underline  hover:text-blue-200 "
               >
                 Team
               </a>
             </li>
-            <li className="pr-5 m2xl:pr-9  text-[15px]">
+            <li className="pr-5 m2xl:pr-9  text-[15px] hover:animate-bounce">
               <a
                 href="/events"
-                className="text-blue-500 hover:underline  hover:text-blue-200 hover:animate-bounce"
+                className="text-blue-500 hover:underline  hover:text-blue-200 "
               >
                 Events
               </a>
             </li>
-            <li className="pr-5 m2xl:pr-9  text-[15px]">
+            <li className="pr-5 m2xl:pr-9  text-[15px] hover:animate-bounce">
               <a
                 href="/gallery2"
-                className="text-blue-500 hover:underline  hover:text-blue-200 hover:animate-bounce"
+                className="text-blue-500 hover:underline  hover:text-blue-200 "
               >
                 Gallery
               </a>
             </li>
-            <li className="pr-5 m2xl:pr-9  text-[15px]">
+            <li className="pr-5 m2xl:pr-9  text-[15px] hover:animate-bounce">
               <a
                 href="/contact"
-                className="text-blue-500 hover:underline  hover:text-blue-200 hover:animate-bounce"
+                className="text-blue-500 hover:underline  hover:text-blue-200 "
               >
                 Contact Us
               </a>
             </li>
           </ul>
-          <button
-            onClick={() => setShowLogo(!showLogo)}
-            className="text-blue-500 hover:underline"
-          ></button>
         </nav>
-        <nav className=" justify-end hidden minlg:flex cursor-pointer text-white pb-3">
+        <nav className=" justify-end hidden minlg:flex cursor-pointer text-white my-3 mr-3">
           {/* <HamburgerMenu /> */}
           <Sheet>
             <SheetTrigger>
@@ -128,7 +135,7 @@ const Navbar = () => {
             <SheetContent>
               <SheetClose></SheetClose>
               <SheetHeader>
-                <SheetTitle className="text-white" >Menu</SheetTitle>
+                <SheetTitle className="text-white">Menu</SheetTitle>
                 {links.map((link) => (
                   <a key={link.url} className="text-white" href={link.url}>
                     {link.name}

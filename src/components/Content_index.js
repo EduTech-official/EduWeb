@@ -1,8 +1,8 @@
 const topics = [
   {
-    Topic: "IdeoLogy",
+    Topic: "Ideology",
     Content:
-      "IdeoLogy is a platform for students to explore and learn about the latest technologies and trends in the world of technology. We aim to provide new and fascinating content, such as workshops, quizes, facts, study material etc., on a regular basis.",
+      "Our ideology is to become a platform for students to explore and learn about the latest technologies and trends in the world of technology. We aim to provide new and fascinating content, such as workshops, quizes, facts, study material etc., on a regular basis.",
     links: "Explore",
   },
   {
