@@ -4,14 +4,7 @@
 // import Cards from "../components/Cards";
 import InfoCard from "../components/InfoCard";
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-
+import { CarouselComp } from "../components/CaroselComp";
 
 // import { IMG, IMG2, logo, Team } from "./../assets/index";
 import { Team } from "./../assets/index";
@@ -20,11 +13,9 @@ import topics from "../components/Content_index";
 import upcomingEvents from "../Config/Events/upcoming.index";
 
 const AboutUs = () => {
-  
-
   return (
     <div className="m-4">
-      <div className="grid grid-cols-3 minlg:grid-cols-1  gap-4 py-5 md:py-0 h-max my-5">
+      <div className="grid grid-cols-3 justify-items-center   minlg:grid-cols-1 gap-4 py-5 md:py-0 h-max my-5">
         <div className="my-5 py-4 text-left pr-4">
           <h1 className="tracking-normal text-4xl minmd:text-lg minsm:text-3xl bg-gradient-to-r font-bold  from-[#E61AA1]  to-[#0CF996] to-55% bg-clip-text text-transparent my-3">
             ABOUT US
@@ -52,10 +43,11 @@ const AboutUs = () => {
           </p> */}
         </div>
 
-        <img
+        {/* <img
           src={Team}
           className="col-span-2  my-auto rounded-2xl shadow-2xl aspect-video object-fill"
-        />
+        /> */}
+        <CarouselComp />
       </div>
       <div className="grid m-5 p-4 gap-4 minmd:p-0 minmd:m-0 minmd:my-2 h-full child grid-cols-3">
         {topics.map((topic, index) => (
