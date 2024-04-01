@@ -4,6 +4,15 @@
 // import Cards from "../components/Cards";
 import InfoCard from "../components/InfoCard";
 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+
+
 // import { IMG, IMG2, logo, Team } from "./../assets/index";
 import { Team } from "./../assets/index";
 import "../components/Content_index";
