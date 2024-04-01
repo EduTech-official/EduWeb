@@ -20,7 +20,7 @@ export function CarouselComp() {
   return (
     <Carousel
       plugins={[plugin.current]}
-      className="max-w-[80vh] col-span-2 "
+      className="max-w-[125vh] col-span-2 min3xl:mr-7 flex items-center"
       // onMouseEnter={plugin.current.stop}
       // onMouseLeave={plugin.current.reset}
     >
