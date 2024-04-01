@@ -20,15 +20,15 @@ export function CarouselComp() {
   return (
     <Carousel
       plugins={[plugin.current]}
-      className="max-w-[80vh] col-span-2 min2xl:m-10 "
+      className="max-w-[80vh] col-span-2 "
       // onMouseEnter={plugin.current.stop}
       // onMouseLeave={plugin.current.reset}
     >
       <CarouselContent>
         {Array.from({ length: 3 }).map((_, index) => (
-          <CarouselItem key={index}>
+          <CarouselItem key={index} className="">
             <div className="p-1">
-              <Card>
+              <Card className="border-transparent bg-transparent">
                 <CardContent className="flex items-center aspect-video justify-center p-1 ">
                   <span className="text-4xl font-semibold">
                     <img src={Team} className="rounded-lg" />
