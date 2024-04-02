@@ -29,7 +29,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="bg-transparent text-black min-h-[90vh] flex items-center justify-center">
+    <div className="bg-transparent text-black min-h-[80vh] flex items-center -translate-y-2 justify-center">
       <div className="text-center">
         <img src={logo3} alt="Logo" className="mx-auto h-24" />
 
