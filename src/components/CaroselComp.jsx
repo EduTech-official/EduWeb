@@ -21,11 +21,11 @@ export function CarouselComp() {
         "https://eduhackedu.devfolio.co/_next/image?url=https%3A%2F%2Fassets.devfolio.co%2Fhackathons%2F68fb59f41ba642c4aaecc6b121fb8aca%2Fassets%2Fcover%2F376.png&w=1440&q=100",
     },
     {
-      link: "https://www.instagram.com/edu_minerva/p/C5JZDExy3Cq/?hl=en",
+      link: "https://unstop.com/p/bvcoes-got-talent-eduvation-bvcoe-947904",
       Image: GOT,
     },
     {
-      link: "https://www.instagram.com/edu_minerva/p/C5JZDExy3Cq/?hl=en",
+      link: "https://unstop.com/p/baggage-battles-eduvation-bvcoe-947958",
       Image: BBattles,
     },
   ];
