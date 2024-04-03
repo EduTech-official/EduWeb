@@ -8,11 +8,11 @@ const upcomingEvents = [
     links: [
       {
         name: "Website",
-        url: "https://unstop.com/hackathons/microverse-bvest24-bvcoe-899187",
+        url: "https://www.instagram.com/edu_minerva/p/C5JZDExy3Cq/?hl=en",
       },
       {
         name: "Registration",
-        url: "https://unstop.com/hackathons/microverse-bvest24-bvcoe-899187",
+        url: "https://www.instagram.com/edu_minerva/p/C5JZDExy3Cq/?hl=en",
       },
     ],
     tags: ["education", "conference", "2024"],
