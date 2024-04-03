@@ -13,7 +13,7 @@ import {
 import { Team, GOT, BBattles } from "./../assets/index";
 
 export function CarouselComp() {
-  const plugin = React.useRef(Autoplay({ delay: 3000 }));
+  const plugin = React.useRef(Autoplay({ delay: 4000 }));
   let Events = [
     {
       link: "https://eduhackedu.devfolio.co/",
@@ -26,7 +26,7 @@ export function CarouselComp() {
     },
     {
       link: "https://www.instagram.com/edu_minerva/p/C5JZDExy3Cq/?hl=en",
-      Image: BBattles ,
+      Image: BBattles,
     },
   ];
 
@@ -42,16 +42,10 @@ export function CarouselComp() {
           <CarouselItem key={index} className="">
             <div className="p-1">
               <Card className="border-transparent bg-transparent">
-                <CardContent className="flex items-center aspect-video justify-center p-1 ">
-                  <span className="text-4xl font-semibold">
-                    <a href={_.link}>
-                      <img
-                        src={_.Image}
-                        alt=""
-                        className="rounded-xl h-fit object-cover m-auto"
-                      />
-                    </a>
-                  </span>
+                <CardContent className=" pt-2 px-3 ">
+                  <a href={_.link}>
+                    <img src={_.Image} alt="" className="rounded-xl w-full " />
+                  </a>
                 </CardContent>
               </Card>
             </div>
