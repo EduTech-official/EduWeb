@@ -35,7 +35,7 @@ const UpcomingEvents = () => {
   return (
     <>
       <div className="grid grid-cols-3 grid-rows-2 gap-4 minxl:flex minxl:flex-col p-4">
-        <div className="col-span-2 flex row-span-2">
+        <div className="col-span-2 flex justify-center row-span-2">
           <CarouselComp />
         </div>
         <div className="col-span-1 my-auto py-4">
@@ -45,6 +45,7 @@ const UpcomingEvents = () => {
           </p>
 
           <h6 className="text-mg pt-4 text-left text-stone-50 ">Link Below</h6>
+          <p className="animate-bounce align- text-white text-xl">↓</p>
         </div>
       </div>
       <div>
