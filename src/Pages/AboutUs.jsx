@@ -11,6 +11,7 @@ import { Team } from "./../assets/index";
 import "../components/Content_index";
 import topics from "../components/Content_index";
 import upcomingEvents from "../Config/Events/upcoming.index";
+import UpcomingEvents from "../components/UpcomingEvents";
 
 const AboutUs = () => {
   return (
@@ -63,7 +64,7 @@ const AboutUs = () => {
         <h1 className="text-4xl bg-gradient-to-r brightness-150 font-semibold tracking-tight from-[#0CF996]  to-[#E61AA1] bg-clip-text text-transparent my-3">
           UPCOMING EVENTS
         </h1>
-        <div className="grid grid-cols-3 grid-rows-2 gap-4 minxl:flex minxl:flex-col p-4">
+        {/* <div className="grid grid-cols-3 grid-rows-2 gap-4 minxl:flex minxl:flex-col p-4">
           <div className="col-span-2 flex row-span-2">
             <img
               src={upcomingEvents[0].image}
@@ -88,15 +89,9 @@ const AboutUs = () => {
                 {upcomingEvents[0].links[0].name}
               </a>
             </p>
-          </div> */}
-        </div>
-        <div>
-          <a href={upcomingEvents[0].links[1].url}>
-            <h1 className="border-white rounded-3xl border-2 text-4xl mt-8 mx-6 py-1 minmd:text-xs text-slate-100 hover:bg-slate-200 hover:bg-opacity-20 hover:animate-bounce ">
-              Register Here
-            </h1>
-          </a>
-        </div>
+          </div> 
+        </div> */}
+        <UpcomingEvents />
       </div>
     </div>
   );
