@@ -108,7 +108,7 @@ const UpcomingEvents = () => {
         </div>
       </div>
       <div>
-        <a href={Events[eventNumber % 3].link}>
+        <a href={Events[current - 1].link}>
           <h1 className="border-white rounded-3xl border-2 text-4xl mt-8 mx-6 py-1 minmd:text-xs text-slate-100 hover:bg-slate-200 hover:bg-opacity-20 hover:animate-bounce ">
             Register Here
           </h1>
