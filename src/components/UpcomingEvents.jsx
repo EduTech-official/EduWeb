@@ -1,5 +1,5 @@
 import { CarouselComp } from "./CaroselComp";
-import { GOT, BBattles } from "./../assets/index";
+import { GOT, BBattles, EDUHack } from "./../assets/index";
 import { useEffect, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -36,8 +36,7 @@ const UpcomingEvents = () => {
     {
       link: "https://eduhackedu.devfolio.co/",
       title: "EduHack",
-      Image:
-        "https://eduhackedu.devfolio.co/_next/image?url=https%3A%2F%2Fassets.devfolio.co%2Fhackathons%2F68fb59f41ba642c4aaecc6b121fb8aca%2Fassets%2Fcover%2F376.png&w=1440&q=100",
+      Image: EDUHack,
       desc: "EduHack is a hackathon where students from all over the world come together to solve real-world problems. The hackathon is a 24-hour coding competition where students can showcase their skills and compete for exciting prizes and opportunities. EduHack is a platform for students to learn, grow, and innovate.",
     },
     {

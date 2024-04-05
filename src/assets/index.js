@@ -5,5 +5,6 @@ import Team from "./team.jpg";
 import GOT from "./BVCOEGOT.jpg"
 import BBattles from "./BBattles.png"
 import Mentor from "./SajiMaam.jpg"
+import EDUHack from "./EDUHack.png"
 
-export { IMG, logo, IMG2, Team , GOT , BBattles , Mentor};
+export { IMG, logo, IMG2, Team , GOT , BBattles , Mentor , EDUHack};

@@ -10,15 +10,14 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import { Team, GOT, BBattles } from "./../assets/index";
+import { Team, GOT, BBattles, EDUHack } from "./../assets/index";
 
 export function CarouselComp() {
   const plugin = React.useRef(Autoplay({ delay: 4000 }));
   let Events = [
     {
       link: "https://eduhackedu.devfolio.co/",
-      Image:
-        "https://eduhackedu.devfolio.co/_next/image?url=https%3A%2F%2Fassets.devfolio.co%2Fhackathons%2F68fb59f41ba642c4aaecc6b121fb8aca%2Fassets%2Fcover%2F376.png&w=1440&q=100",
+      Image: EDUHack,
     },
     {
       link: "https://unstop.com/p/bvcoes-got-talent-eduvation-bvcoe-947904",
