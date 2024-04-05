@@ -1,0 +1,36 @@
+################################# ROBOTS.TXT ###################################
+#    .__________________________.
+#    | .___________________. |==|
+#    | | ................. | |  |
+#    | | ::[ Dear robot ]: | |  |
+#    | | ::::[ be nice ]:: | |  |
+#    | | ::::::::::::::::: | |  |
+#    | | ::::::::::::::::: | |  |
+#    | | ::::::::::::::::: | |  |
+#    | | ::::::::::::::::: | | ,|
+#    | !___________________! |(c|
+#    !_______________________!__!
+#   /                            \
+#  /  [][][][][][][][][][][][][]  \
+# /  [][][][][][][][][][][][][][]  \
+#(  [][][][][____________][][][][]  )
+# \ ------------------------------ /
+#  \______________________________/   
+# cc: https://www.cloudflare.com/learning/bots/what-is-robots-txt/
+# cc: https://github.com/jonasjacek/robots.txt/blob/master/robots.min.txt
+################################################################################
+
+
+User-agent: AdsBot-Google
+User-agent: Applebot
+User-agent: AppleNewsBot
+User-agent: bingbot
+User-agent: BingPreview
+User-agent: DuckDuckBot
+User-agent: Facebot
+User-agent: Pinterest
+User-agent: Twitterbot
+User-agent: Yandex
+Disallow:
+User-agent: *
+Disallow: /
