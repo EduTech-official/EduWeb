@@ -58,14 +58,16 @@ const Navbar = () => {
       <header className=" group/navbar: top-0 bg-transparent z-10 h-6 ">
         <nav className="flex items-end justify-between minlg:hidden ">
           <div className="flex items-center justify-between space-x-4">
-            { (
-              <img
-                src={Logo2}
-                alt="Logo"
-                className="mt-2 min-h-[50px] min-w-[70px] w-10 h-10 aspect-[1/2]"
-                loading="lazy"
-              />
-            )}
+            {
+              <a href="/" target="_self">
+                <img
+                  src={Logo2}
+                  alt="Logo"
+                  className="mt-2 min-h-[50px] min-w-[70px] w-10 h-10 aspect-[1/2]"
+                  loading="lazy"
+                />
+              </a>
+            }
           </div>
           <ul className="flex pb-4">
             <li className="pr-5 m2xl:pr-9 text-[15px] hover:animate-bounce ">
