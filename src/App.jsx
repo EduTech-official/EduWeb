@@ -24,7 +24,7 @@ function App() {
     {
       path: "/",
       // element: <Home />,
-      element: <Events />,
+      element: <AboutUs />,
       errorElement: <Error />,
     },
     {
