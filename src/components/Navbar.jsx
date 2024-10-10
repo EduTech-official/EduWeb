@@ -70,17 +70,9 @@ const Navbar = () => {
             }
           </div>
           <ul className="flex pb-4">
-            <li className="pr-5 m2xl:pr-9 text-[15px] hover:animate-bounce ">
-              <a
-                href="/"
-                className="text-blue-500 hover:underline hover:text-blue-200 "
-              >
-                Home
-              </a>
-            </li>
             <li className="pr-5 m2xl:pr-9  text-[15px] hover:animate-bounce">
               <a
-                href="/aboutus"
+                href="/"
                 className="text-blue-500 hover:underline hover:text-blue-200 "
               >
                 EduMinerva
