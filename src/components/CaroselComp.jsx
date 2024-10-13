@@ -16,15 +16,15 @@ export function CarouselComp() {
   const plugin = React.useRef(Autoplay({ delay: 4000 }));
   let Events = [
     {
-      link: "https://eduhackedu.devfolio.co/",
+      link: "/form",
       Image: EDUHack,
     },
     {
-      link: "https://unstop.com/p/bvcoes-got-talent-eduvation-bvcoe-947904",
+      link: "/form",
       Image: GOT,
     },
     {
-      link: "https://unstop.com/p/baggage-battles-eduvation-bvcoe-947958",
+      link: "/form",
       Image: BBattles,
     },
   ];

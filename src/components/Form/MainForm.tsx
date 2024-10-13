@@ -68,9 +68,16 @@ const MainForm: React.FC = () => {
   }
 
   return (
-    <Box position={"relative"} marginBlockStart={20} marginX={1} padding={50} className="p-100">
+    <Box
+      position={"relative"}
+      marginBlockStart={20}
+      marginX={1}
+      paddingX={25} // Half of the original padding (was 50)
+      paddingY={25} // Half of the original padding (was 50)
+      pb={50} // More padding at the bottom below the form
+    >
       <FormImage imageSrc={eventImage} altText="Event" />
-      <FormHeading text="BVEST 2024" />
+      <FormHeading text="NOW YOU PITCH ME" />
       <FormDetail details="Join us for an exciting event filled with insightful sessions and networking opportunities." />
 
       <form
@@ -206,7 +213,10 @@ const MainForm: React.FC = () => {
 
         {/* Display submission status */}
         {submitStatus && (
-          <Text color={submitStatus === "Response Accepted" ? "green" : "red"} mt={4}>
+          <Text
+            color={submitStatus === "Response Accepted" ? "green" : "red"}
+            mt={4}
+          >
             {submitStatus}
           </Text>
         )}
