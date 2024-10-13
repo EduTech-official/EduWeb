@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FormHeading from "./FormHeading";
 import FormDetail from "./FormDetail";
 import FormImage from "./FormImage";
@@ -34,6 +35,7 @@ const formSchema = z.object({
 
 const MainForm: React.FC = () => {
   const [submitStatus, setSubmitStatus] = useState<string | null>(null); // For showing success/error message
+  const navigate = useNavigate(); // Hook for navigation
 
   const {
     register,
@@ -57,6 +59,7 @@ const MainForm: React.FC = () => {
       .then((data) => {
         console.log(data);
         setSubmitStatus("Response Accepted");
+        navigate("/thanks"); // Redirect to /thanks page
       })
       .catch((error) => {
         console.log(error);
@@ -70,7 +73,13 @@ const MainForm: React.FC = () => {
       <FormHeading text="BVEST 2024" />
       <FormDetail details="Join us for an exciting event filled with insightful sessions and networking opportunities." />
 
-      <form onSubmit={(e) => { e.preventDefault(); Submit(e); }} className="space-y-4">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          Submit(e);
+        }}
+        className="space-y-4"
+      >
         {/* Name */}
         <FormControl isInvalid={!!errors.name}>
           <FormLabel className="text-white">Name</FormLabel>
