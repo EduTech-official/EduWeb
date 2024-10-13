@@ -47,8 +47,8 @@ const Team = () => {
                   PicLink={member.picLink}
                   Name={member.name}
                   Position={member.designation}
-                  InstaLink={member.instagram}
-                  LinkdLink={member.linkedin}
+                  // InstaLink={member.instagram}
+                  // LinkdLink={member.linkedin}
                   // To be uncommented when these are available
                 />
               ))}

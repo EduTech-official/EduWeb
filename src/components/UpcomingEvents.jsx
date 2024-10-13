@@ -6,15 +6,15 @@ const UpcomingEvents = () => {
   const Events = [
     {
       link: "/form",
-      title: "Baggage Battles",
+      title: "Now You Pitch Me",
       Image: BBattles,
       desc: "Think you have an eye for treasure? Baggage Battles is a competition where teams put their deduction skills to the test. Analyze clues from unclaimed baggage and uncover their hidden value! Can you strategize your bids and win big in the fast-paced auction round?",
     },
   ];
 
   return (
-    <Box p={4}>
-      <VStack spacing={6} align="stretch">
+    <Box p={{ base: 2, md: 4 }}>
+      <VStack spacing={{ base: 4, md: 6 }} align="stretch">
         {Events.map((event, index) => (
           <Flex
             key={index}
@@ -22,7 +22,7 @@ const UpcomingEvents = () => {
             borderRadius="lg"
             overflow="hidden"
             bg="gray.800"
-            p={4}
+            p={{ base: 2, md: 4 }}
             align="center"
             direction={{ base: "column", md: "row" }} // Image left, text right on desktop
             w="100%"
@@ -35,12 +35,17 @@ const UpcomingEvents = () => {
               objectFit="cover"
             />
             <VStack
-              align="center" 
+              align="center"
               spacing={2}
-              p={4}
+              p={{ base: 2, md: 4 }} // Adjust padding for mobile
               w={{ base: "100%", md: "60%" }}
             >
-              <Text fontSize="2xl" fontWeight="bold" color="white" textAlign="center">
+              <Text
+                fontSize={{ base: "xl", md: "2xl" }} // Reduced font size on mobile
+                fontWeight="bold"
+                color="white"
+                textAlign="center"
+              >
                 {event.title}
               </Text>
               <Text
@@ -54,10 +59,10 @@ const UpcomingEvents = () => {
                 as="a"
                 href={event.link}
                 colorScheme="teal"
-                size="sm"
+                size={{ base: "sm", md: "md" }} // Adjust button size for mobile
                 w="full"
               >
-               Register Now
+                Register Now
               </Button>
             </VStack>
           </Flex>

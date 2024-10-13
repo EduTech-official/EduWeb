@@ -3,6 +3,7 @@
 // import photo1 from "../assets/IMG_6961.png";
 // import Cards from "../components/Cards";
 import InfoCard from "../components/InfoCard";
+import { Grid } from "@chakra-ui/react";
 
 import { CarouselComp } from "../components/CaroselComp";
 
@@ -50,16 +51,7 @@ const AboutUs = () => {
         /> */}
         <CarouselComp />
       </div>
-      <div className="grid m-5 p-4 gap-4 minmd:p-0 minmd:m-0 minmd:my-2 h-full child grid-cols-3">
-        {topics.map((topic, index) => (
-          <InfoCard
-            key={index}
-            Topic={topic.Topic}
-            Content={topic.Content}
-            links={topic.links}
-          />
-        ))}
-      </div>
+      
       <div className=" mb-32 grid ">
         <h1 className="text-4xl bg-gradient-to-r brightness-150 font-semibold tracking-tight from-[#0CF996]  to-[#E61AA1] bg-clip-text text-transparent my-3">
           UPCOMING EVENTS
@@ -93,7 +85,10 @@ const AboutUs = () => {
         </div> */}
         <UpcomingEvents />
       </div>
+      
     </div>
+
+    
   );
 };
 
