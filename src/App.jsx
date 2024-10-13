@@ -9,7 +9,6 @@ import Home from "./Pages/Home";
 import Events from "./Pages/Events";
 import Team from "./Pages/Team";
 import AboutUs from "./Pages/AboutUs";
-import Gallery from "./Pages/Gallery";
 import Gallery2 from "./Pages/Gallery2";
 import ContactPage from "./Pages/ContactPage";
 import Thanks from "./Pages/Thanks";
@@ -39,10 +38,6 @@ function App() {
     {
       path: "/team",
       element: <Team />,
-    },
-    {
-      path: "/gallery",
-      element: <Gallery />,
     },
     {
       path: "/gallery2",
