@@ -12,6 +12,7 @@ import {
   Textarea,
   Button,
   FormErrorMessage,
+  Text,
 } from "@chakra-ui/react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -32,6 +33,8 @@ const formSchema = z.object({
 });
 
 const MainForm: React.FC = () => {
+  const [submitStatus, setSubmitStatus] = useState<string | null>(null); // For showing success/error message
+
   const {
     register,
     handleSubmit,
@@ -40,123 +43,164 @@ const MainForm: React.FC = () => {
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = (data: any) => {
-    console.log("Form Data:", data);
-  };
+  function Submit(e) {
+    const formEle = document.querySelector("form");
+    const formData = new FormData(formEle);
+    fetch(
+      "https://script.google.com/macros/s/AKfycbwmTNe2dUfWm3HJUjvJaVZ2TmkkELw2XqifqupUDZ-CSLgo3bIHYixG_GM25TCGJVyhew/exec",
+      {
+        method: "POST",
+        body: formData,
+      }
+    )
+      .then((res) => res.text()) // Google Script returns a plain text response
+      .then((data) => {
+        console.log(data);
+        setSubmitStatus("Response Accepted");
+      })
+      .catch((error) => {
+        console.log(error);
+        setSubmitStatus("Error occurred");
+      });
+  }
 
   return (
-    <Box position={"relative"} marginBlockStart={20} marginX={1}>
+    <Box position={"relative"} marginBlockStart={20} marginX={1} padding={50} className="p-100">
       <FormImage imageSrc={eventImage} altText="Event" />
       <FormHeading text="BVEST 2024" />
       <FormDetail details="Join us for an exciting event filled with insightful sessions and networking opportunities." />
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={(e) => { e.preventDefault(); Submit(e); }} className="space-y-4">
         {/* Name */}
         <FormControl isInvalid={!!errors.name}>
-          <FormLabel>Name</FormLabel>
+          <FormLabel className="text-white">Name</FormLabel>
           <Input
+            className="text-white"
             type="text"
             placeholder="Enter your name"
             {...register("name")}
+            name="Name"
           />
-          <FormErrorMessage>
-            {errors.name?.message && typeof errors.name.message === "string"
-              ? errors.name.message
-              : ""}
-          </FormErrorMessage>
+          <FormErrorMessage>{errors.name?.message}</FormErrorMessage>
         </FormControl>
 
         {/* Email */}
         <FormControl isInvalid={!!errors.email}>
-          <FormLabel>Email</FormLabel>
+          <FormLabel className="text-white">Email</FormLabel>
           <Input
+            className="text-white"
             type="email"
             placeholder="Enter your email"
             {...register("email")}
+            name="Email"
           />
-          <FormErrorMessage>
-            {errors.email?.message && typeof errors.email.message === "string"
-              ? errors.email.message
-              : ""}
-          </FormErrorMessage>
+          <FormErrorMessage>{errors.email?.message}</FormErrorMessage>
         </FormControl>
 
         {/* Roll Number */}
         <FormControl isInvalid={!!errors.rollNumber}>
-          <FormLabel>Roll Number</FormLabel>
+          <FormLabel className="text-white">Roll Number</FormLabel>
           <Input
+            className="text-white"
             type="text"
             placeholder="Enter your roll number"
             {...register("rollNumber")}
+            name="Roll_no"
           />
-          <FormErrorMessage>
-            {errors.rollNumber?.message &&
-            typeof errors.rollNumber.message === "string"
-              ? errors.rollNumber.message
-              : ""}
-          </FormErrorMessage>
+          <FormErrorMessage>{errors.rollNumber?.message}</FormErrorMessage>
         </FormControl>
 
         {/* Contact Number */}
         <FormControl isInvalid={!!errors.contactNumber}>
-          <FormLabel>Contact Number (Whatsapp)</FormLabel>
+          <FormLabel className="text-white">Contact Number (Whatsapp)</FormLabel>
           <Input
+            className="text-white"
             type="text"
             placeholder="Enter your contact number"
             {...register("contactNumber")}
+            name="Contact_No"
           />
-          <FormErrorMessage>
-            {errors.contactNumber?.message &&
-            typeof errors.contactNumber.message === "string"
-              ? errors.contactNumber.message
-              : ""}
-          </FormErrorMessage>
+          <FormErrorMessage>{errors.contactNumber?.message}</FormErrorMessage>
         </FormControl>
 
         {/* Branch */}
         <FormControl isInvalid={!!errors.branch}>
-          <FormLabel>Branch</FormLabel>
-          <Select placeholder="Select branch" {...register("branch")}>
-            <option value="CSE-AI ML">CSE-AI ML</option>
-            <option value="CSE">CSE</option>
-            <option value="IT">IT</option>
-            <option value="ECE">ECE</option>
-            <option value="EEE">EEE</option>
-            <option value="ICE">ICE</option>
+          <FormLabel className="text-white">Branch</FormLabel>
+          <Select
+            className="text-white"
+            placeholder="Select branch"
+            {...register("branch")}
+            name="Branch"
+          >
+            <option className="text-black" value="CSE-AI ML">
+              CSE-AI ML
+            </option>
+            <option className="text-black" value="CSE">
+              CSE
+            </option>
+            <option className="text-black" value="IT">
+              IT
+            </option>
+            <option className="text-black" value="ECE">
+              ECE
+            </option>
+            <option className="text-black" value="EEE">
+              EEE
+            </option>
+            <option className="text-black" value="ICE">
+              ICE
+            </option>
           </Select>
-          <FormErrorMessage>
-            {errors.branch?.message && typeof errors.branch.message === "string"
-              ? errors.branch.message
-              : ""}
-          </FormErrorMessage>
+          <FormErrorMessage>{errors.branch?.message}</FormErrorMessage>
         </FormControl>
 
         {/* Year */}
         <FormControl isInvalid={!!errors.year}>
-          <FormLabel>Year</FormLabel>
-          <Select placeholder="Select year" {...register("year")}>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
+          <FormLabel className="text-white">Year</FormLabel>
+          <Select
+            className="text-white"
+            placeholder="Select year"
+            {...register("year")}
+            name="Year"
+          >
+            <option className="text-black" value="1">
+              1
+            </option>
+            <option className="text-black" value="2">
+              2
+            </option>
+            <option className="text-black" value="3">
+              3
+            </option>
+            <option className="text-black" value="4">
+              4
+            </option>
           </Select>
-          <FormErrorMessage>
-            {errors.year?.message && typeof errors.year.message === "string"
-              ? errors.year.message
-              : ""}
-          </FormErrorMessage>
+          <FormErrorMessage>{errors.year?.message}</FormErrorMessage>
         </FormControl>
 
         {/* Any Queries */}
         <FormControl>
-          <FormLabel>Any Queries</FormLabel>
-          <Textarea placeholder="Enter your queries" {...register("queries")} />
+          <FormLabel className="text-white">Any Queries</FormLabel>
+          <Textarea
+            className="text-white"
+            placeholder="Leave Blank if no queries"
+            {...register("queries")}
+            name="Queries"
+          />
         </FormControl>
 
         {/* Submit Button */}
         <Button type="submit" colorScheme="teal" size="md">
           Submit
         </Button>
+
+        {/* Display submission status */}
+        {submitStatus && (
+          <Text color={submitStatus === "Response Accepted" ? "green" : "red"} mt={4}>
+            {submitStatus}
+          </Text>
+        )}
       </form>
     </Box>
   );
