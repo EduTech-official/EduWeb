@@ -8,7 +8,7 @@ type FormDetailProps = {
 const FormDetail: React.FC<FormDetailProps> = ({ details }) => {
   return (
     <Box mb={4}>
-      <Text fontSize="md" textAlign="center" className="text-white" >
+      <Text fontSize="md" textAlign="left" className="text-white" whiteSpace="pre-wrap">
         {details}
       </Text>
     </Box>

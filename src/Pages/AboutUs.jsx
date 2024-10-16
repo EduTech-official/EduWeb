@@ -2,16 +2,12 @@
 // import photo from "../assets/IMG.png";
 // import photo1 from "../assets/IMG_6961.png";
 // import Cards from "../components/Cards";
-import InfoCard from "../components/InfoCard";
-import { Grid } from "@chakra-ui/react";
 
 import { CarouselComp } from "../components/CaroselComp";
 
 // import { IMG, IMG2, logo, Team } from "./../assets/index";
-import { Team } from "./../assets/index";
 import "../components/Content_index";
-import topics from "../components/Content_index";
-import upcomingEvents from "../Config/Events/upcoming.index";
+
 import UpcomingEvents from "../components/UpcomingEvents";
 
 const AboutUs = () => {
