@@ -22,20 +22,26 @@ import { zodResolver } from "@hookform/resolvers/zod";
 // Zod Schema for form validation
 const formSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
-  email: z.string().email({ message: "Invalid email" }),
+  email: z
+    .string()
+    .email({ message: "Invalid email address" })
+    .regex(
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+      { message: "Email must be in the format: name@organization.something" }
+    ), // Custom email format validation
   rollNumber: z.string().min(1, { message: "Roll Number is required" }),
   contactNumber: z
     .string()
-    .min(10, { message: "Contact number must be 10 digits" })
-    .max(10, { message: "Contact number must be 10 digits" }),
+    .regex(/^\d{10}$/, { message: "Contact number must be exactly 10 digits" }), // Updated to accept exactly 10 digits
   branch: z.string().min(1, { message: "Branch is required" }),
   year: z.enum(["1", "2", "3", "4"], { message: "Year is required" }),
   queries: z.string().optional(),
 });
 
 const MainForm: React.FC = () => {
-  const [submitStatus, setSubmitStatus] = useState<string | null>(null); // For showing success/error message
-  const navigate = useNavigate(); // Hook for navigation
+  const [submitStatus, setSubmitStatus] = useState<string | null>(null); 
+  const [isSubmitting, setIsSubmitting] = useState(false); // To prevent multiple submissions
+  const navigate = useNavigate(); 
 
   const {
     register,
@@ -48,6 +54,8 @@ const MainForm: React.FC = () => {
   function Submit(e) {
     const formEle = document.querySelector("form");
     const formData = new FormData(formEle);
+    setIsSubmitting(true); // Disable the submit button
+
     fetch(
       "https://script.google.com/macros/s/AKfycbwmTNe2dUfWm3HJUjvJaVZ2TmkkELw2XqifqupUDZ-CSLgo3bIHYixG_GM25TCGJVyhew/exec",
       {
@@ -55,15 +63,16 @@ const MainForm: React.FC = () => {
         body: formData,
       }
     )
-      .then((res) => res.text()) // Google Script returns a plain text response
+      .then((res) => res.text()) 
       .then((data) => {
         console.log(data);
         setSubmitStatus("Response Accepted");
-        navigate("/thanks"); // Redirect to /thanks page
+        navigate("/thanks"); 
       })
       .catch((error) => {
         console.log(error);
         setSubmitStatus("Error occurred");
+        setIsSubmitting(false); // Re-enable the submit button in case of error
       });
   }
 
@@ -72,18 +81,23 @@ const MainForm: React.FC = () => {
       position={"relative"}
       marginBlockStart={20}
       marginX={1}
-      paddingX={25} // Half of the original padding (was 50)
-      paddingY={25} // Half of the original padding (was 50)
-      pb={50} // More padding at the bottom below the form
+      paddingX={25}
+      paddingY={25}
+      pb={50}
     >
       <FormImage imageSrc={eventImage} altText="Event" />
-      <FormHeading text="NOW YOU PITCH ME" />
-      <FormDetail details="Join us for an exciting event filled with insightful sessions and networking opportunities." />
+      <FormHeading text="Career Clash: Battle of Professions" />
+      <FormDetail
+        details={`The event is a two-round competition focused on career paths and professions.\n\nRound 1:\nAn all-embracing quiz will test participants' knowledge of various careers and serve as the shortlisting round. The top 16 teams (2 members each) advance to the next round.\n\nRound 2:\nA swift debate where teams are assigned professions to defend. They’ll have 1 minute to prepare and then engage in a 3-minute debate with another team. Three judges will cast votes, and the team with the majority advances. The quiz ranking determines matchups, with high performers facing lower scorers first.\n\nThe event progresses through elimination until one team is crowned the winner.`}
+        // Ensure text has new lines with '\n'
+      />
 
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          Submit(e);
+          if (!isSubmitting) {
+            Submit(e);
+          }
         }}
         className="space-y-4"
       >
@@ -207,8 +221,8 @@ const MainForm: React.FC = () => {
         </FormControl>
 
         {/* Submit Button */}
-        <Button type="submit" colorScheme="teal" size="md">
-          Submit
+        <Button type="submit" colorScheme="teal" size="md" isDisabled={isSubmitting}>
+          {isSubmitting ? "Submitting..." : "Submit"}
         </Button>
 
         {/* Display submission status */}

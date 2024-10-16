@@ -6,12 +6,18 @@ const UpcomingEvents = () => {
   const Events = [
     {
       link: "/form",
-      title: "Now You Pitch Me",
+      title: "Career Clash: Battle of Professions",
       Image: BBattles,
-      desc: "Think you have an eye for treasure? Baggage Battles is a competition where teams put their deduction skills to the test. Analyze clues from unclaimed baggage and uncover their hidden value! Can you strategize your bids and win big in the fast-paced auction round?",
+      desc: `The event is a two-round competition focused on career paths and professions.\n
+  Round 1:\n
+  An all-embracing quiz will test participants' knowledge of various careers and serve as the shortlisting round. The top 16 teams (2 members each) advance to the next round.\n
+  Round 2:\n
+  A swift debate where teams are assigned professions to defend. They’ll have 1 minute to prepare and then engage in a 3-minute debate with another team. Three judges will cast votes, and the team with the majority advances. The quiz ranking determines matchups, with high performers facing lower scorers first.\n
+  The event progresses through elimination until one team is crowned the winner.`,
     },
   ];
-
+  
+  
   return (
     <Box p={{ base: 2, md: 4 }}>
       <VStack spacing={{ base: 4, md: 6 }} align="stretch">
