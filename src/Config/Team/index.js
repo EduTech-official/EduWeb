@@ -24,7 +24,7 @@ const teams = [
         instagram: "https://www.instagram.com/edu_minerva/",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1NGEE0Bvg-aa4XPOzX9dNMXegAnNI5ERl&sz=w1000",
+          "https://drive.google.com/thumbnail?id=10m1PUezgKlE0TQTE1yxpmbRsVCbNDAmE&sz=w1000",
       },
       {
         name: "Yashovardhan Singh",
@@ -830,7 +830,7 @@ const teams = [
         instagram: "",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=138ThJQjADNAHBf0e5PapX3cUOF-oENMV&sz=w1000",
+          "https://drive.google.com/thumbnail?id=19FBOLd_wazz1Q_eZKNoIUv1-9qZlmF_2&sz=w1000",
       },
       {
         name: "Sanskar Kannaujia",
