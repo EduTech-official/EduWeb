@@ -1,5 +1,30 @@
 const Gallery2 = () => {
   const images = [
+    "https://drive.google.com/thumbnail?id=13Kl2dDanyKtdJ7ulHzhKck3xQBITzMUa&sz=w1000",
+    "https://drive.google.com/thumbnail?id=1Z5IMtSglNtXiTp0uGGurtF10ayMsI3fm&sz=w1000",
+    "https://drive.google.com/thumbnail?id=1m0J-nFbbZ1uebK6uXYM0i1ADpgFLNo8W&sz=w1000",
+    "https://drive.google.com/thumbnail?id=1grcgnh6gUydD5Oesrf2y_ULmJ-LG3YKz&sz=w1000",
+
+
+
+    "https://drive.google.com/thumbnail?id=1UgBdFD9WXurneenqBwk2d_ZjpV8U9gYL&sz=w1000",
+    "https://drive.google.com/thumbnail?id=1wxosjwLr_NSFUjH2faF_DZAXd6cEm--W&sz=w1000",
+    "https://drive.google.com/thumbnail?id=15KuALg7KPMaWNsf9rn6gJcRRbERbAIg-&sz=w1000",
+    "https://drive.google.com/thumbnail?id=1PBLNeVmjNAR1exgZw21jocJuWA9NZvE7&sz=w1000",
+
+    "https://drive.google.com/thumbnail?id=1FMjVBKZYVHrEbqDmLsf0uUp3idmJun5J&sz=w1000", 
+    "https://drive.google.com/thumbnail?id=1stuS_9uopMtKPhLqav06z1HQUHLODxnw&sz=w1000",
+    "https://drive.google.com/thumbnail?id=1ZYLuiHZO5bXtS6TisJDlY9fR0ogTJhhU&sz=w1000",
+    "https://drive.google.com/thumbnail?id=1Eme3oVHSsvD_8jsoS0BPCeSyfm4cZ4eG&sz=w1000",
+
+
+    "https://drive.google.com/thumbnail?id=1cr05BCpWiNfephtgXG580JFA5s7XFmRn&sz=w1000",
+    "https://drive.google.com/thumbnail?id=1Gk4ckT3dIjZBVtLd9CC0qDJuZ-tehuqM&sz=w1000",
+    "https://drive.google.com/thumbnail?id=1cq3cOLXAlIL1CcPRi03SO1AG3J9BXozb&sz=w1000",
+    "https://drive.google.com/thumbnail?id=1Ye2LDOFMpYAL2-G2JourbPHMcqqcLyFf&sz=w1000",
+
+
+
     "https://drive.google.com/thumbnail?id=1UHL6dYvigUKtr4pwyBWiB_YQS5g7mhqN&sz=w1000",
     "https://drive.google.com/thumbnail?id=1QTLq6APpQKqRuX1lKqTArpmldtrK9N3e&sz=w1000",
     "https://drive.google.com/thumbnail?id=1kCAvvydtPTTnAk1_l38gTAD7FMczxlvk&sz=w1000",
@@ -19,6 +44,7 @@ const Gallery2 = () => {
     "https://drive.google.com/thumbnail?id=1Eme3oVHSsvD_8jsoS0BPCeSyfm4cZ4eG&sz=w1000",
     "https://drive.google.com/thumbnail?id=1Cc1LJGfgA7dLE2Rg-edRK_CCFuViS9zJ&sz=w1000",
     "https://drive.google.com/thumbnail?id=1co9BtUpL8zMwUXcO3LBND3mf3dMDPBu4&sz=w1000",
+
   ];
 
   return (
@@ -60,6 +86,50 @@ const Gallery2 = () => {
         </div>
         <div className="grid gap-4">
           {images.slice(12, 16).map((image, index) => (
+            <div key={index}>
+              <img
+                className="h-auto max-w-full rounded-md"
+                src={image}
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+        <div className="grid gap-4">
+          {images.slice(16, 20).map((image, index) => (
+            <div key={index}>
+              <img
+                className="h-auto max-w-full rounded-md"
+                src={image}
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+        <div className="grid gap-4">
+          {images.slice(20, 24).map((image, index) => (
+            <div key={index}>
+              <img
+                className="h-auto max-w-full rounded-md"
+                src={image}
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+        <div className="grid gap-4">
+          {images.slice(24, 28).map((image, index) => (
+            <div key={index}>
+              <img
+                className="h-auto max-w-full rounded-md"
+                src={image}
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+        <div className="grid gap-4">
+          {images.slice(28, 32).map((image, index) => (
             <div key={index}>
               <img
                 className="h-auto max-w-full rounded-md"
