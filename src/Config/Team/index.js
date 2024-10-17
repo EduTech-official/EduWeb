@@ -14,6 +14,7 @@ const teams = [
       },
     ],
   },
+    //Core Team
   {
     teamName: "Core Team",
     members: [
@@ -39,7 +40,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1T2IJF5QnsvBQuOlfsm916ldsRNyo0SFK&sz=w1000",
       },
       {
         name: "Lakshay",
@@ -79,7 +80,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1sL5YsMv4J0dSlHyDbyaOt9MaiGe6qIrd&sz=w1000",
       },
       {
         name: "Mohit Lamba",
@@ -91,7 +92,101 @@ const teams = [
       }
     ],
   },
-
+    //Technical Team
+  {
+    teamName: "Technical",
+    members: [
+      {
+        name: "Shresth Agarwal",
+        designation: "Head",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1_ZxRen4YJpmV5jaSzz4EpnmFix4u5QPt&sz=w1000"
+      },
+      {
+        name: "Shivank Aggarwal",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1v6iVVvo8mnsR4An4-N47UxHQl95XlcEH&sz=w1000",
+      },
+      {
+        name: "Rishi Kumar Nayak",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1_9J8meqp76rTqfJAZoz9TGask-RMdGXu&sz=w1000",
+      },
+      {
+        name: "Sanskar Kannaujia",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Kartik Padaliya",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=18haIWSM7m7EuzaEpDpUnalXNwGJBlCeW&sz=w1000",
+      },
+      {
+        name: "Shashank Gupta",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1-CkWLVHRs4CVWJYqcKWB-uSSwUL4fuwv&sz=w1000",
+      },
+      {
+        name: "Shivam Jindal",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Satvik Phour",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1ZwuF3DaH5KrySOUck8c8wvYEGMsrk89S&sz=w1000",
+      },
+      {
+        name: "Duptesh Pradhan",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "",
+      },
+      {
+        name: "Parisha Sheoran",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1RFPOfv-fWx6-QNoVpezZYcRKNUbxHiSX&sz=w1000",
+      },
+      {
+        name: "Sachin Negi",
+        designation: "Executive",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1Q6g1Y2R1BFXgXBG4BQgspxLuJ7lSeWry&sz=w1000",
+      }
+    ],
+  },
+    //Content and Documentation
   {
     teamName: "Content & Documentation",
     members: [
@@ -117,7 +212,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1boNf6BAedddwX0ZXyOdGL8oYGCH0fBK4&sz=w1000",
       },
       {
         name: "Alok Tripathi",
@@ -149,7 +244,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1flFVm2h9WPa4VJRa8bLwRIifhC2zO69I&sz=w1000",
       },
       {
         name: "Piyush Singh",
@@ -173,11 +268,11 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1wHnTAFA3aAUhVwHT5WbHUOTrYVLzGO0p&sz=w1000",
       }
     ],
   },
-
+    //Social Media and Publicity
   {
     teamName: "Social Media and Publicity",
     members: [
@@ -227,7 +322,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1baNFpIj0jBkT3v8XSWU8NIPl0cNrh4Ya&sz=w1000",
       },
       {
         name: "Shreya Ojha",
@@ -311,7 +406,7 @@ const teams = [
       }
     ],
   },
-
+    //Design and Creativity
   {
     teamName: "Design and Creativity",
     members: [
@@ -329,7 +424,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1M-C_5ks52f0vBoxHOrrC2oljkqanNvZD&sz=w1000",
       },
       {
         name: "Vidit Garg",
@@ -337,7 +432,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1i6r6hkZ731gZiIDb4hdY1EkM3aFKBO0v&sz=w1000",
       },
       {
         name: "Md Saif",
@@ -361,7 +456,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1kwM53H30sbDGrrhxvH8iYn3EBY7FqIYW&sz=w1000",
       },
       {
         name: "Avinash Gola",
@@ -385,7 +480,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1wBVODWBKmwjWtWmxHKNNjt4tFC7hcPuc&sz=w1000",
       },
       {
         name: "Lavanya Goyal",
@@ -393,7 +488,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1LUO8KWL53GDO67EplW26waJeuZNZcX8A&sz=w1000",
       },
       {
         name: "Nikhil Tyagi",
@@ -409,16 +504,16 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=19ZAm6CBzqMqbJIOscf_Jdb8AoWF0ZnsS&sz=w1000",
       }
     ],
   },
-
+    //Video Editing
   {
     teamName: "Video Editing",
     members: [
       {
-        name: "HImanshu Gupta",
+        name: "Himanshu Gupta",
         designation: "Head",
         linkedin: "",
         instagram: "",
@@ -439,7 +534,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1cj4-2upsgPdfGg_AAbjmHkbjNGz4J7lU&sz=w1000",
       },
       {
         name: "Abhishek Kumar",
@@ -455,7 +550,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1LF0pwktVY8AY_T2_XL0qrMmMAVCNdzC1&sz=w1000",
       },
       {
         name: "Pabitra Mondal",
@@ -487,7 +582,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1plQSJr9A2-r2YTLzWZJAcz8uj1oR3HE6&sz=w1000",
       },
       {
         name: "Parikshit Singh",
@@ -515,7 +610,7 @@ const teams = [
       }
     ],
   },
-
+    //Event Management
   {
     teamName: "Event Management",
     members: [
@@ -525,7 +620,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1WdI73uQR7hseQH9nKucdDaj0BsenB6ar&sz=w1000",
       },
       {
         name: "Taniket Singh",
@@ -533,7 +628,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1-5f3CW8EHjmJoGvuxegaBvMt63OkRQ11&sz=w1000",
       },
       {
         name: "Riddhi Bansal",
@@ -541,7 +636,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=15r6r43Wr03lQ01JZcBuRntkWa4X8DZjg&sz=w1000",
       },
       {
         name: "Yashika Gandhi",
@@ -549,7 +644,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1NUijT6pgA4U2lqyY6r0LYqxOlrJ_v7Xo&sz=w1000",
       },
       {
         name: "Varun Kaushik",
@@ -721,101 +816,7 @@ const teams = [
       }
     ],
   },
-
-  {
-    teamName: "Technical",
-    members: [
-      {
-        name: "Shresth Agarwal",
-        designation: "Head",
-        linkedin: "",
-        instagram: "",
-        optionalLink: "",
-        picLink: "https://drive.google.com/thumbnail?id=1_ZxRen4YJpmV5jaSzz4EpnmFix4u5QPt&sz=w1000"
-      },
-      {
-        name: "Shivank Aggarwal",
-        designation: "Executive",
-        linkedin: "",
-        instagram: "",
-        optionalLink: "",
-        picLink: "https://drive.google.com/thumbnail?id=1v6iVVvo8mnsR4An4-N47UxHQl95XlcEH&sz=w1000",
-      },
-      {
-        name: "Rishi Kumar Nayak",
-        designation: "Executive",
-        linkedin: "",
-        instagram: "",
-        optionalLink: "",
-        picLink: "https://drive.google.com/thumbnail?id=1_9J8meqp76rTqfJAZoz9TGask-RMdGXu&sz=w1000",
-      },
-      {
-        name: "Sanskar Kannaujia",
-        designation: "Executive",
-        linkedin: "",
-        instagram: "",
-        optionalLink: "",
-        picLink: "",
-      },
-      {
-        name: "Kartik Padaliya",
-        designation: "Executive",
-        linkedin: "",
-        instagram: "",
-        optionalLink: "",
-        picLink: "https://drive.google.com/thumbnail?id=18haIWSM7m7EuzaEpDpUnalXNwGJBlCeW&sz=w1000",
-      },
-      {
-        name: "Shashank Gupta",
-        designation: "Executive",
-        linkedin: "",
-        instagram: "",
-        optionalLink: "",
-        picLink: "https://drive.google.com/thumbnail?id=1-CkWLVHRs4CVWJYqcKWB-uSSwUL4fuwv&sz=w1000",
-      },
-      {
-        name: "Shivam Jindal",
-        designation: "Executive",
-        linkedin: "",
-        instagram: "",
-        optionalLink: "",
-        picLink: "",
-      },
-      {
-        name: "Satvik Phour",
-        designation: "Executive",
-        linkedin: "",
-        instagram: "",
-        optionalLink: "",
-        picLink: "https://drive.google.com/thumbnail?id=1ZwuF3DaH5KrySOUck8c8wvYEGMsrk89S&sz=w1000",
-      },
-      {
-        name: "Duptesh Pradhan",
-        designation: "Executive",
-        linkedin: "",
-        instagram: "",
-        optionalLink: "",
-        picLink: "",
-      },
-      {
-        name: "Parisha Sheoran",
-        designation: "Executive",
-        linkedin: "",
-        instagram: "",
-        optionalLink: "",
-        picLink: "https://drive.google.com/thumbnail?id=1RFPOfv-fWx6-QNoVpezZYcRKNUbxHiSX&sz=w1000",
-      },
-      {
-        name: "Sachin Negi",
-        designation: "Executive",
-        linkedin: "",
-        instagram: "",
-        optionalLink: "",
-        picLink: "https://drive.google.com/thumbnail?id=1Q6g1Y2R1BFXgXBG4BQgspxLuJ7lSeWry&sz=w1000",
-      }
-    ],
-  },
-
+    //Sponsorship and Outreach
   {
     teamName: "Sponsorship and Outreach",
     members: [
@@ -889,7 +890,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1pRz60SqFOs2v5OlBq0Q6jlVEbr-pjgNW&sz=w1000",
       },
       {
         name: "Riyanshu",
