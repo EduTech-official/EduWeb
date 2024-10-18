@@ -1,21 +1,28 @@
 import React from "react";
-import { Image, Box } from "@chakra-ui/react";
+import { Image, Box, useBreakpointValue } from "@chakra-ui/react";
+import image1 from "../../assets/form-image.png"; // Import large image
+import image2 from "../../assets/form-image2.png"; // Import small image
 
 type FormImageProps = {
-  imageSrc: string;
   altText: string;
 };
 
-const FormImage: React.FC<FormImageProps> = ({ imageSrc, altText }) => {
+const FormImage: React.FC<FormImageProps> = ({ altText }) => {
+  // Dynamically select the image based on screen size
+  const imageSrc = useBreakpointValue({
+    base: image2, // Small screen (phones)
+    md: image1,   // Medium and larger screens (tablets, desktops)
+  });
+
   return (
     <Box my={4} textAlign="center" width="100%">
       <Image
-        src={imageSrc}
+        src={imageSrc} // Dynamically select based on breakpoint
         alt={altText}
-        objectFit="cover"
+        objectFit="fill"
         borderRadius="lg"
         width="100%"
-        height={"200px"}
+        height={"400px"}
       />
     </Box>
   );

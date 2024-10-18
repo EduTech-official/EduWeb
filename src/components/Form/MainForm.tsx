@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import FormHeading from "./FormHeading";
 import FormDetail from "./FormDetail";
 import FormImage from "./FormImage";
-import eventImage from "../../assets/form-image.png";
+import eventImage from "../../assets/form-image2.png";
 import {
   Box,
   FormControl,
@@ -85,10 +85,14 @@ const MainForm: React.FC = () => {
       paddingY={25}
       pb={50}
     >
-      <FormImage imageSrc={eventImage} altText="Event" />
-      <FormHeading text="Career Clash: Battle of Professions" />
+      <FormImage altText="Event" />
+      <FormHeading 
+        text="Career Clash: Battle of Professions"
+        fontSize={["xl", "2xl", "3xl"]} // Responsive font sizes for different screens
+      />
       <FormDetail
-        details={`The event is a two-round competition focused on career paths and professions.\n\nRound 1:\nAn all-embracing quiz will test participants' knowledge of various careers and serve as the shortlisting round. The top 16 teams (2 members each) advance to the next round.\n\nRound 2:\nA swift debate where teams are assigned professions to defend. They’ll have 1 minute to prepare and then engage in a 3-minute debate with another team. Three judges will cast votes, and the team with the majority advances. The quiz ranking determines matchups, with high performers facing lower scorers first.\n\nThe event progresses through elimination until one team is crowned the winner.`}
+        details={`Get ready for an electrifying experience at the Career Clash! Here’s the lowdown on the action:\n\nRound 1:\nTeams will engage in an all-embracing quiz that tests your knowledge across various career paths, ensuring a fun and dynamic experience for everyone involved. \n\nRound 2:\nStep into the spotlight for a high-energy debate! You'll defend your assigned profession in a fast-paced showdown. This round will keep you on your toes as you navigate through different topics in a swift fashion, making it both exciting and intellectually stimulating.\n\nTo top it all off, there’s a fantastic prize pool of ₹3000 waiting to be claimed! Don’t miss out on the fun—Register Now!`}
+        fontSize={["sm", "md", "lg"]} // Smaller font size on mobile
         // Ensure text has new lines with '\n'
       />
 
@@ -103,8 +107,9 @@ const MainForm: React.FC = () => {
       >
         {/* Name */}
         <FormControl isInvalid={!!errors.name}>
-          <FormLabel className="text-white">Name</FormLabel>
+          <FormLabel fontSize={["sm", "md"]} className="text-white">Name</FormLabel>
           <Input
+            fontSize={["sm", "md"]} // Responsive font size
             className="text-white"
             type="text"
             placeholder="Enter your name"
@@ -116,8 +121,9 @@ const MainForm: React.FC = () => {
 
         {/* Email */}
         <FormControl isInvalid={!!errors.email}>
-          <FormLabel className="text-white">Email</FormLabel>
+          <FormLabel fontSize={["sm", "md"]} className="text-white">Email</FormLabel>
           <Input
+            fontSize={["sm", "md"]} // Responsive font size
             className="text-white"
             type="email"
             placeholder="Enter your email"
@@ -129,8 +135,9 @@ const MainForm: React.FC = () => {
 
         {/* Roll Number */}
         <FormControl isInvalid={!!errors.rollNumber}>
-          <FormLabel className="text-white">Roll Number</FormLabel>
+          <FormLabel fontSize={["sm", "md"]} className="text-white">Roll Number</FormLabel>
           <Input
+            fontSize={["sm", "md"]} // Responsive font size
             className="text-white"
             type="text"
             placeholder="Enter your roll number"
@@ -142,8 +149,9 @@ const MainForm: React.FC = () => {
 
         {/* Contact Number */}
         <FormControl isInvalid={!!errors.contactNumber}>
-          <FormLabel className="text-white">Contact Number (Whatsapp)</FormLabel>
+          <FormLabel fontSize={["sm", "md"]} className="text-white">Contact Number (Whatsapp)</FormLabel>
           <Input
+            fontSize={["sm", "md"]} // Responsive font size
             className="text-white"
             type="text"
             placeholder="Enter your contact number"
@@ -155,8 +163,9 @@ const MainForm: React.FC = () => {
 
         {/* Branch */}
         <FormControl isInvalid={!!errors.branch}>
-          <FormLabel className="text-white">Branch</FormLabel>
+          <FormLabel fontSize={["sm", "md"]} className="text-white">Branch</FormLabel>
           <Select
+            fontSize={["sm", "md"]} // Responsive font size
             className="text-white"
             placeholder="Select branch"
             {...register("branch")}
@@ -186,8 +195,9 @@ const MainForm: React.FC = () => {
 
         {/* Year */}
         <FormControl isInvalid={!!errors.year}>
-          <FormLabel className="text-white">Year</FormLabel>
+          <FormLabel fontSize={["sm", "md"]} className="text-white">Year</FormLabel>
           <Select
+            fontSize={["sm", "md"]} // Responsive font size
             className="text-white"
             placeholder="Select year"
             {...register("year")}
@@ -211,8 +221,9 @@ const MainForm: React.FC = () => {
 
         {/* Any Queries */}
         <FormControl>
-          <FormLabel className="text-white">Any Queries</FormLabel>
+          <FormLabel fontSize={["sm", "md"]} className="text-white">Any Queries</FormLabel>
           <Textarea
+            fontSize={["sm", "md"]} // Responsive font size
             className="text-white"
             placeholder="Leave Blank if no queries"
             {...register("queries")}
@@ -221,19 +232,16 @@ const MainForm: React.FC = () => {
         </FormControl>
 
         {/* Submit Button */}
-        <Button type="submit" colorScheme="teal" size="md" isDisabled={isSubmitting}>
-          {isSubmitting ? "Submitting..." : "Submit"}
+        <Button
+          isDisabled={isSubmitting} // Disable when submitting
+          isLoading={isSubmitting}
+          loadingText="Submitting..."
+          type="submit"
+          colorScheme="blue"
+        >
+          Submit
         </Button>
-
-        {/* Display submission status */}
-        {submitStatus && (
-          <Text
-            color={submitStatus === "Response Accepted" ? "green" : "red"}
-            mt={4}
-          >
-            {submitStatus}
-          </Text>
-        )}
+        {submitStatus && <Text mt={2}>{submitStatus}</Text>}
       </form>
     </Box>
   );
