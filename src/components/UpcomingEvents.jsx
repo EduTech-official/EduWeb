@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BBattles } from "./../assets/index";
+import { formimage } from "./../assets/index";
 import { Box, Button, Image, Text, Flex, VStack } from "@chakra-ui/react";
 
 const UpcomingEvents = () => {
@@ -7,17 +7,12 @@ const UpcomingEvents = () => {
     {
       link: "/form",
       title: "Career Clash: Battle of Professions",
-      Image: BBattles,
-      desc: `The event is a two-round competition focused on career paths and professions.\n
-  Round 1:\n
-  An all-embracing quiz will test participants' knowledge of various careers and serve as the shortlisting round. The top 16 teams (2 members each) advance to the next round.\n
-  Round 2:\n
-  A swift debate where teams are assigned professions to defend. They’ll have 1 minute to prepare and then engage in a 3-minute debate with another team. Three judges will cast votes, and the team with the majority advances. The quiz ranking determines matchups, with high performers facing lower scorers first.\n
-  The event progresses through elimination until one team is crowned the winner.`,
+      Image: formimage,
+      desc: `Get ready to dive into the ultimate showdown of intellect and passion at EduMinerva's Career Clash – Battle of Professions! 🌟 Challenge yourself with a Kahoot quiz testing your career knowledge, then unleash your debating skills in a high-energy debate defending various professions. There's an exciting prize pool of ₹3000 waiting for the winner. Secure your place in this thrilling clash of careers by registering now and prepare to showcase your talents on the big stage!
+`,
     },
   ];
-  
-  
+
   return (
     <Box p={{ base: 2, md: 4 }}>
       <VStack spacing={{ base: 4, md: 6 }} align="stretch">
@@ -37,14 +32,17 @@ const UpcomingEvents = () => {
               src={event.Image}
               alt={event.title}
               borderRadius="xl"
-              boxSize={{ base: "100%", md: "60%" }} // Adjust image size for mobile and desktop
               objectFit="cover"
+              // Updated image size for responsiveness
+              boxSize={{ base: "100%", md: "30%" }}  // Full width on mobile, smaller on desktop
+              height={{ base: "300px", md: "400px" }} // Adjust height for different screen sizes
+              margin={"auto"}
             />
             <VStack
               align="center"
               spacing={2}
               p={{ base: 2, md: 4 }} // Adjust padding for mobile
-              w={{ base: "100%", md: "60%" }}
+              w={{ base: "100%", md: "50%" }}
             >
               <Text
                 fontSize={{ base: "xl", md: "2xl" }} // Reduced font size on mobile
