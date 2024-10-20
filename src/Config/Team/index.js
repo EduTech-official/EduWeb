@@ -161,7 +161,7 @@ const teams = [
         picLink: "https://drive.google.com/thumbnail?id=1ZwuF3DaH5KrySOUck8c8wvYEGMsrk89S&sz=w1000",
       },
       {
-        name: "Duptesh Pradhan",
+        name: "Diptesh Pradhan",
         designation: "Executive",
         linkedin: "",
         instagram: "",
