@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 
 const BasicComp = () => {
+  useEffect(() => {
+    const preventFullscreen = (event) => {
+      event.preventDefault();
+    };
+
+    const videoElement = document.querySelector("video");
+    if (videoElement) {
+      videoElement.addEventListener("fullscreenchange", preventFullscreen);
+      videoElement.addEventListener("webkitfullscreenchange", preventFullscreen);
+    }
+
+    return () => {
+      if (videoElement) {
+        videoElement.removeEventListener("fullscreenchange", preventFullscreen);
+        videoElement.removeEventListener("webkitfullscreenchange", preventFullscreen);
+      }
+    };
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -18,9 +37,6 @@ const BasicComp = () => {
           zIndex: "-1",
         }}
       >
-        {
-
-        }
         <source src="p.webm" />
         Your browser does not support the video tag.
       </video>

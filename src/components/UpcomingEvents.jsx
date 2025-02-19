@@ -5,11 +5,11 @@ import { Box, Button, Image, Text, Flex, VStack } from "@chakra-ui/react";
 const UpcomingEvents = () => {
   const Events = [
     {
-      link: "/form",
-      title: "Career Clash: Battle of Professions",
+      link: "/preplacement",
+      knowMoreLink: "/preplacement", // Added a new link for "Know More"
+      title: "Pre Placement Bootcamp 3.0",
       Image: formimage,
-      desc: `Get ready to dive into the ultimate showdown of intellect and passion at EduMinerva's Career Clash – Battle of Professions! 🌟 Challenge yourself with a Kahoot quiz testing your career knowledge, then unleash your debating skills in a high-energy debate defending various professions. There's an exciting prize pool of ₹3000 waiting for the winner. Secure your place in this thrilling clash of careers by registering now and prepare to showcase your talents on the big stage!
-`,
+      desc: `The Pre-placement Bootcamp 3.0, organized by the T&P Cell BVCOE in collaboration with EduMinerva from 18th - 23rd March 2024, is designed to provide 3rd-year students with a comprehensive platform to address placement-related concerns and enhance employability skills. This year's bootcamp spans 6 days and includes Speaker Sessions, Aptitude & Coding Assessments, Mock Interviews, and interactions with senior professionals from reputed companies. Join us to gain valuable insights, enhance your skills, and prepare for your dream job!`,
     },
   ];
 
@@ -59,15 +59,31 @@ const UpcomingEvents = () => {
               >
                 {event.desc}
               </Text>
-              <Button
-                as="a"
-                href={event.link}
-                colorScheme="teal"
-                size={{ base: "sm", md: "md" }} // Adjust button size for mobile
+              <Flex
+                direction={{ base: "column", md: "row" }} // Stack buttons vertically on mobile
+                gap={2} // Add gap between buttons
                 w="full"
               >
-                Register Now
-              </Button>
+                <Button
+                  as="a"
+                  href={event.link}
+                  colorScheme="teal"
+                  size={{ base: "sm", md: "md" }} // Adjust button size for mobile
+                  w={{ base: "full", md: "auto" }} // Full width on mobile, auto on desktop
+                >
+                  Register Now
+                </Button>
+                <Button
+                  as="a"
+                  href={event.knowMoreLink}
+                  colorScheme="blue"
+                  variant="outline"
+                  size={{ base: "sm", md: "md" }} // Adjust button size for mobile
+                  w={{ base: "full", md: "auto" }} // Full width on mobile, auto on desktop
+                >
+                  Know More
+                </Button>
+              </Flex>
             </VStack>
           </Flex>
         ))}
