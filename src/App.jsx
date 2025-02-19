@@ -12,6 +12,7 @@ import AboutUs from "./Pages/AboutUs";
 import Gallery2 from "./Pages/Gallery2";
 import ContactPage from "./Pages/ContactPage";
 import Thanks from "./Pages/Thanks";
+import PrePlacement from "./Pages/PrePlacement";
 
 import Error from "./Pages/Error";
 
@@ -54,6 +55,10 @@ function App() {
     {
       path: "/form",
       element: <MainForm />,
+    },
+    {
+      path: "/preplacement",
+      element: <PrePlacement />,
     }
   ]);
   // const [count, setCount] = useState(0);
