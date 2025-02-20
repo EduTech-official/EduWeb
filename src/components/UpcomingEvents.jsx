@@ -45,7 +45,7 @@ const UpcomingEvents = () => {
               w={{ base: "100%", md: "50%" }}
             >
               <Text
-                fontSize={{ base: "xl", md: "2xl" }} // Reduced font size on mobile
+                fontSize={{ base: "lg", md: "2xl" }} // Reduced font size on mobile
                 fontWeight="bold"
                 color="white"
                 textAlign="center"
@@ -54,7 +54,7 @@ const UpcomingEvents = () => {
               </Text>
               <Text
                 color="gray.400"
-                fontSize={{ base: "sm", md: "md" }} // Adjust font size for mobile
+                fontSize={{ base: "xs", md: "md" }} // Further reduced font size for mobile
                 textAlign="center"
               >
                 {event.desc}
@@ -63,23 +63,28 @@ const UpcomingEvents = () => {
                 direction={{ base: "column", md: "row" }} // Stack buttons vertically on mobile
                 gap={2} // Add gap between buttons
                 w="full"
+                justify="center" // Center buttons on desktop
               >
                 <Button
                   as="a"
                   href={event.link}
-                  colorScheme="teal"
                   size={{ base: "sm", md: "md" }} // Adjust button size for mobile
                   w={{ base: "full", md: "auto" }} // Full width on mobile, auto on desktop
+                  bgGradient="linear(to-r, teal.400, blue.500)" // Gradient theme
+                  _hover={{ bgGradient: "linear(to-r, teal.500, blue.600)" }} // Hover effect
+                  color="white"
                 >
                   Register Now
                 </Button>
                 <Button
                   as="a"
                   href={event.knowMoreLink}
-                  colorScheme="blue"
                   variant="outline"
                   size={{ base: "sm", md: "md" }} // Adjust button size for mobile
                   w={{ base: "full", md: "auto" }} // Full width on mobile, auto on desktop
+                  bgGradient="linear(to-r, blue.400, purple.500)" // Gradient theme
+                  _hover={{ bgGradient: "linear(to-r, blue.500, purple.600)" }} // Hover effect
+                  color="white"
                 >
                   Know More
                 </Button>
