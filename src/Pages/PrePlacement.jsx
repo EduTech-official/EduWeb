@@ -85,28 +85,28 @@ const PrePlacement = () => {
   ];
 
   return (
-    <div className="min-h-screen text-white p-8">
+    <div className="min-h-screen text-white p-4 md:p-8">
       {/* Big Heading */}
-      <div className="flex flex-col items-center justify-center py-12">
-        <h1 className="tracking-normal text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#E61AA1] to-[#0CF996] to-55% bg-clip-text text-transparent my-3">
+      <div className="flex flex-col items-center justify-center py-8 md:py-12">
+        <h1 className="tracking-normal text-2xl md:text-4xl font-bold bg-gradient-to-r from-[#E61AA1] to-[#0CF996] to-55% bg-clip-text text-transparent my-2 md:my-3">
           Pre Placement Bootcamp 3.0
         </h1>
-        <p className="text-stone-100 text-sm md:text-base text-center max-w-2xl mt-4">
+        <p className="text-stone-100 text-xs md:text-base text-center max-w-2xl mt-2 md:mt-4">
           Gear up for an exciting journey to enhance your employability skills!
           Join us for a 6-day bootcamp packed with speaker sessions, aptitude
           tests, mock interviews, and more.
         </p>
         <a
           href="/register"
-          className="mt-6 px-6 py-2 bg-gradient-to-r from-[#E61AA1] to-[#0CF996] text-white font-semibold rounded-lg hover:opacity-90 transition duration-300"
+          className="mt-4 md:mt-6 px-4 md:px-6 py-2 bg-gradient-to-r from-[#E61AA1] to-[#0CF996] text-white font-semibold rounded-lg hover:opacity-90 transition duration-300 text-sm md:text-base"
         >
           Register Now
         </a>
       </div>
 
       {/* Timeline Section */}
-      <div className="max-w-4xl mx-auto mt-12">
-        <h2 className="tracking-normal text-3xl font-bold bg-gradient-to-r from-[#E61AA1] to-[#0CF996] to-55% bg-clip-text text-transparent my-6 text-center">
+      <div className="max-w-4xl mx-auto mt-8 md:mt-12">
+        <h2 className="tracking-normal text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#E61AA1] to-[#0CF996] to-55% bg-clip-text text-transparent my-4 md:my-6 text-center">
           Timeline
         </h2>
         <VerticalTimeline lineColor="#0CF996">
@@ -127,28 +127,28 @@ const PrePlacement = () => {
                 color: "#fff",
               }}
             >
-              <h3 className="vertical-timeline-element-title text-lg font-bold bg-gradient-to-r from-[#E61AA1] to-[#0CF996] bg-clip-text text-transparent">
+              <h3 className="vertical-timeline-element-title text-base md:text-lg font-bold bg-gradient-to-r from-[#E61AA1] to-[#0CF996] bg-clip-text text-transparent">
                 {event.title}
               </h3>
-              <p className="text-sm text-stone-100">{event.description}</p>
+              <p className="text-xs md:text-sm text-stone-100">{event.description}</p>
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>
       </div>
 
       {/* Resources Section */}
-      <div className="max-w-4xl mx-auto mt-12">
-        <h2 className="tracking-normal text-3xl font-bold bg-gradient-to-r from-[#E61AA1] to-[#0CF996] to-55% bg-clip-text text-transparent my-6 text-center">
+      <div className="max-w-4xl mx-auto mt-8 md:mt-12">
+        <h2 className="tracking-normal text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#E61AA1] to-[#0CF996] to-55% bg-clip-text text-transparent my-4 md:my-6 text-center">
           Resources
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {resources.map((resource, index) => (
             <a
               key={index}
               href={resource.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-4 bg-gray-800 rounded-lg text-sm text-stone-100 hover:bg-gray-700 transition duration-300 text-center"
+              className="p-4 bg-gray-800 rounded-lg text-xs md:text-sm text-stone-100 hover:bg-gray-700 transition duration-300 text-center w-full"
             >
               {resource.title}
             </a>
@@ -157,28 +157,28 @@ const PrePlacement = () => {
       </div>
 
       {/* Our Speakers Section */}
-      <div className="max-w-4xl mx-auto mt-12">
-        <h2 className="tracking-normal text-3xl font-bold bg-gradient-to-r from-[#E61AA1] to-[#0CF996] to-55% bg-clip-text text-transparent my-6 text-center">
+      <div className="max-w-4xl mx-auto mt-8 md:mt-12">
+        <h2 className="tracking-normal text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#E61AA1] to-[#0CF996] to-55% bg-clip-text text-transparent my-4 md:my-6 text-center">
           Our Speakers
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {speakers.map((speaker, index) => (
             <div
               key={index}
-              className="p-6 bg-gray-800 rounded-lg text-center"
+              className="p-4 md:p-6 bg-gray-800 rounded-lg text-center"
             >
               <img
                 src={speaker.image}
                 alt={speaker.name}
-                className="w-24 h-24 rounded-full mx-auto mb-4"
+                className="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto mb-2 md:mb-4"
               />
-              <h3 className="text-xl font-bold text-white">{speaker.name}</h3>
-              <p className="text-sm text-stone-100">{speaker.designation}</p>
-              <p className="text-sm text-stone-100">{speaker.company}</p>
-              <p className="text-md font-semibold text-[#E61AA1] mt-2">
+              <h3 className="text-lg md:text-xl font-bold text-white">{speaker.name}</h3>
+              <p className="text-xs md:text-sm text-stone-100">{speaker.designation}</p>
+              <p className="text-xs md:text-sm text-stone-100">{speaker.company}</p>
+              <p className="text-sm md:text-md font-semibold text-[#E61AA1] mt-1 md:mt-2">
                 {speaker.topic}
               </p>
-              <p className="text-xs text-stone-100 mt-2">{speaker.detail}</p>
+              <p className="text-xs text-stone-100 mt-1 md:mt-2">{speaker.detail}</p>
             </div>
           ))}
         </div>
