@@ -5,11 +5,11 @@ import { Box, Button, Image, Text, Flex, VStack } from "@chakra-ui/react";
 const UpcomingEvents = () => {
   const Events = [
     {
-      link: "/preplacement",
+      link: "https://forms.gle/chshPoMcvSad51tV6",
       knowMoreLink: "/preplacement", // Added a new link for "Know More"
       title: "Pre Placement Bootcamp 3.0",
       Image: formimage,
-      desc: `The Pre-placement Bootcamp 3.0, organized by the T&P Cell BVCOE in collaboration with EduMinerva from 18th - 23rd March 2024, is designed to provide 3rd-year students with a comprehensive platform to address placement-related concerns and enhance employability skills. This year's bootcamp spans 6 days and includes Speaker Sessions, Aptitude & Coding Assessments, Mock Interviews, and interactions with senior professionals from reputed companies. Join us to gain valuable insights, enhance your skills, and prepare for your dream job!`,
+      desc: `The Pre-placement Bootcamp 3.0, organized by the T&P Cell BVCOE in collaboration with EduMinerva from 20th - 26th March 2025, is designed to provide 3rd-year students with a comprehensive platform to address placement-related concerns and enhance employability skills. This year's bootcamp spans 6 days and includes Speaker Sessions, Aptitude & Coding Assessments, Mock Interviews, and interactions with senior professionals from reputed companies. Join us to gain valuable insights, enhance your skills, and prepare for your dream job!`,
     },
   ];
 
