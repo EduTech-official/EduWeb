@@ -6,7 +6,7 @@ const teams = [
       {
         name: "Dr. Saji M Antony",
         designation:
-            "Asst. Professor, Dept. of ECE, BVCOE",
+            "Associate Professor, Dept. of ECE, BVCOE",
         linkedin: "",
         instagram: "https://www.instagram.com/edu_minerva/",
         optionalLink: "",
