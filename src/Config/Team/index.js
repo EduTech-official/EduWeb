@@ -66,14 +66,14 @@ const teams = [
         optionalLink: "",
         picLink: "https://drive.google.com/thumbnail?id=1Fl0v1--YKhSz-PQ-sm5aSzo7wzKnUeFf&sz=w1000",
       },
-      // {
-      //   name: "Armaan Jain",
-      //   designation: "Creative Lead",
-      //   linkedin: "",
-      //   instagram: "",
-      //   optionalLink: "",
-      //   picLink: "",
-      // },
+      {
+        name: "Armaan Jain",
+        designation: "Creative Lead",
+        linkedin: "",
+        instagram: "",
+        optionalLink: "",
+        picLink: "https://drive.google.com/thumbnail?id=1K0EWAQorH7Y_Jx_X8bxamaDEZtetD54M&sz=w1000",
+      },
       {
         name: "Khushi Nagpal",
         designation: "Treasurer",
