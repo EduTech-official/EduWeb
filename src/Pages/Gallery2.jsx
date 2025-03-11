@@ -1,3 +1,6 @@
+import gallery1 from '/assets/gallery1.png';
+import gallery2 from '/assets/gallery2.png';
+
 const Gallery2 = () => {
   const images = [
     "https://drive.google.com/thumbnail?id=13Kl2dDanyKtdJ7ulHzhKck3xQBITzMUa&sz=w1000",
