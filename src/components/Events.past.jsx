@@ -46,7 +46,7 @@ EventCard.propTypes = {
       })
     ).isRequired,
     tags: PropTypes.arrayOf(PropTypes.string), // Keeping tags in case it's needed later
-  }).isRequired,
+  }),
 };
 
 export default EventCard;
