@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const EventCard = ({ events }) => {
   return (
-    <div className="max-w-sm rounded shadow-lg border border-white">
+    <div className="max-w-sm rounded shadow-lg">
       <img
         className="w-full rounded-xl"
         src={events.image}
