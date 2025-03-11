@@ -46,40 +46,96 @@ const Gallery2 = () => {
 
   return (
     <div>
-      <div className="flex justify-center gap-4 mb-8">
-        <img src={gallery1} alt="Gallery 1" className="w-1/2 rounded-md" />
-        <img src={gallery2} alt="Gallery 2" className="w-1/2 rounded-md" />
-      </div>
-      <div className="pt-8 grid grid-cols-2 md:grid-cols-4 justify-center gap-x-2 gap-y-3 px-4">
+     <div className="pt-8 grid grid-cols-2 md:grid-cols-4 justify-center gap-x-2 gap-y-3 px-4">
         <div className="grid gap-y-4 gap-x-2 justify-center">
           {images.slice(0, 4).map((image, index) => (
             <div key={index}>
-              <img className="h-auto max-w-full rounded-md" src={image} alt="" loading="lazy" />
+              <img
+                className="h-auto max-w-full rounded-md"
+                src={image}
+                alt=""
+                loading="lazy"
+              />
             </div>
           ))}
         </div>
         <div className="grid gap-y-1">
           {images.slice(4, 8).map((image, index) => (
             <div key={index}>
-              <img className="h-auto max-w-full rounded-md" src={image} alt="" />
+              <img
+                className="h-auto max-w-full rounded-md"
+                src={image}
+                alt=""
+              />
             </div>
           ))}
         </div>
         <div className="grid gap-4 justify-center">
           {images.slice(8, 12).map((image, index) => (
             <div key={index}>
-              <img className="h-auto max-w-full rounded-md" src={image} alt="" />
+              <img
+                className="h-auto max-w-full rounded-md"
+                src={image}
+                alt=""
+              />
             </div>
           ))}
         </div>
         <div className="grid gap-4">
           {images.slice(12, 16).map((image, index) => (
             <div key={index}>
-              <img className="h-auto max-w-full rounded-md" src={image} alt="" />
+              <img
+                className="h-auto max-w-full rounded-md"
+                src={image}
+                alt=""
+              />
             </div>
           ))}
         </div>
-      </div>
+        <div className="grid gap-4">
+          {images.slice(16, 20).map((image, index) => (
+            <div key={index}>
+              <img
+                className="h-auto max-w-full rounded-md"
+                src={image}
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+        <div className="grid gap-4">
+          {images.slice(20, 24).map((image, index) => (
+            <div key={index}>
+              <img
+                className="h-auto max-w-full rounded-md"
+                src={image}
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+        <div className="grid gap-4">
+          {images.slice(24, 28).map((image, index) => (
+            <div key={index}>
+              <img
+                className="h-auto max-w-full rounded-md"
+                src={image}
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+        <div className="grid gap-4">
+          {images.slice(28, 32).map((image, index) => (
+            <div key={index}>
+              <img
+                className="h-auto max-w-full rounded-md"
+                src={image}
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
     </div>
   );
 };
