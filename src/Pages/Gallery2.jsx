@@ -1,6 +1,3 @@
-import gallery1 from '../assets/gallery1.png';
-import gallery2 from '../assets/gallery2.png';
-
 const Gallery2 = () => {
   const images = [
     "https://drive.google.com/thumbnail?id=13Kl2dDanyKtdJ7ulHzhKck3xQBITzMUa&sz=w1000",
@@ -46,10 +43,6 @@ const Gallery2 = () => {
 
   return (
     <div>
-      <div className="flex justify-center gap-4 mb-8">
-        <img src={gallery1} alt="Gallery 1" className="w-1/2 rounded-md" />
-        <img src={gallery2} alt="Gallery 2" className="w-1/2 rounded-md" />
-      </div>
       <div className="pt-8 grid grid-cols-2 md:grid-cols-4 justify-center gap-x-2 gap-y-3 px-4">
         <div className="grid gap-y-4 gap-x-2 justify-center">
           {images.slice(0, 4).map((image, index) => (
