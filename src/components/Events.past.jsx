@@ -1,12 +1,10 @@
-// Code to display past events
-
 import PropTypes from "prop-types";
 
 const EventCard = ({ events }) => {
   return (
     <div className="max-w-sm rounded shadow-lg">
       <img
-        className="w-full rounded-xl "
+        className="w-full rounded-xl"
         src={events.image}
         alt={events.description}
       />
@@ -28,27 +26,27 @@ const EventCard = ({ events }) => {
             {link.name}
           </a>
         ))}
-        <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+        {/* <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
           {events.tags[2]}
-        </p>
+        </p> */}
       </div>
     </div>
   );
 };
 
 EventCard.propTypes = {
-  events: {
-    title: PropTypes.string,
-    description: PropTypes.string,
-    image: PropTypes.string,
+  events: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
     links: PropTypes.arrayOf(
       PropTypes.shape({
-        name: PropTypes.string,
-        url: PropTypes.string,
+        name: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
       })
-    ),
-    tags: PropTypes.arrayOf(PropTypes.string),
-  },
+    ).isRequired,
+    tags: PropTypes.arrayOf(PropTypes.string), // Keeping tags in case it's needed later
+  }).isRequired,
 };
 
 export default EventCard;
