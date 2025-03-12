@@ -35,7 +35,7 @@ const UpcomingEvents = () => {
               objectFit="cover"
               // Updated image size for responsiveness
               boxSize={{ base: "100%", md: "30%" }}  // Full width on mobile, smaller on desktop
-              height={{ base: "500px", md: "500px" }} // Adjust height for different screen sizes
+              height={{ base: "400px", md: "550px" }} // Adjust height for different screen sizes
               margin={"auto"}
             />
             <VStack
