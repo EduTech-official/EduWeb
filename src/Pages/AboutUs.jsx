@@ -22,7 +22,7 @@ const AboutUs = () => {
             EduMinerva, founded in 2019, is a society of Bharati
             Vidyapeeth&apos;s College of Engineering, assisting students by
             providing opportunities to explore different career fields and
-            co-curricular activities by organising various webinars and
+            co-curricular activities by organizing various webinars and
             workshops. EduMinerva focuses on providing a holistic development to
             anyone who&apos;s dedicated and has a will to improve.
           </p>
@@ -45,7 +45,7 @@ const AboutUs = () => {
           src={Team}
           className="col-span-2  my-auto rounded-2xl shadow-2xl aspect-video object-fill"
         /> */}
-        <CarouselComp />
+{/*         <CarouselComp /> */}
       </div>
       
       <div className=" mb-32 grid ">
