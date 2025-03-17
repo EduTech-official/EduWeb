@@ -32,7 +32,7 @@ const teams = [
         linkedin: "",
         instagram: "",
         optionalLink: "",
-        picLink: "https://drive.google.com/thumbnail?id=145mGSOuTWefhVgW4Q2vxVIqT3idrZjKG&sz=w1000",
+        picLink: "https://drive.google.com/uc?export=view&id=145mGSOuTWefhVgW4Q2vxVIqT3idrZjKG",
       },
       {
         name: "Mohit Bhushan",
