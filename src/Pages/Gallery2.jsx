@@ -1,4 +1,6 @@
 import React from 'react';
+import gallery1 from "../assets/gallery1.png"
+import gallery2 from "../assets/gallery2.png"
 
 const Gallery2 = () => {
   const images = [
@@ -43,14 +45,14 @@ const Gallery2 = () => {
         <div className="w-full md:w-1/2">
           <img
             className="w-full h-auto rounded-md"
-            src="../assets/gallery1.png"
+            src={gallery1}
             alt="Gallery 1"
           />
         </div>
         <div className="w-full md:w-1/2">
           <img
             className="w-full h-auto rounded-md"
-            src="../assets/gallery2.png"
+            src={gallery2}
             alt="Gallery 2"
           />
         </div>
