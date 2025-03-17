@@ -93,7 +93,7 @@ const PrePlacement = () => {
           train, learn, and prepare like never before!
         </p>
         <p className="text-stone-100 text-xs md:text-base mt-4">
-          📢 Stay tuned for registration details!
+          📢 https://docs.google.com/forms/d/e/1FAIpQLSeM7vnOGUvZ3tNq6YEIdTmL0YLMhosXex1JMk7GCYwkuGq2Cw/viewform
         </p>
       </div>
     </div>
