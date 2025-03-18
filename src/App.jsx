@@ -15,6 +15,7 @@ import Thanks from "./Pages/Thanks";
 import PrePlacement from "./Pages/PrePlacement";
 
 import Error from "./Pages/Error";
+import RedirectToResources from "./components/RedirectToResources";
 
 import TeamCards from "./components/TeamCards";
 import BasicComp from "./components/BasicComp";
@@ -59,7 +60,11 @@ function App() {
     {
       path: "/preplacement",
       element: <PrePlacement />,
-    }
+    },
+    {
+    path: "/resources",
+    element: <RedirectToResources />,
+  },
   ]);
   // const [count, setCount] = useState(0);
 
