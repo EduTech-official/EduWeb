@@ -51,6 +51,10 @@ const Navbar = () => {
       name: "Contact Us",
       url: "/contact",
     },
+    {
+      name: "Resources",
+      url: "/resources",
+    },
   ];
 
   return (
