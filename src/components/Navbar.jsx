@@ -106,6 +106,14 @@ const Navbar = () => {
                 Gallery
               </a>
             </li>
+             <li className="pr-5 m2xl:pr-9  text-[15px] hover:animate-bounce">
+              <a
+                href="/resources"
+                className="text-blue-500 hover:underline  hover:text-blue-200 "
+              >
+                Resources
+              </a>
+            </li>
             <li className="pr-5 m2xl:pr-9  text-[15px] hover:animate-bounce">
               <a
                 href="/contact"
