@@ -9,4 +9,4 @@ const RedirectToLeaderboard = () => {
   return <p>Redirecting to leaderboard...</p>;
 };
 
-export default RedirectToResources;
+export default RedirectToLeaderboard;
