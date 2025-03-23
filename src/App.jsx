@@ -16,6 +16,8 @@ import PrePlacement from "./Pages/PrePlacement";
 
 import Error from "./Pages/Error";
 import RedirectToResources from "./components/RedirectToResources";
+import RedirectToLeaderboard from "./components/RedirectToLeaderboard";
+
 
 import TeamCards from "./components/TeamCards";
 import BasicComp from "./components/BasicComp";
@@ -64,6 +66,10 @@ function App() {
     {
     path: "/resources",
     element: <RedirectToResources />,
+  },
+    {
+    path: "/leaderboard",
+    element: <RedirectToLeaderboard />,
   },
   ]);
   // const [count, setCount] = useState(0);
