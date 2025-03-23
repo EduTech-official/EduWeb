@@ -16,7 +16,7 @@ import PrePlacement from "./Pages/PrePlacement";
 
 import Error from "./Pages/Error";
 import RedirectToResources from "./components/RedirectToResources";
-import RedirectToLeaderboard from "./components/RedirectToLeaderboard";
+// import RedirectToLeaderboard from "./components/RedirectToLeaderboard";
 
 
 import TeamCards from "./components/TeamCards";
