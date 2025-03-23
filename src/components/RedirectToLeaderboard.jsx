@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const RedirectToResources = () => {
+const RedirectToLeaderboard = () => {
   useEffect(() => {
     window.location.href = "https://edu-leaderboard.vercel.app";
   }, []);
