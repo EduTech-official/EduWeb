@@ -55,6 +55,10 @@ const Navbar = () => {
       name: "Resources",
       url: "/resources",
     },
+    {
+      name: "Leaderboard",
+      url: "/leaderboard",
+    },
   ];
 
   return (
@@ -112,6 +116,14 @@ const Navbar = () => {
                 className="text-blue-500 hover:underline  hover:text-blue-200 "
               >
                 Resources
+              </a>
+            </li>
+             <li className="pr-5 m2xl:pr-9  text-[15px] hover:animate-bounce">
+              <a
+                href="/leaderboard"
+                className="text-blue-500 hover:underline  hover:text-blue-200 "
+              >
+                Leaderboard
               </a>
             </li>
             <li className="pr-5 m2xl:pr-9  text-[15px] hover:animate-bounce">
