@@ -67,10 +67,10 @@ function App() {
     path: "/resources",
     element: <RedirectToResources />,
   },
-    {
-    path: "/leaderboard",
-    element: <RedirectToLeaderboard />,
-  },
+  //   {
+  //   path: "/leaderboard",
+  //   element: <RedirectToLeaderboard />,
+  // },
   ]);
   // const [count, setCount] = useState(0);
 
