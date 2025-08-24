@@ -34,7 +34,7 @@ const UpcomingEvents = () => {
               borderRadius="xl"
               objectFit="cover"
               // Updated image size for responsiveness
-              boxSize={{ base: "100%", md: "30%" }}  // Full width on mobile, smaller on desktop
+              boxSize={{ base: "100%", md: "30%" }} // Full width on mobile, smaller on desktop
               height={{ base: "400px", md: "600px" }} // Adjust height for different screen sizes
               margin={"auto"}
             />
@@ -65,7 +65,7 @@ const UpcomingEvents = () => {
                 w="full"
                 justify="center" // Center buttons on desktop
               >
-                <Button
+                {/* <Button
                   as="a"
                   href={event.link}
                   size={{ base: "sm", md: "md" }} // Adjust button size for mobile
@@ -75,7 +75,7 @@ const UpcomingEvents = () => {
                   color="white"
                 >
                   Register Now
-                </Button>
+                </Button> */}
                 <Button
                   as="a"
                   href={event.knowMoreLink}

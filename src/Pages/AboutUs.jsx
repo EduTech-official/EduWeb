@@ -45,12 +45,12 @@ const AboutUs = () => {
           src={Team}
           className="col-span-2  my-auto rounded-2xl shadow-2xl aspect-video object-fill"
         /> */}
-{/*         <CarouselComp /> */}
+        {/*         <CarouselComp /> */}
       </div>
-      
+
       <div className=" mb-32 grid ">
         <h1 className="text-4xl bg-gradient-to-r brightness-150 font-semibold tracking-tight from-[#0CF996]  to-[#E61AA1] bg-clip-text text-transparent my-3">
-          UPCOMING EVENTS
+          OUR LAST EVENTS
         </h1>
         {/* <div className="grid grid-cols-3 grid-rows-2 gap-4 minxl:flex minxl:flex-col p-4">
           <div className="col-span-2 flex row-span-2">
@@ -81,10 +81,7 @@ const AboutUs = () => {
         </div> */}
         <UpcomingEvents />
       </div>
-      
     </div>
-
-    
   );
 };
 
