@@ -6,11 +6,11 @@ const PrePlacement = () => {
       {/* Main Heading */}
       <div className="py-8 md:py-12">
         <h1 className="tracking-normal text-xl md:text-4xl font-bold bg-gradient-to-r from-[#E61AA1] to-[#0CF996] to-55% bg-clip-text text-transparent my-2 md:my-3">
-          Pre Placement Bootcamp 3.0
+          Pre-Placement Boot Camp 3.0
         </h1>
         <p className="text-stone-100 text-xs md:text-base mt-2 md:mt-4">
           Gear up for an exciting journey to enhance your employability skills!
-          Join us for a 6-day bootcamp packed with speaker sessions, aptitude
+          Join us for a 6-day Boot Camp packed with speaker sessions, aptitude
           tests, mock interviews, and more.
         </p>
       </div>
@@ -93,7 +93,7 @@ const PrePlacement = () => {
           train, learn, and prepare like never before!
         </p>
         <p className="text-stone-100 text-xs md:text-base mt-4">
-          📢 Stay tuned for registration details!
+          📢 https://docs.google.com/forms/d/e/1FAIpQLSeM7vnOGUvZ3tNq6YEIdTmL0YLMhosXex1JMk7GCYwkuGq2Cw/viewform
         </p>
       </div>
     </div>

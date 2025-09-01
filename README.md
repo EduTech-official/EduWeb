@@ -1,10 +1,9 @@
-# React + Vite
-
-### hactoberfest accepted
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 # EduWeb
+This is the website of EduMinerva, a Student Chapter at Bharati VVidyapeeth College of Engineering, New Delhi.
+
+# How to Run Locally
+1. Fork the EduWeb Repository
+2. Clone your forked repository using git clone <your forket git repo address>
+3. Open the cloned folder using your preferred code editor.
+4. Open a new terminal and type "npm install" to install all the dependencies
+5. Run "npm run dev" to run the webapp locally
