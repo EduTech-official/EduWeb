@@ -18,10 +18,9 @@ import Error from "./Pages/Error";
 import RedirectToResources from "./components/RedirectToResources";
 import RedirectToLeaderboard from "./components/RedirectToLeaderboard";
 
-
 import TeamCards from "./components/TeamCards";
 import BasicComp from "./components/BasicComp";
-import MainForm from './components/Form/MainForm';
+import MainForm from "./components/Form/MainForm";
 
 function App() {
   const router = createBrowserRouter([
@@ -64,12 +63,12 @@ function App() {
       element: <PrePlacement />,
     },
     {
-    path: "/resources",
-    element: <RedirectToResources />,
+      path: "/resources",
+      element: <RedirectToResources />,
     },
     {
-    path: "/leaderboard",
-    element: <RedirectToLeaderboard />,
+      path: "/leaderboard",
+      element: <RedirectToLeaderboard />,
     },
   ]);
   // const [count, setCount] = useState(0);
