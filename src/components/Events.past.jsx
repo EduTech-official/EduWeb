@@ -16,7 +16,9 @@ const EventCard = ({ events }) => {
           {events.description}
         </p>
       </div>
-{/*       <div className="px-6 pt-4 pb-2">
+
+      {/* 
+      <div className="px-6 pt-4 pb-2">
         {events.links.map((link, index) => (
           <a
             key={index}
@@ -29,7 +31,8 @@ const EventCard = ({ events }) => {
         <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
           {events.tags[2]}
         </p>
-      </div> */}
+      </div>
+      */}
     </div>
   );
 };
@@ -44,9 +47,9 @@ EventCard.propTypes = {
         name: PropTypes.string.isRequired,
         url: PropTypes.string.isRequired,
       })
-    ).isRequired,
+    ),
     tags: PropTypes.arrayOf(PropTypes.string), // Keeping tags in case it's needed later
-  }),
+  }).isRequired,
 };
 
 export default EventCard;
