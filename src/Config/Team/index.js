@@ -4,7 +4,7 @@ const teams = [
     teamName: "Faculty Mentors",
     members: [
       {
-        name: "Dr. Saji M Antony",
+        name: "Dr. Ruchi Sharma",
         designation: "Associate Professor, Dept. of ECE, BVCOE",
         linkedin: "",
         instagram: "https://www.instagram.com/edu_minerva/",
@@ -62,8 +62,8 @@ const teams = [
         linkedin: "https://www.linkedin.com/in/manya-dhingra",
         instagram: "manya_dhingra15",
         optionalLink: "",
-        picLink:
-          "https://drive.google.com/thumbnail?id=1m8S3Hg9cWQk2JG6RSePp5oB6gG6syaoC&sz=w1000",
+        picLink: 
+          "https://drive.google.com/thumbnail?id=1Ne9gX1OA3zV9rOWGnpzqgu2_R4kdGPuP&sz=w1000",
       },
       {
         name: "Taniket Singh",
@@ -72,7 +72,7 @@ const teams = [
         instagram: "taniket.singh",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/open?id=1RjTWzFF367bjj99IgkMcBhHaZ_4I-lYA=w1000",
+          "https://drive.google.com/thumbnail?id=1RjTWzFF367bjj99IgkMcBhHaZ_4I-lYA&sz=w1000",
       },
       {
         name: "Divyansh Singh",
@@ -81,7 +81,7 @@ const teams = [
         instagram: "its_ya_boi_divyansh",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/open?id=1cDihncFE847BTPpIscwUHmdhdHZ5IBDX=w1000",
+          "https://drive.google.com/thumbnail?id=1cDihncFE847BTPpIscwUHmdhdHZ5IBDX&sz=w1000",
       },
       {
         name: "Tanmay Jain",
@@ -90,7 +90,7 @@ const teams = [
         instagram: "tanmayj2023",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/open?id=1MQK05wRbc-K-FDwJRNWxEZ55Lm7p8hw6=w1000",
+          "https://drive.google.com/thumbnail?id=1MQK05wRbc-K-FDwJRNWxEZ55Lm7p8hw6&sz=w1000",
       },
       {
         name: "Harshit Mehta",
@@ -99,7 +99,7 @@ const teams = [
         instagram: "mehtaharshit_1",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/open?id=1KWRqDd356sGLqo-pl00AQUiZxioIyPgf=w1000",
+          "https://drive.google.com/thumbnail?id=1KWRqDd356sGLqo-pl00AQUiZxioIyPgf&sz=w1000",
       },
     ],
   },
@@ -123,7 +123,7 @@ const teams = [
         instagram: "",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1PEgDK_jici9HIlgAALJd91PMjh8hnl0Z&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1PEgDK_jici9HIlgAAUI8rw2ktgPsPQEu&sz=w1000",
       },
       {
         name: "Sanskar Kannaujia",
@@ -132,7 +132,7 @@ const teams = [
         instagram: "_not_sanskari_",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1AbVY2JcPY7TIj_hO2i2-WcyggSEsDnUQ&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1pZJbQVALC0UJQKFWpImNsteIfDGRQBxF&sz=w1000",
       },
       {
         name: "Parisha Sheoran",
@@ -141,7 +141,7 @@ const teams = [
         instagram: "",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1gS4D9TgN7wCGc7HlwWjxzjEkDjE6uWPh&sz=w1000",
+          "https://drive.google.com/thumbnail?id=15qEUH2vd2kxvJJ-izHSYrQVOLXgqXgV_&sz=w1000",
       },
       {
         name: "Sachin Negi",
@@ -150,16 +150,16 @@ const teams = [
         instagram: "",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1hIoH8m2RfWj-Yt9MLA5VfL_1C94XeZ9L&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1oO-cVw1D_2FpHXZhzyZK3hGdjKNGXpG5&sz=w1000",
       },
       {
-        name: "Bhavya",
+        name: "Bhavya Sharma",
         designation: "Executive",
         linkedin: "",
         instagram: "bhavya.sharma68",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1phO_2r7QJf2Nf6k3imc4d1zR3L5HTqec&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1F-cKfhsnLv6xWojNHi974fO5beltc6Ma&sz=w1000",
       },
       {
         name: "Rahul",
@@ -168,7 +168,7 @@ const teams = [
         instagram: "",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1iXK9t85hUMaC1Uk2duIl_gBBfKrtVlwV&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1fQFMzEtRaWqzTclAUiFBmJLyPMoZ0qdm&sz=w1000",
       },
       {
         name: "Ayush Singh",
@@ -177,7 +177,7 @@ const teams = [
         instagram: "ayush_siingh._",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1qzD0wcN2kS-0nPTuS3D7dOdIGmvqzSwR&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1Fp-cUnAN7iSrbRvm0tHFzFSNXYTefx81&sz=w1000",
       },
       {
         name: "Saptarshi Pandit",
@@ -186,7 +186,7 @@ const teams = [
         instagram: "saptarshipan",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1gRC-aU-RfctzIXCjLTVjjldGvSln_H4m&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1OMNcbksoe1BAci7S1rROmRecyLQuAUMn&sz=w1000",
       },
       {
         name: "Pabitra Mondal",
@@ -195,7 +195,7 @@ const teams = [
         instagram: "itzzmepavii",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1rS9xz1crQoJBRP6DwqFCaV2Vf7Q2Ougw&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1dVmEyekPopP3RrCCxM3s76t1dP9CUabN&sz=w1000",
       },
     ],
   },
@@ -229,7 +229,7 @@ const teams = [
         instagram: "aloktripathi14916",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=10ctk47tamL0Q5OUiGWqzh1kq2DW7rzjN&sz=w1000",
+          "https://drive.google.com/thumbnail?id=10ctk47tamL0Q5OUiGWqzh1kq2DW7rzj2&sz=w1000",
       },
       {
         name: "Piyush Singh",
@@ -247,7 +247,7 @@ const teams = [
         instagram: "ishani_bhushan",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1qA3B-kgTi7pnKJh9q3qbrjNW-dUcxv9q&sz=w1000",
+          "https://drive.google.com/thumbnail?id=15icGkssm1T5slSoG_p9DBsPY7LpLMGbg&sz=w1000",
       },
       {
         name: "Radhya Aggarwal",
@@ -256,7 +256,7 @@ const teams = [
         instagram: "__raadhyaa__",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=13Q97x5FvJcuAq4n3d9sGeX7cS2rHbNYv&sz=w1000",
+          "https://drive.google.com/thumbnail?id=13Q97x5FvJcuAn3De80STM8rMFX0u_TkK&sz=w1000",
       },
     ],
   },
@@ -281,7 +281,7 @@ const teams = [
         instagram: "_akshita__s",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1PZXEZ4QiwydcQ0dxFom9UoIdWbmMAdfZ&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1pUYYa0tbS_gxcz4Mo_aC6wpIenfwkkvu&sz=w1000",
       },
       {
         name: "Harsh Raj",
@@ -308,7 +308,7 @@ const teams = [
         instagram: "jhaaadarsh2022",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1I_taz7iMNXES5u5E0Qk91NcYxJ7EX0xJ&sz=w1000",
+          "https://drive.google.com/thumbnail?id=15CIhoAYoziNQvHfAdA196I5oAjQvGOeN&sz=w1000",
       },
       {
         name: "Ayush Ranjan",
@@ -317,7 +317,7 @@ const teams = [
         instagram: "its__ayushh__ranjan",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1VB2Y-cA2m09X0RSulKOlXoyO6snY6bqg&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1Iycc2qhpcoksoLJD-n-LZXFMSMijcRQn&sz=w1000",
       },
       {
         name: "Anshul Gupta",
@@ -327,7 +327,7 @@ const teams = [
         instagram: "anshulgupta2170",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1AaOycENbnnCEQQ4VLkDW9gFrsMjsyE7t&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1jX_D_Zi2pCn5vPvBOV-uM1jBxPIAIHxP&sz=w1000",
       },
       {
         name: "Abhay Kanojia",
@@ -372,7 +372,7 @@ const teams = [
         instagram: "08mdsaif",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1pe9HjZVsvHK-EmKNrrpmZbiX5V5zL_yM&sz=w1000",
+          "https://drive.google.com/thumbnail?id=14OQCPVfF60pyVOPVsJkLYl_05xZH_08l&sz=w1000",
       },
       {
         name: "Raghav Gupta",
@@ -382,7 +382,7 @@ const teams = [
         instagram: "raghav_gupta29",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1h2RSl1zArjLzwAwKPfZFVdIvsfX8b2W5&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1fd1esK1W9wrzL-nysJnGNPOssczsTn5V&sz=w1000",
       },
       {
         name: "Kalpit Goyal",
@@ -391,7 +391,7 @@ const teams = [
         instagram: "kalpitgoyal",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1qM-WtdvHr7Da9BXLpF7uDLbk-dAKYAdW&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1rnDPyHPmsr-2IwPaGVmqcVf4caQvdDaO&sz=w1000",
       },
       {
         name: "Aditi",
@@ -411,7 +411,7 @@ const teams = [
         instagram: "_satvik_16",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1jVtN8sQf6cTTrFljUUt1ytnkFSS29T6K&sz=w1000",
+          "https://drive.google.com/thumbnail?id=10tXGlAnX34HYVYwiqAOO4ZNpt0cgv2Wm&sz=w1000",
       },
     ],
   },
@@ -447,7 +447,7 @@ const teams = [
         instagram: "dhrruuvvv",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1Q5h-Rkq3PHJ_0vW9rThTCRB6GojtfzJr&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1VYtlkLf5NM5UE2FygzCYQ937Km45RLpd&sz=w1000",
       },
       {
         name: "Swapnil Deep",
@@ -457,7 +457,7 @@ const teams = [
         instagram: "swapnildeep9",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1UZUQUf-0RHZZ_WXn0iDsbmJK0JQupPnq&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1LUDTdfG5mug7yNCyzZsIdqevTNbkhHkZ&sz=w1000",
       },
       {
         name: "Abhishek Kumar",
@@ -467,7 +467,7 @@ const teams = [
         instagram: "abhi_kumar_67",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1yfUd4dYzCJv0sWc1tEs3oZyUWh9qO-rM&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1XeZdPiefr3peimnHIMyzAaqB9UHfF9HR&sz=w1000",
       },
       {
         name: "Harsh Sharma",
@@ -476,7 +476,7 @@ const teams = [
         instagram: "harshsharma8329",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1pmwKmAm1uhYJ5cH6Kak8m9trYwlQkXYa&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1DPHvkGxLz2KAVkpyhvBn3Q2FJoCfjJDG&sz=w1000",
       },
     ],
   },
@@ -501,7 +501,7 @@ const teams = [
         instagram: "anubhav.gr",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1ji40D1LD7-DWxeoeCs5sLgi93wzBhxHR&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1ji40D1LD7-DWQbEJXSTjnIQBJiMEhsHI&sz=w1000",
       },
       {
         name: "Sonvi Goyal",
@@ -510,7 +510,7 @@ const teams = [
         instagram: "sonvigoyal_",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1sOdrtQEuKgV3F6SHv4aezh5HuM0N5q4U&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1uHUaNuWWyMqbq0b4u3ihKg5bM_wevZ22&sz=w1000",
       },
       {
         name: "Tanuj Singh Rawat",
@@ -519,7 +519,7 @@ const teams = [
         instagram: "tanujrawat__",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1R44U7mEmnDnLPb52utAcFuMJ_kGkmrdX&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1Dkbh3OIHk0knNKtDu_pzqzNslarpi8br&sz=w1000",
       },
       {
         name: "Siddhant Mahapatra",
@@ -528,7 +528,7 @@ const teams = [
         instagram: "siddhazntx",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1T1y0T8Tcc89qNrs8a7sqBv8Jk4HJ0b0X&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1tw6_ws8JJP_kU-KMvjbdgvAl6l5iF5d0&sz=w1000",
       },
     ],
   },
@@ -562,7 +562,7 @@ const teams = [
         instagram: "adityay.03",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1LzkFwVCPXMQWcW9L_rnaY39I5w_EzoQb&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1eLXwX7GzxYeuDgj5O_cQu9xrZAzo9LQG&sz=w1000",
       },
       {
         name: "Riyanshu",
@@ -571,7 +571,7 @@ const teams = [
         instagram: "riyansshu._",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1aMZ5GLtPBhLv28nlTiR1NEpDRwHCEWgo&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1r1poYAB8gIV-FeRO4WN1Om3or6JCzBqB&sz=w1000",
       },
       {
         name: "Deepanshu Yadav",
@@ -580,7 +580,7 @@ const teams = [
         instagram: "ydv_deepanshu05",
         optionalLink: "",
         picLink:
-          "https://drive.google.com/thumbnail?id=1vD2K9fHnbuPQ0lJz7dd-lMPvC0TnP8uZ&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1uH7kks7195BaAdpU0O09xgaTHYeEEHCX&sz=w1000",
       },
     ],
   },
