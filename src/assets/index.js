@@ -4,7 +4,7 @@ import IMG2 from "./IMG_6961.png";
 import Team from "./team.jpg";
 import GOT from "./BVCOEGOT.jpg"
 import BBattles from "./BBattles.png"
-import Mentor from "./SajiMaam.jpg"
+import Mentor from "./ruchi.sharma.png"
 import EDUHack from "./EDUHack.png"
 import formimage from "./form-image2.png"
 import formimage2 from "./form-image.png"
