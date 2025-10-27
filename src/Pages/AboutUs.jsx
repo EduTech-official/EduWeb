@@ -50,7 +50,7 @@ const AboutUs = () => {
 
       <div className=" mb-32 grid ">
         <h1 className="text-4xl bg-gradient-to-r brightness-150 font-semibold tracking-tight from-[#0CF996]  to-[#E61AA1] bg-clip-text text-transparent my-3">
-          OUR LAST EVENTS
+          Our Upcoming Events
         </h1>
         {/* <div className="grid grid-cols-3 grid-rows-2 gap-4 minxl:flex minxl:flex-col p-4">
           <div className="col-span-2 flex row-span-2">
