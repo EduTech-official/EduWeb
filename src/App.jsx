@@ -13,6 +13,7 @@ import Gallery2 from "./Pages/Gallery2";
 import ContactPage from "./Pages/ContactPage";
 import Thanks from "./Pages/Thanks";
 import PrePlacement from "./Pages/PrePlacement";
+import FunFair from "./Pages/FunFair";
 
 import Error from "./Pages/Error";
 import RedirectToResources from "./components/RedirectToResources";
@@ -61,6 +62,10 @@ function App() {
     {
       path: "/preplacement",
       element: <PrePlacement />,
+    },
+    {
+      path: "/funfair",
+      element: <FunFair />,
     },
     {
       path: "/resources",
