@@ -30,7 +30,7 @@ const Funfair = () => {
           <li><strong>Venue:</strong> Ground and Basketball Court</li>
           <li><strong>Entry Fees:</strong></li>
           <ul className="ml-6 list-disc">
-            <li>1 game – ₹10</li>
+            <li>3 game – ₹30</li>
             <li>All 6 games – ₹50</li>
           </ul>
         </ul>
