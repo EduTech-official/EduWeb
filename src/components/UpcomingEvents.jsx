@@ -14,7 +14,7 @@ const UpcomingEvents = () => {
 🗓️ Date: 30 October 2025
 🕒 Time: 3:00 PM – 5:00 PM
 📍 Venue: Ground and Basketball Court
-💰 Entry: ₹10 per game or ₹50 for all 6 games.
+💰 Entry: ₹30 for 3 games or ₹50 for all 6 games.
 
 So round up your crew, pick your games, and let the energy take over! 🎉`,
     },
