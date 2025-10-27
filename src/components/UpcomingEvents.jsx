@@ -5,7 +5,7 @@ import { Box, Button, Image, Text, Flex, VStack } from "@chakra-ui/react";
 const UpcomingEvents = () => {
   const Events = [
     {
-      link: "https://forms.gle/chshPoMcvSad51tV6",
+      link: "https://docs.google.com/forms/d/e/1FAIpQLSdc5m0_hezFdCP7EvO4xNLIrPZxnwQMPeN_MZU8jW3PLhwWwA/viewform?pli=1 ",
       knowMoreLink: "/funfair", // Updated link for "Know More"
       title: "Funfair 3.0 — Let the Games Begin!",
       Image: formimage,
