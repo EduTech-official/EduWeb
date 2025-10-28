@@ -6,8 +6,8 @@ import GOT from "./BVCOEGOT.jpg"
 import BBattles from "./BBattles.png"
 import Mentor from "./ruchi.sharma.png"
 import EDUHack from "./EDUHack.png"
-import formimage from "./form-image2.png"
-import formimage2 from "./form-image.png"
+import formimage from "./FUNFAIR.png"
+import formimage2 from "./FUNFAIR.png"
 
 
 
