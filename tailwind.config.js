@@ -82,28 +82,26 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+    // ORDER MATTERS. Tailwind emits media queries in the order these keys are
+    // declared, and CSS applies the last matching rule. Previously this object
+    // ran largest-first (2xl, xl, lg, md, sm), so `sm:` was emitted AFTER `lg:`
+    // and silently overrode it at desktop widths - every min-width utility in
+    // the project behaved backwards. Declaring them smallest-first restores
+    // normal mobile-first behaviour: sm < md < lg < xl < 2xl.
     screens: {
-      "2xl": { min: "1535px" },
-      xl: { min: "1279px" },
-      lg: { min: "1023px" },
-      md: { min: "767px" },
       sm: { min: "639px" },
-      // this Are Default Tailwind Breakpoints
+      md: { min: "767px" },
+      lg: { min: "1023px" },
+      xl: { min: "1279px" },
+      "2xl": { min: "1535px" },
 
-      // these are custom breakpoints for the project responsive design
-      // => @media (max-width: 1535px) { ... }
+      // Max-width helpers used throughout the existing markup. These are
+      // desktop-first, so they are declared largest-first on purpose: a narrower
+      // max-width rule must win over a wider one.
       min2xl: { max: "1535px" },
-
-      // => @media (max-width: 1279px) { ... }
       minxl: { max: "1279px" },
-
-      // => @media (max-width: 1023px) { ... }
       minlg: { max: "1023px" },
-
-      // => @media (max-width: 767px) { ... }
       minmd: { max: "767px" },
-
-      // => @media (max-width: 639px) { ... }
       minsm: { max: "639px" },
     },
   },

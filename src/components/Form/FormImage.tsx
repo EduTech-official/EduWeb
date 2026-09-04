@@ -9,13 +9,18 @@ type FormImageProps = {
 const FormImage: React.FC<FormImageProps> = ({ altText }) => {
   return (
     <Box my={4} textAlign="center" width="100%">
+      {/* objectFit was "fill" at a fixed 400px height, which stretched this
+          poster out of its 2480x3508 aspect ratio. "contain" with a responsive
+          max height keeps it undistorted on every screen. */}
       <Image
-        src={image2} // Always show image2
+        src={image2}
         alt={altText}
-        objectFit="fill"
+        objectFit="contain"
         borderRadius="lg"
         width="100%"
-        height="400px"
+        maxHeight={{ base: "260px", md: "380px", lg: "440px" }}
+        mx="auto"
+        loading="lazy"
       />
     </Box>
   );
