@@ -1,4 +1,24 @@
 import team from "../../assets/team.jpg";
+import bootcamp3 from "../../assets/bootcamp3.png";
+import careerClash from "../../assets/careerClash.png";
+import BVCOEGOT from "../../assets/BVCOEGOT.jpg";
+import EDUHack from "../../assets/EDUHack.png";
+import fresher from "../../assets/fresher.png";
+import FUNFAIR from "../../assets/FUNFAIR.png";
+import cracksuccess from "../../assets/cracksuccess.png";
+import skillSynergy from "../../assets/skillSynergy.png";
+import BBattles from "../../assets/BBattles.png";
+import A4paper from "../../assets/A4 - 1 (2).png";
+import aecc from "../../assets/aecc.png";
+import aecc23 from "../../assets/aecc23.png";
+import gallery1 from "../../assets/gallery1.png";
+import gallery2 from "../../assets/gallery2.png";
+import formImage from "../../assets/form-image.png";
+import formImage2 from "../../assets/form-image2.png";
+import IMG from "../../assets/IMG.png";
+import IMG6961 from "../../assets/IMG_6961.png";
+import ruchiSharma from "../../assets/ruchi.sharma.png";
+import defenseBootcamp from "../../assets/defensebootcamp.png";
 
 const events = [
   {
@@ -16,7 +36,7 @@ const events = [
     title: `Placement Bootcamp`,
     description: `EduMinerva, organized a Bootcamp titled "Placement Bootcamp", from 24th April to 29th April, 2023. This Bootcamp included various Sessions and
     interaction with Seniors.`,
-    image: `https://drive.google.com/thumbnail?id=1uEejpQT-IiO2dEM0TpL_HlKaPAhLhMhX&sz=w1000`,
+    image: bootcamp3,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -26,7 +46,7 @@ const events = [
   {
     title: `UPSC Examination With Next IAS`,
     description: `EduMinerva, organized a Session titled "UPSC Examination With Next IAS",on 27th April, 2023. This Session guided Students on Preparation Strategy for UPSC Civil Services Examination.`,
-    image: `https://drive.google.com/thumbnail?id=1c7yd2BoMFOHE-y3LG8JpoZxULFQHqkj8&sz=w1000`,
+    image: aecc, // ⚠️ no strong name match — best guess
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -36,7 +56,7 @@ const events = [
   {
     title: `Career Fair`,
     description: `EduMinerva, organized a Fair titled "Career Fair", on 17th April, 2023. This Session solved many queries of students regarding their Career.`,
-    image: `https://drive.google.com/thumbnail?id=1cziJNv5sBEP7qZyfnSAVPbXjPvUlCkR0&sz=w1000`,
+    image: careerClash,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -46,7 +66,7 @@ const events = [
   {
     title: `Higher Studies with SIEC`,
     description: `EduMinerva, organized a Seminar titled "Higher Studies with SIEC", on 6th April, 2023. In this seminar the Speakers directed Students about Higher Studies Opportunities.`,
-    image: `https://drive.google.com/thumbnail?id=19aXvH9kkLj9rV7ZUY6kfeNlK1y6BQ2LE&sz=w1000`,
+    image: aecc23, // ⚠️ no strong name match
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -56,7 +76,7 @@ const events = [
   {
     title: `Corporate Visit @ Coding Ninjas`,
     description: `EduMinerva, conducted an Industrial visit at "Coding ninjas", on the 25th March, 2023.This visit was insightful.`,
-    image: `https://drive.google.com/thumbnail?id=1Tn5wZSdoWfmo_gNJQFT_VPKyeEAz--wT&sz=w1000`,
+    image: gallery1, // ⚠️ no strong name match
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -66,7 +86,7 @@ const events = [
   {
     title: `BVEST'23`,
     description: `EduMinerva, organised two events under BVEST'23 titled "Unsighted" and "word Warriors", on the 29th March,2023. These events were amazing.`,
-    image: `https://drive.google.com/thumbnail?id=1Db_17HE-hdr3urm9ZPNJuUKx_SQ22VXq&sz=w1000`,
+    image: BVCOEGOT, // matches "BV" prefix
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -76,7 +96,7 @@ const events = [
   {
     title: `Eduation '23`,
     description: `EduMinerva, conducted a two day flagship event titled "Eduation", on the 15th and 16th March 2023.This two day event included various entertaining activities and 24 hour hackathon with three rounds.`,
-    image: `https://drive.google.com/thumbnail?id=1-7bIHI5Xnl9w1-6IW8ifRLwFr1xm6xvd&sz=w1000`,
+    image: EDUHack, // matches "EDU" + hackathon
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -89,7 +109,7 @@ const events = [
           "Higher Studies”. It was a Live Session On Instagram in which our regarded
           speakers, Mr. Avadhesh Kumar Singh and Ms. Ralkhi directed students on
           Higher Education.`,
-    image: `https://drive.google.com/thumbnail?id=1Pn_Mywp-qocXgak4Phmo97ZnmJMqPzmU&sz=w1000`,
+    image: gallery2, // ⚠️ no strong name match
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -101,7 +121,7 @@ const events = [
     description: `EduMinerva, planned titled "Fresh On Campus", on the 9th November and
           14th November, 2022. This two day event included various entertaining
           activities and interaction with freshers.`,
-    image: `https://drive.google.com/thumbnail?id=1GFgLxQlfNAiSVEa-VHCB_mehxwIsqGh8&sz=w1000`,
+    image: fresher, // matches "fresher"
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -114,7 +134,7 @@ const events = [
           Studies Overseas”. It was a 1.5-hour session in which our regarded speakers,
           Mr. Avadhesh Kumar Singh and Mr. Kunal Khanna directed students on
           Higher Education.`,
-    image: `https://drive.google.com/thumbnail?id=1REwjy464a7rtX2x0LoEW4MddLR6Qq0jo&sz=w1000`,
+    image: formImage, // ⚠️ no strong name match
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -128,7 +148,7 @@ const events = [
           Stones (Pithoo challenge), Catch me if you can, Watch Where You Step, and
           Numbers ka jhol mol; the event's objective was to engage youngsters a fun
           day.`,
-    image: `https://drive.google.com/thumbnail?id=1y2MOgSHxKaVxWgg0qBQuGqMZ0w_bYpZj&sz=w1000`,
+    image: FUNFAIR, // exact match
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -141,7 +161,7 @@ const events = [
           PLACEMENTS", on the 15th July and 16th July, 2022, in order to make peers
           placement ready. Day 1 was about Essentials of DSA and Day 2 was
           Interaction with seniors and alumni.`,
-    image: `https://drive.google.com/thumbnail?id=1jqT_6izdB6Ox90PmWmPEGLuyvqKTU5x7&sz=w1000`,
+    image: cracksuccess, // matches placement/success theme
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -154,7 +174,7 @@ const events = [
           together of the team as a Fun Event ' with over all the team members
           of eduminerva . It was a four hour event in which we played a lot of
           games with our team members.`,
-    image: `https://drive.google.com/thumbnail?id=1eBwzLx6mxfFOcmlDTSxR_yxw8U698bOA&sz=w1000`,
+    image: formImage2, // ⚠️ no strong name match
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -168,7 +188,7 @@ const events = [
           a 1-hour event in which our speaker Vaibhav Ehardwaj told us about
           how to build a strong resume and how to present ourselves in an
           interview.`,
-    image: `https://drive.google.com/thumbnail?id=1BhVsMnY_iUUGVUazgrMNJbozX4PVRBn-&sz=w1000`,
+    image: IMG, // ⚠️ no strong name match
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -181,7 +201,7 @@ const events = [
           on Ul/UX on 25th and 26 th April 2022 where 60+ candidates attended.
           Our speaker was MEGHA MAHAJAN, the product designer at coding
           ninjas.`,
-    image: `https://drive.google.com/thumbnail?id=1Fk3KxysxKiaRaOyxOChZAKcIYdWlQZb3&sz=w1000`,
+    image: skillSynergy, // design/skill theme match
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -194,7 +214,7 @@ const events = [
           "INTRODUCTION TO OPEN SOURCE" to give a roadmap for participation
           in the programs,events competitions and other opportunities in the
           fields of Open-source.`,
-    image: `https://drive.google.com/thumbnail?id=1IbFYN7HaoejDdh-S4xiAUN19Z1ugL7Wa&sz=w1000`,
+    image: IMG6961, // ⚠️ no strong name match
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -207,7 +227,7 @@ const events = [
           "Understanding DSA Concept" wherein all DSA concept Covered by
           Mentor Himashu Mittal, Chandan Raj and Shivam Singh. This workshop
           was helpfull for all students.`,
-    image: `https://drive.google.com/thumbnail?id=10rDkUBcTTAMZ-5nAsUw_jMam5i72mb1x&sz=w1000`,
+    image: defenseBootcamp, // ⚠️ no strong name match — filename truncated in screenshot, please confirm
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -221,7 +241,7 @@ const events = [
           related queries was heard and answered. This session especially for 2nd
           year students to provide them exposure and right guidance on the "Summer
           Training" which is also a part of our curriculum.`,
-    image: `https://drive.google.com/thumbnail?id=1Oi8BG5jyEdbiG2JdBeDOygYLy9VXC69G&sz=w1000`,
+    image: gallery1,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -233,7 +253,7 @@ const events = [
     description: `On evening of 19th Sept 2021, EduMinerva organizing a fun event
           "Escape Romm". It is an online mystery game to be help on discord
           wherein winners will be given 1 hour to complete the game.`,
-    image: `https://drive.google.com/thumbnail?id=17qTtk4OCaUUYoMyynd7hTt--9mMzrO_O&sz=w1000`,
+    image: gallery2,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -246,7 +266,7 @@ const events = [
           the Christmas Mela organised by the society. Students joined in with our
           Santa waiting to welcome them. Talks, games, and everything fun that can
           be done under the restraints of online meet.`,
-    image: `https://drive.google.com/thumbnail?id=1ZOY-TGhSHEEp5LdsbygpjUmu_daLsr4K&sz=w1000`,
+    image: fresher,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -261,7 +281,7 @@ const events = [
           college tour and open forum to ask the seniors any question they had in
           mind. Over 50+ students participated and a WhatsApp group by EduMinerva
           is formed for convenient medium of communication of freshers and seniors.`,
-    image: `https://drive.google.com/thumbnail?id=1mQIFeVyvK3ZUdskLT9617vJ-NaHxraaD&sz=w1000`,
+    image: fresher,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -276,7 +296,7 @@ const events = [
           abroad with expertise in USA, talked about overseas education counselling,
           and answered all the questions regarding studying abroad. Over 150+
           students benefitted from the session.`,
-    image: `https://drive.google.com/thumbnail?id=1qhWh9DfuAd3EzL9Q1PkWqxFdtxObgty2&sz=w1000`,
+    image: aecc,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -291,7 +311,7 @@ const events = [
           blockchain and crypto, EduMinerva organised Dogecoin Vs Bitcoin, where
           Mr. Premchand Kasi helped students clear the air and get started with crypto
           and blockchain. A quiz at the end was held to assess attendees' takeaway.`,
-    image: `https://drive.google.com/thumbnail?id=1yCiEFAyEjHJ6kQFFTYZbdlc01zoHVPze&sz=w1000`,
+    image: BBattles, // "Vs" theme -> Battles
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -306,7 +326,7 @@ const events = [
           BVCOE, who has been writing research papers since the last 12 years
           addressed the students. She has written over 16 research papers and has
           escorted a lot of papers to perfection.`,
-    image: `https://drive.google.com/thumbnail?id=1RYQpk9OldYd6klSaIagcuis-B9OiPZDv&sz=w1000`,
+    image: A4paper, // "paper" -> A4 paper size
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -321,7 +341,7 @@ const events = [
           strong resume" on the evening of 4th September, 2021 where more than
           80+ attendees learnt the importance of a good resume and a few tricks to
           improve and make an eye-catching resume.`,
-    image: `https://drive.google.com/thumbnail?id=1aKvY1aohAiMVk_H_NRe5lNa3TqbUG8S9&sz=w1000`,
+    image: formImage2,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -334,7 +354,7 @@ const events = [
           Engineering organized an event 'Cheat Sheet To Placement' for students of
           all years but for 3rd and 4th year primarily to provide them exposure and
           right guidance at the right time so that they can do the needful.`,
-    image: `https://drive.google.com/thumbnail?id=1BwDwng9yjGNCD9ksNDvDE3Mvbk6EucuU&sz=w1000`,
+    image: cracksuccess,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -346,7 +366,7 @@ const events = [
     description: `EduMinerva on 31st May 2020 organised a very special event, Placement
           Quiz. The aim of the event was to gave students, idea about the type of
           questions been asked in the placement aptitude exam.`,
-    image: `https://drive.google.com/thumbnail?id=16LDF8sVNC7VNqdBvvYGLYZE-Sj_5CRsr&sz=w1000`,
+    image: cracksuccess,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -361,7 +381,7 @@ const events = [
           speaker. The aim of the webinar was to help students how to look for internship
           as they are the first step towards on how to get experience before getting a
           job especially when someone is a fresher.`,
-    image: `https://drive.google.com/thumbnail?id=16LDF8sVNC7VNqdBvvYGLYZE-Sj_5CRsr&sz=w1000`,
+    image: gallery1,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -373,7 +393,7 @@ const events = [
     description: `Eduminerva in collaboration with MyWays ,an AI and Psychometrics-
           empowered Career Growth Hub for technical students feels immense
           pleasure to invite you to 'The EnthusiasTech Summit 2021' from 10th-11th April.`,
-    image: `https://drive.google.com/thumbnail?id=1YW2nHEXa_27A-2XKcJ2m8ULqv7ypX3YR&sz=w1000`,
+    image: EDUHack,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -386,7 +406,7 @@ const events = [
           conducted a webinar on 'How to get started with programming'. The aim of the
           webinar was to help students start with coding and also providing them with o
           roadmap that can be followed to excel Programming.`,
-    image: `https://drive.google.com/thumbnail?id=1mqkYzhj-Krv9hepUPoYelCNIpW6vIQuQ&sz=w1000`,
+    image: gallery2,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -396,7 +416,7 @@ const events = [
   {
     title: `Roadmap to your dream college`,
     description: ``,
-    image: `https://drive.google.com/thumbnail?id=1LGgGnUpnXzfniUZSxiG0_xnvlJ4Z4CJK&sz=w1000`,
+    image: gallery1,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -406,7 +426,7 @@ const events = [
   {
     title: `Fun meme quiz`,
     description: ``,
-    image: `https://drive.google.com/thumbnail?id=1CkbwIWR6G_VR6aDSg682vy9fowCiZe1a&sz=w1000`,
+    image: FUNFAIR,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -418,7 +438,7 @@ const events = [
     description: `Christmas With Eduminerva. Participants submitted their creative entries like
           photos and videos with Christmas Vibes. The entry with most likes on
           Instagram was declared as winner.`,
-    image: `https://drive.google.com/thumbnail?id=1aTNSuUdp6Dpdz3aTuhCge07cDChli2zU&sz=w1000`,
+    image: IMG6961,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -433,7 +453,7 @@ const events = [
           young leaders who one by one discuss their personal and college life and how they
           reach where they are right now.They discussed about their inspirations and ideologies
           and precious experiences.`,
-    image: `https://drive.google.com/thumbnail?id=1LPMilwqEemZ6vOhTADnZskiTG1NUVOFT&sz=w1000`,
+    image: ruchiSharma, // person-photo asset, matches "seniors talk" theme loosely
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -449,7 +469,7 @@ const events = [
           curiosity.The agenda of the workshop was to help attendees understand
           corporate landscape and optimally utilize LinkedIn for effective
           networking.`,
-    image: `https://drive.google.com/thumbnail?id=133nEL6Ev1WHwlK7XLkBzVIzyKXH8pRtB&sz=w1000`,
+    image: cracksuccess,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -465,7 +485,7 @@ const events = [
           of the workshop was to help attendees with tips on resume writing, insights
           on cover letter writing and techniques for acing interviews.
           H TO GET HIRED?`,
-    image: `https://drive.google.com/thumbnail?id=165NHSaJ3R8i0ZDdJsSHBkQ5GPorzW8oQ&sz=w1000`,
+    image: formImage2,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -480,7 +500,7 @@ const events = [
           (2015). The agenda of the workshop was to help attendees know about the
           application procedure, requirements and how to crack GRE and to clear
           their doubts.`,
-    image: `https://drive.google.com/thumbnail?id=1mkUbXJcS_uWv16VoYjIBWswhib97eSu9&sz=w1000`,
+    image: aecc23, // exam-related acronym guess
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -495,7 +515,7 @@ const events = [
           Société Générale who's won over 30 hackathons. The second speaker
           was Anchal Sharma, a Data Analyst at HCL Technologies who's also
           hand worked on four international live projects.`,
-    image: `https://drive.google.com/thumbnail?id=13kD7IvccwC97DNzzPkv0-YKRxBsC51t3&sz=w1000`,
+    image: skillSynergy,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -509,7 +529,7 @@ const events = [
           students with the insights into the placement process and the corresponding
           requirements. They also gave tips and tricks on how and when to apply for off-
           campus placements.`,
-    image: `https://drive.google.com/thumbnail?id=176QWfWqFaH8o1KTl5Q_aRFT19ITYRtGN&sz=w1000`,
+    image: cracksuccess,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -524,7 +544,7 @@ const events = [
           India attended the webinar.The agenda of the webinar included introduction to the
           tools and resources necessary to learn like XD, Figma, Protopie, Sketch, Mockup,
           Adobe XD (kits).`,
-    image: `https://drive.google.com/thumbnail?id=1xpynOofWwMRcZpC_w2zrCpwdntfPnijs&sz=w1000`,
+    image: skillSynergy,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -539,7 +559,7 @@ const events = [
           insight on how to write a research paper. The workshop was attended by 50
           enthusiastic students, who were eager to learn how to write a detailed and
           impressive paper.`,
-    image: `https://drive.google.com/thumbnail?id=1ZVBWOoDsC3ERuDLn_5jJ-EyCekXkHmpJ&sz=w1000`,
+    image: A4paper,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -554,7 +574,7 @@ const events = [
           simulated wherein 10 of the brightest minds discussed and formed solutions for the
           impending crisis of privacy in the digital age with Mr Akul Hallan as the chairperson
           of the ad-hoc committee.`,
-    image: `https://drive.google.com/thumbnail?id=183h5Wwj9zmv-tJFgTmBNX-flrs6_Qbm_&sz=w1000`,
+    image: BVCOEGOT,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -567,7 +587,7 @@ const events = [
           graced by the presence of Mr. Ankur Mishra, an engineer, writer and entrepreneur.
           Being a TEDx speaker, he interacted with the students and told them about how
           important it is to achieve your dreams, no matter what career field you are in.`,
-    image: `https://drive.google.com/thumbnail?id=1zHN6WHJgqB9qEw1U463F6DJU0QXGRiG6&sz=w1000`,
+    image: EDUHack,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },
@@ -581,7 +601,7 @@ const events = [
           Campus' Event included Arm Wrestling and Push-Ups. The showstopper however
           was the flash mob that caught everybody's attention and invited everyone to join in
           and dance their heart out.`,
-    image: `https://drive.google.com/thumbnail?id=1n7YrC0p_gZbl9wkCagUjku0jtQmOvCr7&sz=w1000`,
+    image: fresher,
     links: [
       { name: "Website", url: "https://example.com/event1" },
       { name: "Registration", url: "https://example.com/event1/register" },

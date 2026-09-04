@@ -1,9 +1,13 @@
 import { useState } from "react";
-// import photo from "../assets/IMG.png";
-// import photo1 from "../assets/IMG_6961.png";
-// import Cards from "../components/Cards";
-// import InfoCard from "../components/InfoCard";
-import events from "../Config/Events";
+import aecc from "../assets/aecc.png";
+import careerClash from "../assets/careerClash.png";
+import crackSuccess from "../assets/cracksuccess.png";
+import bootcamp3 from "../assets/bootcamp3.png";
+import fresher from "../assets/fresher.png";
+import defenseBootcamp from "../assets/defensebootcamp.png";
+import aecc23 from "../assets/aecc23.png";
+import skillSynergy from "../assets/skillSynergy.png";
+import events from "../Config/Events/index";
 import upcomingEvents from "../Config/Events/upcoming.index";
 import EventsCard from "../components/Events.past";
 
@@ -85,7 +89,7 @@ const yearChange = (e) => {
               <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10] bg-slate-800 rounded-xl">
                 <img
                   className="my-auto object-cover w-full h-full rounded-xl"
-                  src= "src\assets\aecc.png"
+                  src= {aecc}
                   alt="photo"
                 />
               </div>
@@ -94,7 +98,7 @@ const yearChange = (e) => {
               </p>
             </div>
             <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl">
-              <img className="rounded-md w-[90vh]" src="src\assets\aecc.png" alt="AECC " /> 
+              <img className="rounded-md w-[90vh]" src={aecc} alt="AECC " /> 
             </div>
           </div>
         </div>
@@ -108,7 +112,7 @@ const yearChange = (e) => {
               <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10]  bg-slate-800 rounded-xl">
                 <img
                   className="my-auto object-cover w-full h-full rounded-xl"
-                  src= "src\assets\careerClash.png"
+                  src= {careerClash}
                   alt="photo"
                 />
               </div>
@@ -117,7 +121,7 @@ const yearChange = (e) => {
               </p>
             </div>
             <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl">
-              <img className="rounded-md w-[90vh]" src="src\assets\careerClash.png" alt="AECC " /> 
+              <img className="rounded-md w-[90vh]" src={careerClash} alt="AECC " /> 
             </div>
           </div>
         </div>
@@ -131,7 +135,7 @@ const yearChange = (e) => {
               <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10] bg-slate-800 rounded-xl">
                 <img
                   className="my-auto object-cover w-full h-full rounded-xl"
-                  src= "src\assets\cracksuccess.png"
+                  src={crackSuccess}
                   alt="photo"
                 />
               </div>
@@ -140,7 +144,7 @@ const yearChange = (e) => {
               </p>
             </div>
             <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10] bg-slate-800 bg-opacity-30 rounded-xl">
-              <img className="rounded-md w-[90vh]" src="src\assets\cracksuccess.png" alt="AECC " /> 
+              <img className="rounded-md w-[90vh]" src={crackSuccess} alt="AECC " /> 
             </div>
           </div>
         </div>
@@ -154,7 +158,7 @@ const yearChange = (e) => {
               <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10]  bg-slate-800 rounded-xl">
                 <img
                   className="my-auto object-cover w-full h-full rounded-xl"
-                  src= "src\assets\bootcamp3.png"
+                  src={bootcamp3}
                   alt="photo"
                 />
               </div>
@@ -163,7 +167,7 @@ const yearChange = (e) => {
               </p>
             </div>
             <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl mr-7">
-              <img className="rounded-md w-[90vh]" src="src\assets\bootcamp3.png" alt="AECC " /> 
+              <img className="rounded-md w-[90vh]" src={bootcamp3} alt="AECC " /> 
             </div>
           </div>
         </div>
@@ -183,7 +187,7 @@ const yearChange = (e) => {
               <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10] bg-slate-800 rounded-xl">
                 <img
                   className="my-auto object-cover w-full h-full rounded-xl"
-                  src= "src\assets\fresher.png"
+                  src={fresher}
                   alt="photo"
                 />
               </div>
@@ -192,7 +196,7 @@ const yearChange = (e) => {
               </p>
             </div>
             <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl">
-              <img className="rounded-md w-[90vh]" src="src\assets\fresher.png" alt="AECC " /> 
+              <img className="rounded-md w-[90vh]" src={fresher} alt="AECC " /> 
             </div>
           </div>
         </div>
@@ -206,7 +210,7 @@ const yearChange = (e) => {
               <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10]  bg-slate-800 rounded-xl">
                 <img
                   className="my-auto object-cover w-full h-full rounded-xl"
-                  src= "src\assets\defensebootcamp.png"
+                  src={defenseBootcamp}
                   alt="photo"
                 />
               </div>
@@ -215,7 +219,7 @@ const yearChange = (e) => {
               </p>
             </div>
             <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl mr-7">
-              <img className="rounded-md w-[90vh]" src="src\assets\defensebootcamp.png" alt="AECC " /> 
+              <img className="rounded-md w-[90vh]" src={defenseBootcamp} alt="AECC " /> 
             </div>
           </div>
         </div>
@@ -229,7 +233,7 @@ const yearChange = (e) => {
               <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10] bg-slate-800 rounded-xl">
                 <img
                   className="my-auto object-cover w-full h-full rounded-xl"
-                  src= "src\assets\aecc23.png"
+                  src={aecc23}
                   alt="photo"
                 />
               </div>
@@ -238,7 +242,7 @@ const yearChange = (e) => {
               </p>
             </div>
             <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10] bg-slate-800 bg-opacity-30 rounded-xl">
-              <img className="rounded-md w-[90vh]" src="src\assets\aecc23.png" alt="AECC " /> 
+              <img className="rounded-md w-[90vh]" src={aecc23} alt="AECC " /> 
             </div>
           </div>
         </div>
@@ -252,7 +256,7 @@ const yearChange = (e) => {
               <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10]  bg-slate-800 rounded-xl">
                 <img
                   className="my-auto object-cover w-full h-full rounded-xl"
-                  src= "src\assets\skillSynergy.png"
+                  src={skillSynergy}
                   alt="photo"
                 />
               </div>
@@ -261,7 +265,7 @@ const yearChange = (e) => {
               </p>
             </div>
             <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl mr-7">
-              <img className="rounded-md w-[90vh]" src="src\assets\skillSynergy.png" alt="AECC " /> 
+              <img className="rounded-md w-[90vh]" src={skillSynergy} alt="AECC " /> 
             </div>
           </div>
         </div>
