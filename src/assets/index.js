@@ -1,6 +1,7 @@
-import IMG from "./IMG.png";
+// IMG (1.2 MB) and IMG2 / IMG_6961.png (10 MB) were exported here but consumed
+// nowhere. Their only references are commented out in AboutUs.jsx and
+// Events.jsx, so they were adding ~11 MB to every build and deploy for nothing.
 import logo from "./logo.jpeg";
-import IMG2 from "./IMG_6961.png";
 import Team from "./team.jpg";
 import GOT from "./BVCOEGOT.jpg"
 import BBattles from "./BBattles.png"
@@ -11,4 +12,4 @@ import formimage2 from "./FUNFAIR.png"
 
 
 
-export { IMG, logo, IMG2, Team , GOT , BBattles , Mentor , EDUHack, formimage, formimage2};
+export { logo, Team, GOT, BBattles, Mentor, EDUHack, formimage, formimage2 };
