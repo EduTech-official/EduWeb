@@ -25,7 +25,7 @@ const Funfair = () => {
           🗓️ Event Details
         </h2>
         <ul className="space-y-2 text-stone-100 text-xs md:text-base">
-          <li><strong>Date:</strong> 30 October 2025</li>
+          <li><strong>Date:</strong> 9 September 2026</li>
           <li><strong>Time:</strong> 3:00 PM – 5:00 PM</li>
           <li><strong>Venue:</strong> Ground and Basketball Court</li>
           <li><strong>Entry Fees:</strong></li>
