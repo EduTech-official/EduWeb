@@ -1,121 +1,293 @@
-import Globe from "../components/Gloabe";
+import { lazy, Suspense, useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 import SpecularButton from "../components/reactbits/SpecularButton";
 
+const Globe = lazy(() => import("../components/Gloabe")); // <- double-check this path/filename
+
 const fieldClasses =
-  "w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-[15px] text-white " +
-  "placeholder:text-slate-400 shadow-inner outline-none transition " +
-  "focus:border-[#0CF996]/60 focus:bg-white/[0.07] focus:ring-2 focus:ring-[#0CF996]/30";
+  "w-full rounded-md border border-white/10 bg-white/[0.035] " +
+  "px-3 text-[14px] text-white placeholder:text-slate-500 " +
+  "outline-none transition-all duration-300 " +
+  "focus:border-[#0CF996]/50 focus:bg-white/[0.08] focus:shadow-[0_0_15px_rgba(12,249,150,0.15)]";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0, filter: "blur(4px)" },
+  visible: {
+    y: 0,
+    opacity: 1,
+    filter: "blur(0px)",
+    transition: {
+      type: "spring",
+      stiffness: 250,
+      damping: 20,
+      filter: { type: "tween", duration: 0.4, ease: "easeOut" },
+    },
+  },
+};
+
+const globeVariants = {
+  hidden: { opacity: 0, scale: 0.8, filter: "blur(10px)" },
+  visible: {
+    opacity: 0.8,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: { duration: 1.2, ease: "easeOut", delay: 0.3 },
+  },
+};
 
 const ContactPage = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+  const [error, setError] = useState(null);
+  const formRef = useRef(null);
+  const isMountedRef = useRef(true);
+  const timeoutRef = useRef(null);
 
-  // Flex + items-center vertically centres the content. Previously the block was
-  // top aligned inside a tall min-height, which dumped all the leftover room at
-  // the bottom as dead space, most visible when zoomed out.
+  useEffect(() => {
+    isMountedRef.current = true;
+    return () => {
+      isMountedRef.current = false;
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (isSubmitting) return;
+
+  setError(null);
+  setIsSubmitting(true);
+
+  const formData = new FormData(formRef.current);
+
+  try {
+    const res = await fetch(
+      "https://formsubmit.co/ajax/eduminerva.bvcoe@gmail.com",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      }
+    );
+
+    if (!res.ok) {
+      throw new Error(`Submission failed with status ${res.status}`);
+    }
+
+    const data = await res.json();
+    if (data?.success === false || data?.success === "false") {
+      throw new Error(data?.message || "Submission was rejected");
+    }
+
+    // Let the flip animation (0.8s) finish, then show "Sent"
+    timeoutRef.current = setTimeout(() => {
+      if (!isMountedRef.current) return;
+      setIsSent(true);
+      formRef.current?.reset();
+
+      // Briefly show "Sent", then flip back and unlock the form
+      timeoutRef.current = setTimeout(() => {
+        if (!isMountedRef.current) return;
+        setIsSubmitting(false);
+        setIsSent(false);
+      }, 500); // <- how long "Message Sent!" stays visible
+    }, 800); // <- matches the flip transition duration below
+  } catch (err) {
+    console.error("Submission failed", err);
+    if (!isMountedRef.current) return;
+    setError("Something went wrong. Please try again.");
+    setIsSubmitting(false);
+  }
+};
   return (
-    <div className="relative flex min-h-[calc(100svh-5rem)] w-full items-center overflow-hidden">
-      {/* Page level background. Sits behind the content, never intercepts clicks. */}
+    <main className="relative mx-auto grid min-h-[calc(100dvh-64px)] max-w-6xl grid-cols-1 items-center gap-12 overflow-x-hidden py-10 px-4 lg:grid-cols-2 lg:py-0">
+      <section className="relative z-10 w-full max-w-[420px] justify-self-center lg:justify-self-end lg:pr-8">
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0CF996]/[0.03] blur-3xl" />
 
-      {/* Centred, width capped container. Padding scales with the viewport so the
-          content never touches the edge on a phone or drift apart on a wide screen. */}
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
-        <header className="mx-auto max-w-2xl text-center">
-          <h1 className="bg-gradient-to-r from-[#0CF996] to-[#E61AA1] bg-clip-text text-3xl font-extrabold tracking-tight text-transparent brightness-150 sm:text-4xl">
-            Contact Us
-          </h1>
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-300/80 sm:text-base">
-            Got an issue? Want to send feedback about an event? Need details about
-            our plans? Let us know.
-          </p>
-        </header>
-
-        {/* items-stretch (the default) so the globe column takes its height from
-            the form row, which is how the original layout sized it. */}
-        <div className="mt-10 grid gap-10 lg:mt-14 lg:grid-cols-2 lg:gap-12">
-          {/* Form. Plain card on purpose: the animated BorderGlow that was here
-              pooled colour into one corner and read as a rendering artefact.
-              The glow now belongs to the submit button alone. */}
-          <div className="w-full rounded-3xl border border-white/10 bg-[rgba(9,13,22,0.82)] shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-md">
-            <form
-              method="POST"
-              action="https://formsubmit.co/eduminerva.bvcoe@gmail.com"
-              className="flex flex-col gap-4 p-5 text-left sm:p-7"
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          style={{ willChange: "transform, opacity, filter" }}
+          className="
+            relative
+            rounded-2xl
+            border border-white/10
+            bg-[#090d16]/80
+            p-6
+            backdrop-blur-md
+            shadow-[0_16px_45px_rgba(0,0,0,0.45)]
+          "
+        >
+          <motion.header variants={itemVariants} className="mb-6 text-center">
+            <h1
+              className="
+                bg-gradient-to-r
+                from-[#0CF996]
+                to-[#E61AA1]
+                bg-clip-text
+                text-[26px]
+                font-bold
+                leading-tight
+                text-transparent
+              "
             >
-              <div>
-                <label htmlFor="email" className="mb-1.5 block text-xs font-medium text-slate-300">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  autoComplete="email"
-                  className={fieldClasses}
-                  placeholder="you@example.com"
-                  required
-                />
-              </div>
+              Get in touch
+            </h1>
+            <p className="mt-2 text-[13px] leading-tight text-slate-400">
+              Questions, feedback, or an issue? Let us know.
+            </p>
+          </motion.header>
 
-              <div>
-                <label htmlFor="name" className="mb-1.5 block text-xs font-medium text-slate-300">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className={fieldClasses}
-                  placeholder="Let us know how we can help you"
-                  required
-                />
-              </div>
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className={`space-y-4 ${isSubmitting ? "pointer-events-none" : ""}`}
+          >
+            <motion.div variants={itemVariants}>
+              <label htmlFor="email" className="mb-1.5 block text-[13px] font-medium text-slate-300">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autoComplete="email"
+                placeholder="you@example.com"
+                className={`${fieldClasses} h-[40px]`}
+                required
+                readOnly={isSubmitting}
+              />
+            </motion.div>
 
-              <div>
-                <label htmlFor="message" className="mb-1.5 block text-xs font-medium text-slate-300">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  className={`${fieldClasses} resize-y min-h-[120px]`}
-                  placeholder="Leave a comment..."
-                />
-              </div>
+            <motion.div variants={itemVariants}>
+              <label htmlFor="subject" className="mb-1.5 block text-[13px] font-medium text-slate-300">
+                Subject
+              </label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="What can we help with?"
+                className={`${fieldClasses} h-[40px]`}
+                required
+                readOnly={isSubmitting}
+              />
+            </motion.div>
 
-              {/* Centred at every width, not left aligned on desktop. */}
-              <div className="mt-2 flex justify-center">
-                <SpecularButton
-                  type="submit"
-                  size="lg"
-                  radius={14}
-                  textColor="#f8fafc"
-                  baseColor="#0f172a"
-                  lineColor="#0CF996"
-                  tint="#0CF996"
-                  tintOpacity={0.06}
-                  intensity={1.15}
-                  className="w-full max-w-[340px] whitespace-nowrap"
+            <motion.div variants={itemVariants}>
+              <label htmlFor="message" className="mb-1.5 block text-[13px] font-medium text-slate-300">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Write your message..."
+                className={`${fieldClasses} h-[100px] resize-none py-2.5`}
+                required
+                readOnly={isSubmitting}
+              />
+            </motion.div>
+
+            {error && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-[12px] text-red-400"
+              >
+                {error}
+              </motion.p>
+            )}
+
+            <motion.div variants={itemVariants} className="pt-2">
+              <div className="relative h-[46px] w-full [perspective:1000px]">
+                <motion.div
+                  className="relative h-full w-full [transform-style:preserve-3d] [transform:translateZ(0)]"
+                  animate={
+                    isSubmitting
+                      ? { rotateX: 180, scale: [1, 0.85, 1] }
+                      : { rotateX: 0, scale: 1 }
+                  }
+                  transition={{
+                    duration: 0.8,
+                    ease: "easeInOut",
+                    times: [0, 0.5, 1],
+                  }}
+                  style={{ willChange: "transform" }}
                 >
-                  Send message
-                </SpecularButton>
-              </div>
-            </form>
-          </div>
+                  <div
+                    className={`absolute inset-0 [backface-visibility:hidden] ${
+                      isSubmitting ? "pointer-events-none" : ""
+                    }`}
+                  >
+                    <SpecularButton
+                      type="submit"
+                      size="lg"
+                      radius={9}
+                      textColor="#f8fafc"
+                      baseColor="#0f172a"
+                      lineColor="#0CF996"
+                      tint="#0CF996"
+                      tintOpacity={0.04}
+                      intensity={1}
+                      className="h-full w-full !py-0 !text-[14px] font-medium transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                    >
+                      Send message
+                    </SpecularButton>
+                  </div>
 
-          {/* Globe: close to its original proportions, nudged up a step. It still
-              stretches with the row on desktop, the min-heights just set the
-              floor. The Globe component itself stays untouched. */}
-          {/* No min-height on desktop: the grid row is items-stretch, so this
-              column takes exactly the form's height and the globe ends up the
-              same size as the contact card. No sm: step here on purpose, because
-              tailwind.config.js declares screens largest-first, so Tailwind emits
-              sm (639px) AFTER lg (1023px) and sm wins at desktop widths. */}
-          <div className="order-first min-h-[300px] w-full lg:order-none lg:min-h-0">
-            <Globe />
-          </div>
-        </div>
-      </div>
-    </div>
+                  <div
+                    className="
+                      absolute inset-0
+                      flex flex-col items-center justify-center
+                      rounded-[9px] border border-[#0CF996]/40
+                      bg-[#0f172a] shadow-[0_0_20px_rgba(12,249,150,0.15)]
+                      [backface-visibility:hidden] [transform:rotateX(180deg)]
+                    "
+                  >
+                    <span className="bg-gradient-to-r from-[#0CF996] to-[#E61AA1] bg-clip-text text-[15px] font-bold tracking-wide text-transparent">
+                      {isSent ? "Message Sent!" : "Sending..."}
+                    </span>
+                    {!isSent && (
+                      <span className="mt-0.5 text-[10px] text-slate-400">
+                        Please wait...
+                      </span>
+                    )}
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </form>
+        </motion.div>
+      </section>
+
+      <motion.div
+        variants={globeVariants}
+        initial="hidden"
+        animate="visible"
+        style={{ willChange: "transform, opacity, filter" }}
+        className="pointer-events-none relative hidden h-[500px] w-full items-center justify-center lg:flex lg:justify-self-start"
+      >
+        <div className="absolute h-[350px] w-[350px] rounded-full bg-gradient-to-tr from-[#0CF996]/5 to-[#E61AA1]/10 blur-[80px]" />
+
+        <Suspense fallback={<div className="h-[240px] w-[240px]" />}>
+          <Globe />
+        </Suspense>
+      </motion.div>
+    </main>
   );
 };
 
