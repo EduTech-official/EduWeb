@@ -15,7 +15,8 @@ import UpcomingEvents from "../components/UpcomingEvents";
 const AboutUs = () => {
   const coreTeam = teams.find((team) => team.teamName === "Core Team");
   const departments = teams.filter(
-    (team) => team.teamName !== "Faculty Mentors",
+    (team) =>
+      team.teamName !== "Faculty Mentors" && team.teamName !== "Core Team",
   );
 
   const stats = [
@@ -44,7 +45,7 @@ const AboutUs = () => {
           <h1 className="tracking-normal text-4xl minmd:text-lg minsm:text-3xl bg-gradient-to-r font-bold  from-[#E61AA1]  to-[#0CF996] to-55% bg-clip-text text-transparent my-3">
             ABOUT US
           </h1>
-          <p className="text-stone-100 text-sm minmd:text-xs tracking-tighter text-left font-IBMplex h-auto">
+          <p className="text-white text-sm minmd:text-xs tracking-tighter text-left font-IBMplex h-auto">
             EduMinerva, founded in 2019, is a society of Bharati
             Vidyapeeth&apos;s College of Engineering, assisting students by
             providing opportunities to explore different career fields and
