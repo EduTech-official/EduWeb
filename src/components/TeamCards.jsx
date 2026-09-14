@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Logo from "../assets/logo.jpeg";
 import "./../App.css";
 
-const TeamCards = ({ PicLink, Name, Position }) => {
+const TeamCards = ({ PicLink, Name, Position, isCore, index }) => {
   const handleClick = (event) => {
     event.preventDefault(); // Prevent default behavior
   };
@@ -16,6 +16,11 @@ const TeamCards = ({ PicLink, Name, Position }) => {
         id="hove"
         className="w-full h-full max-w-[16rem] min-w-[10rem] border-gray-200 rounded-xl bg-gray-800 bg-opacity-80 hover:bg-opacity-95 hover:brightness-110 dark:border-gray-700 p-4 flex flex-col items-center text-center"
       >
+        {isCore && (
+          <div className="w-full text-left text-xs font-mono text-gray-400 mb-2">
+            CORE • {String(index).padStart(2, "0")}
+          </div>
+        )}
         <img
           className="rounded-lg object-cover"
           src={PicLink ? PicLink : Logo}
@@ -39,6 +44,8 @@ TeamCards.propTypes = {
   PicLink: PropTypes.string,
   Name: PropTypes.string,
   Position: PropTypes.string,
+  isCore: PropTypes.bool,
+  index: PropTypes.number,
 };
 
 export default TeamCards;
