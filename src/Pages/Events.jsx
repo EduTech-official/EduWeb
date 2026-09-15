@@ -72,8 +72,9 @@ const yearChange = (e) => {
               value={year}
               onChange={(e) => yearChange(e.target.value)}
             >
-              <option value="2023-2024">2023-2024</option>
               <option value="2024-2025">2024-2025</option>
+              <option value="2023-2024">2023-2024</option>
+              <option value="2022-2023">2022-2023</option>
             </select>
       </div>
 
@@ -272,17 +273,22 @@ const yearChange = (e) => {
       </>
       )}
       
-      <h1 className="text-2xl  bg-gradient-to-r brightness-150 from-[#0CF996]  to-[#E61AA1] bg-clip-text text-transparent mt-8 mb-3">
-        Past Events
-      </h1>
-      <div className="col-span-1 minmd:col-span-3 flex gap-4 flex-wrap justify-center">
-        {/* first event contains the title and description of /events page.Skip it. */}
-        {events.slice(1).map((event, index) => (
-          <div key={index} className="py-7">
-            <EventsCard events={event} />
+      {year === "2022-2023" && (
+        <>
+          <h1 className="text-2xl bg-gradient-to-r brightness-150 from-[#0CF996] to-[#E61AA1] bg-clip-text text-transparent mt-8 mb-3">
+            Past Events — 2022-2023
+          </h1>
+          <div className="col-span-1 minmd:col-span-3 flex gap-4 flex-wrap justify-center">
+            {/* Events fetched from Config/Events/index — shown only for 2022-2023. */}
+            {events.slice(1).map((event, index) => (
+              <div key={index} className="py-7">
+                <EventsCard events={event} />
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
+
     </>
   );
 };

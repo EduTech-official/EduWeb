@@ -116,18 +116,18 @@ const events = [
     ],
     tags: ["education", "conference", "2022"],
   },
-  {
-    title: `Fresh On Campus`,
-    description: `EduMinerva, planned titled "Fresh On Campus", on the 9th November and
-          14th November, 2022. This two day event included various entertaining
-          activities and interaction with freshers.`,
-    image: fresher, // matches "fresher"
-    links: [
-      { name: "Website", url: "https://example.com/event1" },
-      { name: "Registration", url: "https://example.com/event1/register" },
-    ],
-    tags: ["education", "conference", "2022"],
-  },
+  // {
+  //   title: `Fresh On Campus`,
+  //   description: `EduMinerva, planned titled "Fresh On Campus", on the 9th November and
+  //         14th November, 2022. This two day event included various entertaining
+  //         activities and interaction with freshers.`,
+  //   image: fresher, // matches "fresher"
+  //   links: [
+  //     { name: "Website", url: "https://example.com/event1" },
+  //     { name: "Registration", url: "https://example.com/event1/register" },
+  //   ],
+  //   tags: ["education", "conference", "2022"],
+  // },
   {
     title: `Higher Studies Overseas`,
     description: `EduMinerva, on the 12th October, 2022, conducted a workshop on "Higher
@@ -273,21 +273,21 @@ const events = [
     ],
     tags: ["education", "conference", "2022"],
   },
-  {
-    title: `Welcoming Freshers '21`,
-    description: `As is the tradition of EduMinerva, we welcome all the freshers of batch 2021-
-          2025. On the evening of 12th December, 2021, EduMinerva held a virtual
-          get-together with the freshers, wherein the freshers were given a virtual
-          college tour and open forum to ask the seniors any question they had in
-          mind. Over 50+ students participated and a WhatsApp group by EduMinerva
-          is formed for convenient medium of communication of freshers and seniors.`,
-    image: fresher,
-    links: [
-      { name: "Website", url: "https://example.com/event1" },
-      { name: "Registration", url: "https://example.com/event1/register" },
-    ],
-    tags: ["education", "conference", "2022"],
-  },
+  // {
+  //   title: `Welcoming Freshers '21`,
+  //   description: `As is the tradition of EduMinerva, we welcome all the freshers of batch 2021-
+  //         2025. On the evening of 12th December, 2021, EduMinerva held a virtual
+  //         get-together with the freshers, wherein the freshers were given a virtual
+  //         college tour and open forum to ask the seniors any question they had in
+  //         mind. Over 50+ students participated and a WhatsApp group by EduMinerva
+  //         is formed for convenient medium of communication of freshers and seniors.`,
+  //   image: fresher,
+  //   links: [
+  //     { name: "Website", url: "https://example.com/event1" },
+  //     { name: "Registration", url: "https://example.com/event1/register" },
+  //   ],
+  //   tags: ["education", "conference", "2022"],
+  // },
   {
     title: `Build A Strong Profile For Studying Abroad`,
     description: `On the evening of 2nd December, 2021, EduMinerva conducted a webinar
@@ -594,19 +594,19 @@ const events = [
     ],
     tags: ["education", "conference", "2022"],
   },
-  {
-    title: `FRESH ON CAMPUS`,
-    description: `With the start of a new session, on 22nd August 2019, Edu-Minerva head started by
-          organizing a myriad of fun and engaging activities for the freshers. The 'Fresh on
-          Campus' Event included Arm Wrestling and Push-Ups. The showstopper however
-          was the flash mob that caught everybody's attention and invited everyone to join in
-          and dance their heart out.`,
-    image: fresher,
-    links: [
-      { name: "Website", url: "https://example.com/event1" },
-      { name: "Registration", url: "https://example.com/event1/register" },
-    ],
-    tags: ["education", "conference", "2022"],
-  },
+  // {
+  //   title: `FRESH ON CAMPUS`,
+  //   description: `With the start of a new session, on 22nd August 2019, Edu-Minerva head started by
+  //         organizing a myriad of fun and engaging activities for the freshers. The 'Fresh on
+  //         Campus' Event included Arm Wrestling and Push-Ups. The showstopper however
+  //         was the flash mob that caught everybody's attention and invited everyone to join in
+  //         and dance their heart out.`,
+  //   image: fresher,
+  //   links: [
+  //     { name: "Website", url: "https://example.com/event1" },
+  //     { name: "Registration", url: "https://example.com/event1/register" },
+  //   ],
+  //   tags: ["education", "conference", "2022"],
+  // },
 ];
 export default events;
