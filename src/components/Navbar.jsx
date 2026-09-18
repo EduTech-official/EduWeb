@@ -1,171 +1,131 @@
-import { useState } from "react";
-// import Logo from "../assets/logo.jpeg";
+import { useEffect, useRef, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import Logo2 from "../assets/Vector.png";
-// import { Outlet, Link } from "react-router-dom";
-// import HamburgerMenu from "./HambergerMenu";
+
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
 
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "./ui/navigation-menu";
-import { SheetClose } from "./ui/sheet";
+// Single source of truth. The desktop bar and the mobile sheet previously kept
+// two different hand written lists, which is why they showed different items.
+const links = [
+  { name: "EduMinerva", url: "/" },
+  { name: "Team", url: "/team" },
+  { name: "Events", url: "/events" },
+  { name: "Gallery", url: "/gallery2" },
+  { name: "Resources", url: "/resources" },
+  { name: "Leaderboard", url: "/leaderboard" },
+  { name: "Contact Us", url: "/contact" },
+];
 
 const Navbar = () => {
-  const [showLogo, setShowLogo] = useState(false);
-  const links = [
-    {
-      name: "Home",
-      url: "/",
-    },
-    {
-      name: "About Us",
-      url: "/aboutus",
-    },
-    {
-      name: "Team",
-      url: "/team",
-    },
-    {
-      name: "Events",
-      url: "/events",
-    },
-    {
-      name: "Gallery",
-      url: "/gallery2",
-    },
-    {
-      name: "Contact Us",
-      url: "/contact",
-    },
-    {
-      name: "Resources",
-      url: "/resources",
-    },
-    {
-      name: "Leaderboard",
-      url: "/leaderboard",
-    },
-  ];
+  const [open, setOpen] = useState(false);
+  const [stuck, setStuck] = useState(false);
+  const ticking = useRef(false);
+
+  // rAF throttled so the scroll handler cannot fire more often than the browser
+  // paints. A bare scroll listener that writes state on every event is a common
+  // cause of janky headers.
+  useEffect(() => {
+    const onScroll = () => {
+      if (ticking.current) return;
+      ticking.current = true;
+      window.requestAnimationFrame(() => {
+        setStuck(window.scrollY > 8);
+        ticking.current = false;
+      });
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const renderLogo = () => (
+    <Link to="/" aria-label="EduMinerva home" className="nav-logo">
+      <img
+        src={Logo2}
+        alt="EduMinerva logo"
+        width="70"
+        height="50"
+        className="nav-logo__img"
+      />
+    </Link>
+  );
 
   return (
-    <div>
-      <header className=" group/navbar: top-0 bg-transparent z-10 h-6 ">
-        <nav className="flex items-end justify-between minlg:hidden ">
-          <div className="flex items-center justify-between space-x-4">
-            {
-              <a href="/" target="_self">
-                <img
-                  src={Logo2}
-                  alt="Logo"
-                  className="mt-2 min-h-[50px] min-w-[70px] w-10 h-10 aspect-[1/2]"
-                  loading="lazy"
-                />
-              </a>
-            }
-          </div>
-          <ul className="flex pb-4">
-            <li className="pr-5 m2xl:pr-9  text-[15px] hover:animate-bounce">
-              <a
-                href="/"
-                className="text-blue-500 hover:underline hover:text-blue-200 "
+    <header className={`site-nav ${stuck ? "is-stuck" : ""}`}>
+      {/* Desktop bar. minlg is a max-width breakpoint, so this hides at <=1023px. */}
+      <nav className="site-nav__inner minlg:hidden">
+        {renderLogo()}
+
+        <ul className="nav-list">
+          {links.map((link, i) => (
+            <li key={link.url} className="nav-list__item">
+              <NavLink
+                to={link.url}
+                end={link.url === "/"}
+                style={{ "--i": i }}
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "is-active" : ""}`
+                }
               >
-                EduMinerva
-              </a>
+                <span className="nav-link__label">{link.name}</span>
+                <span className="nav-link__underline" aria-hidden="true" />
+              </NavLink>
             </li>
-            <li className="pr-5 m2xl:pr-9 text-[15px] hover:animate-bounce">
-              <a
-                href="/team"
-                className="text-blue-500 hover:underline  hover:text-blue-200 "
-              >
-                Team
-              </a>
-            </li>
-            <li className="pr-5 m2xl:pr-9  text-[15px] hover:animate-bounce">
-              <a
-                href="/events"
-                className="text-blue-500 hover:underline  hover:text-blue-200 "
-              >
-                Events
-              </a>
-            </li>
-            <li className="pr-5 m2xl:pr-9  text-[15px] hover:animate-bounce">
-              <a
-                href="/gallery2"
-                className="text-blue-500 hover:underline  hover:text-blue-200 "
-              >
-                Gallery
-              </a>
-            </li>
-             <li className="pr-5 m2xl:pr-9  text-[15px] hover:animate-bounce">
-              <a
-                href="/resources"
-                className="text-blue-500 hover:underline  hover:text-blue-200 "
-              >
-                Resources
-              </a>
-            </li>
-             <li className="pr-5 m2xl:pr-9  text-[15px] hover:animate-bounce">
-              <a
-                href="/leaderboard"
-                className="text-blue-500 hover:underline  hover:text-blue-200 "
-              >
-                Leaderboard
-              </a>
-            </li>
-            <li className="pr-5 m2xl:pr-9  text-[15px] hover:animate-bounce">
-              <a
-                href="/contact"
-                className="text-blue-500 hover:underline  hover:text-blue-200 "
-              >
-                Contact Us
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <nav className=" justify-end hidden minlg:flex cursor-pointer text-white my-3 mr-3">
-          {/* <HamburgerMenu /> */}
-          <Sheet>
-            <SheetTrigger>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 50 50"
-                width="50px"
-                height="50px"
-                fill="white"
-              >
-                <path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z" />
-              </svg>
-            </SheetTrigger>
-            <SheetContent>
-              <SheetClose></SheetClose>
-              <SheetHeader>
-                <SheetTitle className="text-white">Menu</SheetTitle>
-                {links.map((link) => (
-                  <a key={link.url} className="text-white" href={link.url}>
-                    {link.name}
-                  </a>
-                ))}
-              </SheetHeader>
-            </SheetContent>
-          </Sheet>
-        </nav>
-      </header>
-      {/* Rest of your website content */}
-    </div>
+          ))}
+        </ul>
+      </nav>
+
+      {/* Mobile bar. The logo used to be missing entirely below 1023px. */}
+      <nav className="site-nav__inner hidden minlg:flex">
+        {renderLogo()}
+
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger aria-label="Open menu" className="nav-burger">
+            <span className={`nav-burger__box ${open ? "is-open" : ""}`}>
+              <span className="nav-burger__bar" />
+              <span className="nav-burger__bar" />
+              <span className="nav-burger__bar" />
+            </span>
+          </SheetTrigger>
+
+          {/* ui/sheet.jsx defaults to `bg-white bg-opacity-20`, which renders as a
+              washed out translucent panel on this dark site and lets the page
+              show through the menu. An explicit rgba background overrides it
+              without editing the shared sheet component, because bg-opacity-*
+              only affects colours that use the --tw-bg-opacity variable. */}
+          <SheetContent className="bg-[rgba(7,11,20,0.97)] backdrop-blur-xl border-l border-white/10">
+            <SheetHeader>
+              <SheetTitle className="text-white">Menu</SheetTitle>
+            </SheetHeader>
+
+            <ul className="nav-sheet">
+              {links.map((link, i) => (
+                <li key={link.url} style={{ "--i": i }} className="nav-sheet__item">
+                  <SheetClose asChild>
+                    <NavLink
+                      to={link.url}
+                      end={link.url === "/"}
+                      className={({ isActive }) =>
+                        `nav-sheet__link ${isActive ? "is-active" : ""}`
+                      }
+                    >
+                      {link.name}
+                    </NavLink>
+                  </SheetClose>
+                </li>
+              ))}
+            </ul>
+          </SheetContent>
+        </Sheet>
+      </nav>
+    </header>
   );
 };
 

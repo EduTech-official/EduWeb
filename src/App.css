@@ -1,26 +1,3 @@
-body {
-  background-color: whitesmoke;
-  scroll-behavior: smooth;
-}
-
-#root {
-  margin: 0;
-  /* padding: 2rem; */
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-}
-
-video {
-  object-fit: cover !important;
-  width: 100vw;
-  height: 250vh !important;
-  position: fixed !important;
-  top: 0;
-  left: 0;
-}
-
 html,
 body {
   height: 100%;
@@ -28,13 +5,473 @@ body {
 
 html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 150%;
+  /* Was a flat 150%, which made 1rem = 24px on every device and left phone text
+     oversized. Desktop keeps the original 24px; small screens now scale down. */
+  font-size: clamp(16px, 12px + 1vw, 24px);
   line-height: 1.4;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  /* Transparent by design: the colour is on html. An opaque body background
+     paints over the z-index:-1 site backdrop and hides it entirely. */
+  background-color: transparent;
+  color: #f5f5f4;
 }
+
+#root {
+  margin: 0;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ---------------------------------------------------------------------------
+   Backdrop
+   Replaces the old global `video { height: 250vh !important }` rule, which
+   forced every video on the site to 2.5x the viewport height and was a major
+   source of inconsistent layout between devices.
+   --------------------------------------------------------------------------- */
+
+.site-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background-color: #05070d;
+  /* Ambient wash tuned to the logo palette so every route shares one theme. */
+  background-image:
+    radial-gradient(1200px 620px at 72% -12%, rgba(72, 168, 216, 0.10), transparent 62%),
+    radial-gradient(900px 520px at 10% 18%, rgba(120, 72, 168, 0.09), transparent 62%),
+    radial-gradient(700px 480px at 45% 110%, rgba(216, 96, 168, 0.06), transparent 60%);
+}
+
+/* The WebGL canvas fades in once its chunk loads, so there is no hard pop
+   between the gradient and the starfield. */
+.site-backdrop__scene {
+  position: absolute;
+  inset: 0;
+  animation: backdrop-fade-in 900ms ease-out both;
+}
+
+@keyframes backdrop-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ---------------------------------------------------------------------------
+   Custom cursor
+   Only active when a fine pointer is present (see CustomCursor.jsx). Both layers
+   are pointer-events:none so they can never swallow a click, and the native
+   cursor is only hidden once the custom one is actually mounted.
+   --------------------------------------------------------------------------- */
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 999px;
+  will-change: transform;
+}
+
+/* Colours sampled from the site logo (src/assets/Vector.png): its dominant
+   saturated tone is #48a8d8, with #7848a8 purple and #d860a8 pink accents. */
+.cursor-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #48a8d8;
+  box-shadow: 0 0 12px rgba(72, 168, 216, 0.9);
+}
+
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(72, 168, 216, 0.8);
+  background-color: rgba(72, 168, 216, 0.07);
+  transition:
+    width 220ms cubic-bezier(0.22, 0.9, 0.24, 1),
+    height 220ms cubic-bezier(0.22, 0.9, 0.24, 1),
+    border-color 220ms ease,
+    border-radius 220ms ease,
+    background-color 220ms ease,
+    opacity 180ms ease;
+}
+
+/* Over a link or button: the ring opens up and takes the brand accent. */
+.cursor-ring[data-state="hover"] {
+  width: 52px;
+  height: 52px;
+  border-color: rgba(120, 72, 168, 0.95);
+  background-color: rgba(120, 72, 168, 0.16);
+  box-shadow: 0 0 18px rgba(72, 168, 216, 0.35);
+}
+
+/* Over a text field the ring becomes a caret-like bar, so the cursor still
+   communicates "you can type here" after the native I-beam is hidden. */
+.cursor-ring[data-state="text"] {
+  width: 3px;
+  height: 26px;
+  border-radius: 2px;
+  border-color: transparent;
+  background-color: rgba(216, 96, 168, 0.95);
+}
+
+.cursor-ring.is-pressed {
+  width: 26px;
+  height: 26px;
+  background-color: rgba(216, 96, 168, 0.22);
+  border-color: rgba(216, 96, 168, 0.95);
+}
+
+.cursor-ring[data-state="text"].is-pressed {
+  width: 3px;
+  height: 22px;
+}
+
+.cursor-ring.is-hidden,
+.cursor-dot.is-hidden {
+  opacity: 0;
+}
+
+/* Hide the native cursor only when the custom one is running. If the component
+   bails out (touch device, reduced motion) the real cursor is untouched. */
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* ---------------------------------------------------------------------------
+   Shared interactive button treatment
+   --------------------------------------------------------------------------- */
+
+.btn-interactive {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 260ms cubic-bezier(0.22, 0.9, 0.24, 1),
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+
+.btn-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(72, 168, 216, 0.28);
+  border-color: rgba(72, 168, 216, 0.6);
+}
+
+.btn-interactive:active {
+  transform: translateY(0) scale(0.985);
+}
+
+/* Sheen that sweeps across on hover. transform only, so it stays on the GPU. */
+.btn-interactive::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.16) 50%,
+    transparent 65%
+  );
+  transform: translateX(-120%);
+  transition: transform 620ms cubic-bezier(0.22, 0.9, 0.24, 1);
+  pointer-events: none;
+}
+
+.btn-interactive:hover::after {
+  transform: translateX(120%);
+}
+
+/* ---------------------------------------------------------------------------
+   Navigation
+   All motion is transform/opacity only so it stays on the compositor. Animating
+   width, top or background-position here would force layout on every frame,
+   which is what makes navbars feel choppy.
+   --------------------------------------------------------------------------- */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  transition: background-color 320ms ease, box-shadow 320ms ease;
+}
+
+.site-nav.is-stuck {
+  /* Opaque enough to read as a bar. At 0.62 the blur smeared bright background
+     content (the contact page grid) into a blob behind the links. */
+  background-color: rgba(5, 7, 13, 0.9);
+  backdrop-filter: blur(10px) saturate(130%);
+  -webkit-backdrop-filter: blur(10px) saturate(130%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.07), 0 12px 34px rgba(0, 0, 0, 0.42);
+}
+
+.site-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0;
+  /* The shared perspective is what makes the child link tilts read as real 3D
+     rotation rather than a flat skew. */
+  perspective: 700px;
+}
+
+/* Logo */
+
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  transform-style: preserve-3d;
+  transition: transform 520ms cubic-bezier(0.22, 0.9, 0.24, 1);
+}
+
+.nav-logo:hover,
+.nav-logo:focus-visible {
+  transform: rotateY(22deg) rotateX(-6deg) translateZ(10px);
+}
+
+/* Scales with the viewport instead of sitting at a fixed 40px, so the mark
+   stays readable on a phone and does not shrink into the corner on a large or
+   zoomed-out desktop window. Clamped at both ends so it never gets silly. */
+.nav-logo__img {
+  height: clamp(40px, 5.5vw, 56px);
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 0 rgba(72, 168, 216, 0));
+  transition: filter 420ms ease;
+}
+
+.nav-logo:hover .nav-logo__img {
+  filter: drop-shadow(0 4px 16px rgba(72, 168, 216, 0.55));
+}
+
+/* Desktop links */
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transform-style: preserve-3d;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  font-size: 15px;
+  color: #60a5fa;
+  text-decoration: none;
+  border-radius: 8px;
+  transform-style: preserve-3d;
+  transition:
+    transform 380ms cubic-bezier(0.22, 0.9, 0.24, 1),
+    color 240ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #bfdbfe;
+  transform: translateZ(26px) rotateX(-14deg);
+}
+
+.nav-link.is-active {
+  color: #7dd3fc;
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* Gradient underline that grows from the centre. scaleX is free to animate;
+   animating width would not be. */
+.nav-link__underline {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 2px;
+  background-image: linear-gradient(90deg, #e61aa1, #0cf996);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 340ms cubic-bezier(0.22, 0.9, 0.24, 1);
+}
+
+.nav-link:hover .nav-link__underline,
+.nav-link:focus-visible .nav-link__underline,
+.nav-link.is-active .nav-link__underline {
+  transform: scaleX(1);
+}
+
+/* Hamburger */
+
+.nav-burger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 44px;
+  border-radius: 10px;
+  color: #ffffff;
+  background: transparent;
+  transition: background-color 240ms ease;
+}
+
+.nav-burger:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.nav-burger:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+.nav-burger__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 24px;
+}
+
+.nav-burger__bar {
+  display: block;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: currentColor;
+  transition:
+    transform 320ms cubic-bezier(0.22, 0.9, 0.24, 1),
+    opacity 200ms ease;
+}
+
+/* Morphs the three bars into a cross while the sheet is open. */
+.nav-burger__box.is-open .nav-burger__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-burger__box.is-open .nav-burger__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-burger__box.is-open .nav-burger__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile sheet links, entering in a stagger driven by the --i custom property */
+
+.nav-sheet {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  perspective: 600px;
+}
+
+.nav-sheet__item {
+  animation: sheet-item-in 420ms cubic-bezier(0.22, 0.9, 0.24, 1) both;
+  animation-delay: calc(var(--i) * 45ms);
+}
+
+@keyframes sheet-item-in {
+  from {
+    opacity: 0;
+    transform: translateX(18px) rotateY(-18deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.nav-sheet__link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 260ms ease, color 200ms ease, background-color 200ms ease;
+}
+
+.nav-sheet__link:hover,
+.nav-sheet__link:focus-visible {
+  color: #7dd3fc;
+  background-color: rgba(255, 255, 255, 0.06);
+  transform: translateX(4px);
+}
+
+.nav-sheet__link.is-active {
+  color: #7dd3fc;
+}
+
+/* ---------------------------------------------------------------------------
+   Accessibility
+   Anyone who has asked their OS for reduced motion gets the layout with none of
+   the movement. The 3D backdrop is not mounted at all for them.
+   --------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Reduced motion removes MOVEMENT, not the design. Colour, glow and underline
+     feedback all stay, because a 200ms colour fade is not vestibular motion.
+     What goes is anything that travels across the screen: the 3D tilts, the
+     sheen sweep, the staggered slide-in and the backdrop fade. */
+  .site-backdrop__scene,
+  .nav-sheet__item {
+    animation: none;
+    opacity: 1;
+  }
+
+  .btn-interactive::after {
+    display: none;
+  }
+
+  .btn-interactive:hover {
+    transform: none;
+    /* Glow still confirms the hover, it just does not move. */
+    box-shadow: 0 0 0 1px rgba(72, 168, 216, 0.6);
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible,
+  .nav-logo:hover,
+  .nav-logo:focus-visible,
+  .nav-sheet__link:hover {
+    transform: none;
+  }
+
+  /* The underline still appears, it just fades instead of growing sideways. */
+  .nav-link__underline {
+    transition: opacity 200ms ease;
+    transform: scaleX(1);
+    opacity: 0;
+  }
+
+  .nav-link:hover .nav-link__underline,
+  .nav-link:focus-visible .nav-link__underline,
+  .nav-link.is-active .nav-link__underline {
+    opacity: 1;
+  }
+}
+
+/* Legacy helpers kept from the original stylesheet */
 
 .viewport-header {
   position: relative;
@@ -48,10 +485,6 @@ body {
 
 #stuff {
   opacity: 0;
-  -webkit-transition: all 500ms ease-in-out;
-  -moz-transition: all 500ms ease-in-out;
-  -ms-transition: all 500ms ease-in-out;
-  -o-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
 }
 
@@ -59,24 +492,6 @@ body {
   cursor: pointer;
 }
 
-#hove:hover >*>*> #stuff {
-  opacity: 1.0;
+#hove:hover > * > * > #stuff {
+  opacity: 1;
 }
-/* h1>span {
-  display: block;
-  font-size: 10vw;
-  letter-spacing: -1.3vw;
-  z-index: 1;
-}
-
-main {
-  display: none;
-  width: 80vw;
-  left: 10%;
-  height: 40vh;
-  overflow: auto;
-  background: rgba(black, 0.66);
-  color: white;
-  position: relative;
-  padding: 1rem;
-} */

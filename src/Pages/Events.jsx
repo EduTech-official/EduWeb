@@ -66,7 +66,7 @@ const yearChange = (e) => {
         </div>
       </div>
 
-      <div className="flex justify-center w-full mt-7">
+      <div className="flex justify-center w-full my-7">
         <select
               className="bg-gray-800 text-white border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
               value={year}
