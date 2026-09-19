@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import events from "../Config/Events";
 import upcomingEvents from "../Config/Events/upcoming.index";
 import EventsCard from "../components/Events.past";
@@ -12,16 +12,8 @@ import aecc23 from "../assets/aecc23.png";
 import skillSynergy from "../assets/skillSynergy.png";
 
 const Events = () => {
-  const [selectedEvent, setSelectedEvent] = useState(events[0]);
+  const selectedEvent = events[0];
   const [year, setYear] = useState("2024-2025");
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
 
   const yearChange = (e) => {
     setYear(e.target.value);
@@ -154,9 +146,9 @@ const Events = () => {
         <h2 className="text-2xl bg-gradient-to-r brightness-150 from-[#0CF996] to-[#E61AA1] bg-clip-text text-transparent mb-6">
           {year === "2024-2025" ? "Current Events" : "Past Events (2023-2024)"}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+        <div className="grid auto-rows-fr grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {currentEvents.map((event, index) => (
-            <div key={index}>
+            <div key={index} className="flex h-full">
               <EventsCard events={event} />
             </div>
           ))}
@@ -168,10 +160,10 @@ const Events = () => {
         <h2 className="text-2xl bg-gradient-to-r brightness-150 from-[#0CF996] to-[#E61AA1] bg-clip-text text-transparent mb-6">
           Past Events
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+        <div className="grid auto-rows-fr grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {/* first event contains the title and description of /events page. Skip it. */}
           {events.slice(1).map((event, index) => (
-            <div key={index}>
+            <div key={index} className="flex h-full">
               <EventsCard events={event} />
             </div>
           ))}
