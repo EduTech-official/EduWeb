@@ -1,34 +1,104 @@
 import PropTypes from "prop-types";
 import Logo from "../assets/logo.jpeg";
-import "./../App.css";
+
+// Helper function to extract Google Drive File ID and convert to direct image URL
+const getDirectDriveUrl = (url) => {
+  if (!url) return null;
+
+  // Extract ID if URL matches standard drive formats (/d/ID, id=ID, or direct lh3 link)
+  const regExp = /(?:\d\/|id=|lh3\.googleusercontent\.com\/d\/)([a-zA-Z0-9_-]+)/;
+  const match = url.match(regExp);
+
+  if (match && match[1]) {
+    return `https://lh3.googleusercontent.com/d/${match[1]}`;
+  }
+
+  return url; // Return original if it's not a recognized Drive URL
+};
 
 const TeamCards = ({ PicLink, Name, Position }) => {
-  const handleClick = (event) => {
-    event.preventDefault(); // Prevent default behavior
-  };
+  const imageUrl = getDirectDriveUrl(PicLink) || Logo;
 
   return (
-    <div
-      className="flex justify-center items-center border-none"
-      style={{ flex: "1 0 20%" }}
-    >
-      <div
-        id="hove"
-        className="w-full h-full max-w-[16rem] min-w-[10rem] border-gray-200 rounded-xl bg-gray-800 bg-opacity-80 hover:bg-opacity-95 hover:brightness-110 dark:border-gray-700 p-4 flex flex-col items-center text-center"
-      >
+    <div className="team-card-wrapper">
+      <style>{`
+        .team-card-wrapper {
+          flex: 1 0 20%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          padding: 0.75rem;
+        }
+
+        .team-card {
+          width: 100%;
+          max-width: 16rem;
+          min-width: 10rem;
+          padding: 1rem;
+          border-radius: 0.75rem;
+          background-color: rgba(31, 41, 55, 0.8);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          box-sizing: border-box;
+          transition: background-color 0.2s ease,
+                      filter 0.2s ease,
+                      transform 0.2s ease;
+        }
+
+        .team-card:hover {
+          background-color: rgba(31, 41, 55, 0.95);
+          filter: brightness(1.1);
+          transform: translateY(-2px);
+        }
+
+        .team-card-image {
+          width: 300px;
+          height: 300px;
+          max-width: 100%;
+          object-fit: cover;
+          border-radius: 0.5rem;
+          display: block;
+        }
+
+        .team-card-name {
+          margin: 0;
+          padding-top: 0.75rem;
+          font-size: 1.25rem;
+          font-weight: 600;
+          letter-spacing: -0.025em;
+          color: #ffffff;
+        }
+
+        .team-card-position {
+          margin: 0.75rem 0;
+        }
+
+        .team-card-position span {
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: #ffffff;
+        }
+      `}</style>
+
+      <div className="team-card">
         <img
-          className="rounded-lg object-cover"
-          src={PicLink ? PicLink : Logo}
-          alt="team member"
-          style={{ height: 300, width: 300, objectFit: "cover" }}
+          className="team-card-image"
+          src={imageUrl}
+          alt={Name || "Team member"}
+          crossOrigin="anonymous"
+          onError={(e) => {
+            // Fallback to logo if Google Drive fails to load
+            e.target.src = Logo;
+          }}
         />
-        <a href="#" onClick={handleClick}>
-          <h5 className="text-xl pt-3 font-semibold tracking-tight text-white">
-            {Name}
-          </h5>
-        </a>
-        <div className="my-3">
-          <span className="text-xs font-bold text-white">{Position}</span>
+
+        <h5 className="team-card-name">{Name}</h5>
+
+        <div className="team-card-position">
+          <span>{Position}</span>
         </div>
       </div>
     </div>
