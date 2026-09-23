@@ -5,13 +5,12 @@ import { Box, Button, Image, Text, Flex, VStack } from "@chakra-ui/react";
 const UpcomingEvents = () => {
   const Events = [
     {
-      link: "https://docs.google.com/forms/d/e/1FAIpQLSdc5m0_hezFdCP7EvO4xNLIrPZxnwQMPeN_MZU8jW3PLhwWwA/viewform?pli=1 ",
       knowMoreLink: "/funfair", // Updated link for "Know More"
-      title: "Funfair 3.0 — Let the Games Begin!",
+      title: "Funfair 4.0 — Let the Games Begin!",
       Image: formimage,
-      desc: `🎪 Get ready for explosive fun! EduMinerva proudly presents Funfair 3.0 — the ultimate campus fiesta packed with laughter, thrills, and unforgettable memories. Join us for a day of friendly competition, hilarious challenges, and lighthearted chaos. Whether you're playing, cheering, or just soaking in the fun vibes, every moment promises excitement you won't want to miss! 💥
+      desc: `🎪 Get ready for explosive fun! EduMinerva proudly presents Funfair 4.0 — the ultimate campus fiesta packed with laughter, thrills, and unforgettable memories. Join us for a day of friendly competition, hilarious challenges, and lighthearted chaos. Whether you're playing, cheering, or just soaking in the fun vibes, every moment promises excitement you won't want to miss! 💥
 
-🗓️ Date: 30 October 2025
+🗓️ Date: 9 September 2026
 🕒 Time: 3:00 PM – 5:00 PM
 📍 Venue: Ground and Basketball Court
 💰 Entry: ₹30 for 3 games or ₹50 for all 6 games.
@@ -72,19 +71,6 @@ So round up your crew, pick your games, and let the energy take over! 🎉`,
                 w="full"
                 justify="center"
               >
-                {/* Registration Button */}
-                <Button
-                  as="a"
-                  href={event.link}
-                  size={{ base: "sm", md: "md" }}
-                  w={{ base: "full", md: "auto" }}
-                  bgGradient="linear(to-r, teal.400, blue.500)"
-                  _hover={{ bgGradient: "linear(to-r, teal.500, blue.600)" }}
-                  color="white"
-                >
-                  Register Now
-                </Button>
-
                 {/* Know More Button */}
                 <Button
                   as="a"

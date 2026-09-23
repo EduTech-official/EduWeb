@@ -12,6 +12,7 @@ import RedirectToLeaderboard from "./components/RedirectToLeaderboard";
 // Route level code splitting. Each page is fetched only when it is visited, so
 // heavy dependencies (three.js on /contact, chakra on /form) no longer ship
 // with the landing page bundle.
+const Home = lazy(() => import("./Pages/Home"));
 const Events = lazy(() => import("./Pages/Events"));
 const Team = lazy(() => import("./Pages/Team"));
 const AboutUs = lazy(() => import("./Pages/AboutUs"));
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <Error />,
     children: [
-      { path: "/", element: <AboutUs /> },
+      { path: "/", element: <Home /> },
       { path: "/events", element: <Events /> },
       { path: "/aboutus", element: <AboutUs /> },
       { path: "/team", element: <Team /> },
