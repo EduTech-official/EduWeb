@@ -76,14 +76,38 @@ const MainForm: React.FC = () => {
       });
   }
 
+  // Shared dark-theme styling for every field. Chakra's defaults assume a light
+  // surface, so on this site the inputs rendered as near-invisible boxes.
+  const fieldProps = {
+    bg: "whiteAlpha.50",
+    borderColor: "whiteAlpha.300",
+    color: "white",
+    _placeholder: { color: "gray.500" },
+    _hover: { borderColor: "whiteAlpha.400" },
+    _focusVisible: {
+      borderColor: "#0CF996",
+      boxShadow: "0 0 0 1px #0CF996",
+      bg: "whiteAlpha.100",
+    },
+    borderRadius: "xl",
+    size: "lg" as const,
+  };
+
   return (
     <Box
-      position={"relative"}
-      marginBlockStart={20}
-      marginX={1}
-      paddingX={25}
-      paddingY={25}
-      pb={50}
+      position="relative"
+      maxWidth="820px"
+      marginX="auto"
+      marginBlockStart={{ base: 6, md: 10 }}
+      paddingX={{ base: 4, md: 8 }}
+      paddingY={{ base: 6, md: 10 }}
+      paddingBottom={{ base: 10, md: 16 }}
+      borderRadius="3xl"
+      borderWidth="1px"
+      borderColor="whiteAlpha.200"
+      bg="rgba(9, 13, 22, 0.82)"
+      backdropFilter="blur(12px)"
+      boxShadow="0 20px 60px rgba(0,0,0,0.45)"
     >
       <FormImage altText="Event" />
       <FormHeading 
@@ -109,8 +133,8 @@ const MainForm: React.FC = () => {
         <FormControl isInvalid={!!errors.name}>
           <FormLabel fontSize={["sm", "md"]} className="text-white">Name</FormLabel>
           <Input
-            fontSize={["sm", "md"]} // Responsive font size
-            className="text-white"
+            {...fieldProps}
+            fontSize={["sm", "md"]}
             type="text"
             placeholder="Enter your name"
             {...register("name")}
@@ -123,8 +147,8 @@ const MainForm: React.FC = () => {
         <FormControl isInvalid={!!errors.email}>
           <FormLabel fontSize={["sm", "md"]} className="text-white">Email</FormLabel>
           <Input
-            fontSize={["sm", "md"]} // Responsive font size
-            className="text-white"
+            {...fieldProps}
+            fontSize={["sm", "md"]}
             type="email"
             placeholder="Enter your email"
             {...register("email")}
@@ -137,8 +161,8 @@ const MainForm: React.FC = () => {
         <FormControl isInvalid={!!errors.rollNumber}>
           <FormLabel fontSize={["sm", "md"]} className="text-white">Roll Number</FormLabel>
           <Input
-            fontSize={["sm", "md"]} // Responsive font size
-            className="text-white"
+            {...fieldProps}
+            fontSize={["sm", "md"]}
             type="text"
             placeholder="Enter your roll number"
             {...register("rollNumber")}
@@ -151,8 +175,8 @@ const MainForm: React.FC = () => {
         <FormControl isInvalid={!!errors.contactNumber}>
           <FormLabel fontSize={["sm", "md"]} className="text-white">Contact Number (Whatsapp)</FormLabel>
           <Input
-            fontSize={["sm", "md"]} // Responsive font size
-            className="text-white"
+            {...fieldProps}
+            fontSize={["sm", "md"]}
             type="text"
             placeholder="Enter your contact number"
             {...register("contactNumber")}
@@ -165,8 +189,8 @@ const MainForm: React.FC = () => {
         <FormControl isInvalid={!!errors.branch}>
           <FormLabel fontSize={["sm", "md"]} className="text-white">Branch</FormLabel>
           <Select
-            fontSize={["sm", "md"]} // Responsive font size
-            className="text-white"
+            {...fieldProps}
+            fontSize={["sm", "md"]}
             placeholder="Select branch"
             {...register("branch")}
             name="Branch"
@@ -197,8 +221,8 @@ const MainForm: React.FC = () => {
         <FormControl isInvalid={!!errors.year}>
           <FormLabel fontSize={["sm", "md"]} className="text-white">Year</FormLabel>
           <Select
-            fontSize={["sm", "md"]} // Responsive font size
-            className="text-white"
+            {...fieldProps}
+            fontSize={["sm", "md"]}
             placeholder="Select year"
             {...register("year")}
             name="Year"
@@ -223,8 +247,8 @@ const MainForm: React.FC = () => {
         <FormControl>
           <FormLabel fontSize={["sm", "md"]} className="text-white">Any Queries</FormLabel>
           <Textarea
-            fontSize={["sm", "md"]} // Responsive font size
-            className="text-white"
+            {...fieldProps}
+            fontSize={["sm", "md"]}
             placeholder="Leave Blank if no queries"
             {...register("queries")}
             name="Queries"
@@ -237,7 +261,16 @@ const MainForm: React.FC = () => {
           isLoading={isSubmitting}
           loadingText="Submitting..."
           type="submit"
-          colorScheme="blue"
+          className="btn-interactive"
+          size="lg"
+          width={{ base: "100%", sm: "auto" }}
+          mt={2}
+          borderRadius="xl"
+          bg="#0CF996"
+          color="#04120c"
+          fontWeight="semibold"
+          _hover={{ bg: "#0CF996" }}
+          _active={{ bg: "#0bd985" }}
         >
           Submit
         </Button>
