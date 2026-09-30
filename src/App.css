@@ -27,10 +27,9 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
-   Backdrop
-   Replaces the old global `video { height: 250vh !important }` rule, which
-   forced every video on the site to 2.5x the viewport height and was a major
-   source of inconsistent layout between devices.
+   Static High-Performance Backdrop
+   Replaced live WebGL canvas loop with zero-overhead, elegant static CSS
+   gradients and subtle dot grid pattern.
    --------------------------------------------------------------------------- */
 
 .site-backdrop {
@@ -38,109 +37,22 @@ body {
   inset: 0;
   z-index: -1;
   overflow: hidden;
-  background-color: #05070d;
-  /* Ambient wash tuned to the logo palette so every route shares one theme. */
+  background-color: #060913;
+  /* Ambient static glow highlights */
   background-image:
-    radial-gradient(1200px 620px at 72% -12%, rgba(72, 168, 216, 0.10), transparent 62%),
-    radial-gradient(900px 520px at 10% 18%, rgba(120, 72, 168, 0.09), transparent 62%),
-    radial-gradient(700px 480px at 45% 110%, rgba(216, 96, 168, 0.06), transparent 60%);
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.09), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(99, 102, 241, 0.07), transparent 60%),
+    radial-gradient(ellipse 50% 50% at 10% 80%, rgba(168, 85, 247, 0.05), transparent 60%);
 }
 
-/* The WebGL canvas fades in once its chunk loads, so there is no hard pop
-   between the gradient and the starfield. */
-.site-backdrop__scene {
+.site-backdrop__grid {
   position: absolute;
   inset: 0;
-  animation: backdrop-fade-in 900ms ease-out both;
-}
-
-@keyframes backdrop-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* ---------------------------------------------------------------------------
-   Custom cursor
-   Only active when a fine pointer is present (see CustomCursor.jsx). Both layers
-   are pointer-events:none so they can never swallow a click, and the native
-   cursor is only hidden once the custom one is actually mounted.
-   --------------------------------------------------------------------------- */
-
-.cursor-dot,
-.cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 60%, transparent 100%);
   pointer-events: none;
-  border-radius: 999px;
-  will-change: transform;
-}
-
-/* Colours sampled from the site logo (src/assets/Vector.png): its dominant
-   saturated tone is #48a8d8, with #7848a8 purple and #d860a8 pink accents. */
-.cursor-dot {
-  width: 7px;
-  height: 7px;
-  background-color: #48a8d8;
-  box-shadow: 0 0 12px rgba(72, 168, 216, 0.9);
-}
-
-.cursor-ring {
-  width: 32px;
-  height: 32px;
-  border: 1.5px solid rgba(72, 168, 216, 0.8);
-  background-color: rgba(72, 168, 216, 0.07);
-  transition:
-    width 220ms cubic-bezier(0.22, 0.9, 0.24, 1),
-    height 220ms cubic-bezier(0.22, 0.9, 0.24, 1),
-    border-color 220ms ease,
-    border-radius 220ms ease,
-    background-color 220ms ease,
-    opacity 180ms ease;
-}
-
-/* Over a link or button: the ring opens up and takes the brand accent. */
-.cursor-ring[data-state="hover"] {
-  width: 52px;
-  height: 52px;
-  border-color: rgba(120, 72, 168, 0.95);
-  background-color: rgba(120, 72, 168, 0.16);
-  box-shadow: 0 0 18px rgba(72, 168, 216, 0.35);
-}
-
-/* Over a text field the ring becomes a caret-like bar, so the cursor still
-   communicates "you can type here" after the native I-beam is hidden. */
-.cursor-ring[data-state="text"] {
-  width: 3px;
-  height: 26px;
-  border-radius: 2px;
-  border-color: transparent;
-  background-color: rgba(216, 96, 168, 0.95);
-}
-
-.cursor-ring.is-pressed {
-  width: 26px;
-  height: 26px;
-  background-color: rgba(216, 96, 168, 0.22);
-  border-color: rgba(216, 96, 168, 0.95);
-}
-
-.cursor-ring[data-state="text"].is-pressed {
-  width: 3px;
-  height: 22px;
-}
-
-.cursor-ring.is-hidden,
-.cursor-dot.is-hidden {
-  opacity: 0;
-}
-
-/* Hide the native cursor only when the custom one is running. If the component
-   bails out (touch device, reduced motion) the real cursor is untouched. */
-.has-custom-cursor,
-.has-custom-cursor * {
-  cursor: none !important;
 }
 
 /* ---------------------------------------------------------------------------
@@ -215,9 +127,6 @@ body {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.4rem 0;
-  /* The shared perspective is what makes the child link tilts read as real 3D
-     rotation rather than a flat skew. */
-  perspective: 700px;
 }
 
 /* Logo */
@@ -226,13 +135,13 @@ body {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  transform-style: preserve-3d;
-  transition: transform 520ms cubic-bezier(0.22, 0.9, 0.24, 1);
+  transition: opacity 200ms ease, transform 200ms ease;
 }
 
 .nav-logo:hover,
 .nav-logo:focus-visible {
-  transform: rotateY(22deg) rotateX(-6deg) translateZ(10px);
+  opacity: 0.9;
+  transform: scale(1.02);
 }
 
 /* Scales with the viewport instead of sitting at a fixed 40px, so the mark
@@ -260,7 +169,6 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
-  transform-style: preserve-3d;
 }
 
 .nav-link {
@@ -268,25 +176,23 @@ body {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  padding: 0 0.75rem;
+  padding: 0 0.85rem;
   font-size: 15px;
-  color: #60a5fa;
+  font-weight: 500;
+  color: #94a3b8;
   text-decoration: none;
   border-radius: 8px;
-  transform-style: preserve-3d;
-  transition:
-    transform 380ms cubic-bezier(0.22, 0.9, 0.24, 1),
-    color 240ms ease;
+  transition: color 200ms ease, transform 200ms ease;
 }
 
 .nav-link:hover,
 .nav-link:focus-visible {
-  color: #bfdbfe;
-  transform: translateZ(26px) rotateX(-14deg);
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 .nav-link.is-active {
-  color: #7dd3fc;
+  color: #38bdf8;
 }
 
 .nav-link:focus-visible {
@@ -294,19 +200,18 @@ body {
   outline-offset: 2px;
 }
 
-/* Gradient underline that grows from the centre. scaleX is free to animate;
-   animating width would not be. */
+/* Underline with brand society gradient that grows smoothly */
 .nav-link__underline {
   position: absolute;
-  left: 0.75rem;
-  right: 0.75rem;
+  left: 0.85rem;
+  right: 0.85rem;
   bottom: 6px;
   height: 2px;
   border-radius: 2px;
   background-image: linear-gradient(90deg, #e61aa1, #0cf996);
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform 340ms cubic-bezier(0.22, 0.9, 0.24, 1);
+  transition: transform 250ms cubic-bezier(0.22, 0.9, 0.24, 1);
 }
 
 .nav-link:hover .nav-link__underline,

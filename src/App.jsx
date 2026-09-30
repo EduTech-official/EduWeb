@@ -7,7 +7,6 @@ import "./App.css";
 import BasicComp from "./components/BasicComp";
 import Error from "./Pages/Error";
 import RedirectToResources from "./components/RedirectToResources";
-import RedirectToLeaderboard from "./components/RedirectToLeaderboard";
 
 // Route level code splitting. Each page is fetched only when it is visited, so
 // heavy dependencies (three.js on /contact, chakra on /form) no longer ship
@@ -21,6 +20,7 @@ const Thanks = lazy(() => import("./Pages/Thanks"));
 const PrePlacement = lazy(() => import("./Pages/PrePlacement"));
 const FunFair = lazy(() => import("./Pages/FunFair"));
 const MainForm = lazy(() => import("./components/Form/MainForm"));
+const Leaderboard = lazy(() => import("./Pages/Leaderboard"));
 
 const PageFallback = () => (
   <div
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
       { path: "/preplacement", element: <PrePlacement /> },
       { path: "/funfair", element: <FunFair /> },
       { path: "/resources", element: <RedirectToResources /> },
-      { path: "/leaderboard", element: <RedirectToLeaderboard /> },
+      { path: "/leaderboard", element: <Leaderboard /> },
     ],
   },
 ]);
