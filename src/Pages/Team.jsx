@@ -1,8 +1,10 @@
 import TeamCards from "../components/TeamCards";
 import "./../components/Scroll.css";
 import teams from "../Config/Team";
+import { useState } from "react";
 
 const Team = () => {
+  const [openTeam, setOpenTeam] = useState(null);
   // const peeps = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
     <div className="m-2 minmd:m-0 ">
@@ -35,11 +37,17 @@ const Team = () => {
       </div>
       <div id="Team" className=" my-4 flex flex-wrap justify-center ">
         {teams.map((team) => (
-          <div key={team.teamName} className="">
-            <h1 className="text-white text-2xl font-mono left-0 ">
-              {team.teamName}
-            </h1>
+          <div key={team.teamName} className="w-full mb-8">
+            <button
+              onClick={() =>
+              setOpenTeam(openTeam === team.teamName ? null : team.teamName)
+            }
+            className="text-white text-2xl font-mono block mb-3"
+          >
+            {team.teamName}
+            </button>
 
+            {(team.teamName === "Core Team" || team.teamName === "Faculty Mentors" || openTeam === team.teamName) && (
             <div className="flex flex-wrap m-4 gap-3">
               {team.members.map((member) => (
                 <TeamCards
@@ -47,12 +55,12 @@ const Team = () => {
                   PicLink={member.picLink}
                   Name={member.name}
                   Position={member.designation}
-                  // InstaLink={member.instagram}
-                  // LinkdLink={member.linkedin}
-                  // To be uncommented when these are available
+                  isCore={team.teamName === "Core Team"}
+                  index={team.members.indexOf(member) + 1}
                 />
               ))}
             </div>
+)}
             <br />
           </div>
         ))}
