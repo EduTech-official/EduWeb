@@ -1,6 +1,6 @@
 import TeamCards from "../components/TeamCards";
 import "./../components/Scroll.css";
-import teams from "../Config/Team";
+import teams from "../Config/Team/index";
 
 const Team = () => {
   // const peeps = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
