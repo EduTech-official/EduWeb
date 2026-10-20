@@ -6,17 +6,17 @@ const UpcomingEvents = () => {
   const Events = [
     {
       link: "https://docs.google.com/forms/d/e/1FAIpQLSdc5m0_hezFdCP7EvO4xNLIrPZxnwQMPeN_MZU8jW3PLhwWwA/viewform?pli=1 ",
-      knowMoreLink: "/funfair", // Updated link for "Know More"
+      knowMoreLink: "/funfair",
       title: "Funfair 3.0 — Let the Games Begin!",
       Image: formimage,
-      desc: `🎪 Get ready for explosive fun! EduMinerva proudly presents Funfair 3.0 — the ultimate campus fiesta packed with laughter, thrills, and unforgettable memories. Join us for a day of friendly competition, hilarious challenges, and lighthearted chaos. Whether you're playing, cheering, or just soaking in the fun vibes, every moment promises excitement you won't want to miss! 💥
+      desc: `Get ready for explosive fun! EduMinerva proudly presents Funfair 3.0 — the ultimate campus fiesta packed with laughter, thrills, and unforgettable memories. Join us for a day of friendly competition, hilarious challenges, and lighthearted chaos. Whether you're playing, cheering, or just soaking in the fun vibes, every moment promises excitement you won't want to miss!
 
-🗓️ Date: 30 October 2025
-🕒 Time: 3:00 PM – 5:00 PM
-📍 Venue: Ground and Basketball Court
-💰 Entry: ₹30 for 3 games or ₹50 for all 6 games.
+Date: 30 October 2025
+Time: 3:00 PM – 5:00 PM
+Venue: Ground and Basketball Court
+Entry: ₹30 for 3 games or ₹50 for all 6 games.
 
-So round up your crew, pick your games, and let the energy take over! 🎉`,
+So round up your crew, pick your games, and let the energy take over!`,
     },
   ];
 
@@ -27,12 +27,14 @@ So round up your crew, pick your games, and let the energy take over! 🎉`,
           <Flex
             key={index}
             borderWidth="1px"
-            borderRadius="lg"
+            borderColor="whiteAlpha.200"
+            borderRadius="2xl"
             overflow="hidden"
-            bg="gray.800"
-            p={{ base: 2, md: 4 }}
+            bg="transparent"
+            backdropFilter="blur(16px)"
+            p={{ base: 3, md: 5 }}
             align="center"
-            direction={{ base: "column", md: "row" }} // Image left, text right on desktop
+            direction={{ base: "column", md: "row" }}
             w="100%"
           >
             <Image
@@ -62,7 +64,7 @@ So round up your crew, pick your games, and let the energy take over! 🎉`,
                 color="gray.400"
                 fontSize={{ base: "xs", md: "md" }}
                 textAlign="center"
-                whiteSpace="pre-line" // preserves newlines in description
+                whiteSpace="pre-line"
               >
                 {event.desc}
               </Text>
@@ -92,8 +94,8 @@ So round up your crew, pick your games, and let the energy take over! 🎉`,
                   variant="outline"
                   size={{ base: "sm", md: "md" }}
                   w={{ base: "full", md: "auto" }}
-                  bgGradient="linear(to-r, blue.400, purple.500)"
-                  _hover={{ bgGradient: "linear(to-r, blue.500, purple.600)" }}
+                  borderColor="whiteAlpha.300"
+                  _hover={{ bg: "whiteAlpha.100" }}
                   color="white"
                 >
                   Know More

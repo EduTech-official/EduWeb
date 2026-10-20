@@ -41,11 +41,26 @@ const PrePlacement = () => {
           expectations. It helps students:
         </p>
         <ul className="mt-4 space-y-2 text-stone-100 text-xs md:text-base">
-          <li>✅ Develop essential placement skills, including resume-building, coding, and aptitude preparation.</li>
-          <li>✅ Gain real-world experience through mock interviews and industry-level assessments.</li>
-          <li>✅ Interact with senior professionals from reputed companies and gain valuable insights.</li>
-          <li>✅ Understand industry hiring trends and the best ways to prepare for job interviews.</li>
-          <li>✅ Boost confidence by experiencing a placement-like environment before the actual hiring process begins.</li>
+          <li className="flex items-start gap-2.5">
+            <span className="text-[#0cf996] font-bold">›</span>
+            <span>Develop essential placement skills, including resume-building, coding, and aptitude preparation.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="text-[#0cf996] font-bold">›</span>
+            <span>Gain real-world experience through mock interviews and industry-level assessments.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="text-[#0cf996] font-bold">›</span>
+            <span>Interact with senior professionals from reputed companies and gain valuable insights.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="text-[#0cf996] font-bold">›</span>
+            <span>Understand industry hiring trends and the best ways to prepare for job interviews.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="text-[#0cf996] font-bold">›</span>
+            <span>Boost confidence by experiencing a placement-like environment before the actual hiring process begins.</span>
+          </li>
         </ul>
       </div>
 
@@ -59,11 +74,26 @@ const PrePlacement = () => {
           all essential aspects of placement preparation:
         </p>
         <ul className="mt-4 space-y-2 text-stone-100 text-xs md:text-base">
-          <li>✅ <strong>Coding & Technical Skills Development:</strong> Hands-on coding practice, problem-solving sessions, and insights into consultancy and technical roles.</li>
-          <li>✅ <strong>Resume Building & ATS Optimization:</strong> Craft a professional, ATS-friendly resume with LaTeX optimization and resume screening.</li>
-          <li>✅ <strong>Career Roadmap & Industry Insights:</strong> Explore career paths, align goals with industry demands, and hear directly from industry experts.</li>
-          <li>✅ <strong>Mock Interviews & Placement Simulations:</strong> Simulate real placement rounds with technical and HR mock interviews, plus feedback sessions.</li>
-          <li>✅ <strong>HR Discussions & Prize Distribution:</strong> Gain corporate insights and compete for recognition and rewards for top performers.</li>
+          <li className="flex items-start gap-2.5">
+            <span className="text-[#0cf996] font-bold">›</span>
+            <span><strong>Coding & Technical Skills Development:</strong> Hands-on coding practice, problem-solving sessions, and insights into consultancy and technical roles.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="text-[#0cf996] font-bold">›</span>
+            <span><strong>Resume Building & ATS Optimization:</strong> Craft a professional, ATS-friendly resume with LaTeX optimization and resume screening.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="text-[#0cf996] font-bold">›</span>
+            <span><strong>Career Roadmap & Industry Insights:</strong> Explore career paths, align goals with industry demands, and hear directly from industry experts.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="text-[#0cf996] font-bold">›</span>
+            <span><strong>Mock Interviews & Placement Simulations:</strong> Simulate real placement rounds with technical and HR mock interviews, plus feedback sessions.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="text-[#0cf996] font-bold">›</span>
+            <span><strong>HR Discussions & Prize Distribution:</strong> Gain corporate insights and compete for recognition and rewards for top performers.</span>
+          </li>
         </ul>
       </div>
 
@@ -76,9 +106,18 @@ const PrePlacement = () => {
           The boot camp is exclusively for 3rd-year B.Tech students at BVCOE who are looking to:
         </p>
         <ul className="mt-4 space-y-2 text-stone-100 text-xs md:text-base">
-          <li>✅ Gain a competitive edge in campus placements.</li>
-          <li>✅ Improve technical and soft skills required by recruiters.</li>
-          <li>✅ Understand the hiring process from resume shortlisting to final selection.</li>
+          <li className="flex items-start gap-2.5">
+            <span className="text-[#0cf996] font-bold">›</span>
+            <span>Gain a competitive edge in campus placements.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="text-[#0cf996] font-bold">›</span>
+            <span>Improve technical and soft skills required by recruiters.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="text-[#0cf996] font-bold">›</span>
+            <span>Understand the hiring process from resume shortlisting to final selection.</span>
+          </li>
         </ul>
       </div>
 
@@ -92,9 +131,16 @@ const PrePlacement = () => {
           If you're serious about landing a great job, this is your chance to
           train, learn, and prepare like never before!
         </p>
-        <p className="text-stone-100 text-xs md:text-base mt-4">
-          📢 https://docs.google.com/forms/d/e/1FAIpQLSeM7vnOGUvZ3tNq6YEIdTmL0YLMhosXex1JMk7GCYwkuGq2Cw/viewform
-        </p>
+        <div className="mt-6">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeM7vnOGUvZ3tNq6YEIdTmL0YLMhosXex1JMk7GCYwkuGq2Cw/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-xl bg-gradient-to-r from-[#0CF996] to-[#E61AA1] px-6 py-2.5 text-sm font-bold text-slate-950 transition hover:opacity-90"
+          >
+            Register on Google Forms
+          </a>
+        </div>
       </div>
     </div>
   );
