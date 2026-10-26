@@ -1,23 +1,34 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
 import events from "../Config/Events";
 import upcomingEvents from "../Config/Events/upcoming.index";
 import EventsCard from "../components/Events.past";
 import aecc from "../assets/aecc.png";
 import careerClash from "../assets/careerClash.png";
-import cracksuccess from "../assets/cracksuccess.png";
+import crackSuccess from "../assets/cracksuccess.png";
 import bootcamp3 from "../assets/bootcamp3.png";
 import fresher from "../assets/fresher.png";
-import defensebootcamp from "../assets/defensebootcamp.png";
+import defenseBootcamp from "../assets/defensebootcamp.png";
 import aecc23 from "../assets/aecc23.png";
 import skillSynergy from "../assets/skillSynergy.png";
 
 const Events = () => {
   const selectedEvent = events[0];
   const [year, setYear] = useState("2024-2025");
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
-  const yearChange = (e) => {
-    setYear(e.target.value);
-  };
+  const years = ["2024-2025", "2023-2024", "2022-2023"];
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // 2024-2025 events
   const events2024 = [
@@ -38,7 +49,7 @@ const Events = () => {
     {
       title: "Crack the Success Code",
       description: "The primary objective of Crack the Success Code was to empower participants with the essential skills and strategies needed to achieve greater success in their personal and professional lives. The goal was for participants to leave with a renewed sense of purpose, a clear action plan, and the necessary tools and techniques to crack the code to their success. The workshop aimed to provide attendees with practical, actionable insights across four key areas: Clear goal setting, Effective time management, Communication Mastery, and Self-empowerment techniques.",
-      image: cracksuccess,
+      image: crackSuccess,
       links: [{ name: "Website", url: "" }, { name: "Registration", url: "" }],
       tags: ["education", "2024"],
     },
@@ -63,7 +74,7 @@ const Events = () => {
     {
       title: "EduMinerva Defence Bootcamp",
       description: "This event was designed to create a comprehensive learning experience for the participants. By bringing in experienced speakers to share their insights, conducting mock interviews to enhance interview skills, facilitating group discussions to foster teamwork, and guidance on how to give defence exams, the bootcamp aimed to empower attendees with the knowledge, skills, and confidence needed for their holistic preparation for their defence career.",
-      image: defensebootcamp,
+      image: defenseBootcamp,
       links: [{ name: "Website", url: "" }, { name: "Registration", url: "" }],
       tags: ["education", "2023"],
     },
@@ -129,213 +140,243 @@ const Events = () => {
         </div>
       </div>
 
-      <div className="flex justify-center w-full my-7">
-        <select
-              className="bg-gray-800 text-white border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
-              value={year}
-              onChange={(e) => yearChange(e.target.value)}
-            >
-              <option value="2024-2025">2024-2025</option>
-              <option value="2023-2024">2023-2024</option>
-              <option value="2022-2023">2022-2023</option>
-            </select>
+      <div className="flex justify-center items-center w-full my-7">
+        <div ref={dropdownRef} className="relative inline-block text-center w-48">
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-full flex items-center justify-center relative bg-gray-800 hover:bg-gray-900/60 text-white border border-gray-600 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer transition-colors duration-150"
+          >
+            <span>{year}</span>
+            <ChevronDown
+              className={`w-4 h-4 absolute right-3 transition-transform duration-200 text-gray-400 ${
+                isOpen ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+
+          {isOpen && (
+            <div className="absolute left-0 right-0 mt-1.5 z-50 rounded-lg bg-gray-800 border border-gray-600 shadow-xl p-1 flex flex-col gap-0.5">
+              {years.map((item) => {
+                const isSelected = item === year;
+                return (
+                  <button
+                    key={item}
+                    type="button"
+                    onClick={() => {
+                      setYear(item);
+                      setIsOpen(false);
+                    }}
+                    className={`w-full text-center px-4 py-2 text-sm rounded-md transition-colors duration-150 cursor-pointer ${
+                      isSelected
+                        ? "bg-black/50 text-white font-semibold hover:bg-black/70"
+                        : "text-gray-300 hover:bg-black/50 hover:text-white"
+                    }`}
+                  >
+                    {item}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
       </div>
 
 
       {year === "2024-2025" && (
         <>
-        <div className="gap-4 mx-5 mt-10">
-          <div className="flex items-center gap-14">
-            <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3">
-              <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
-              AECC GLOBAL Industrial Visit
-              </h1>
-              <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10] bg-slate-800 rounded-xl">
-                <img
-                  className="my-auto object-cover w-full h-full rounded-xl"
-                  src= {aecc}
-                  alt="photo"
-                />
+          <div className="gap-4 mx-5 mt-10">
+            <div className="flex items-center gap-14">
+              <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3">
+                <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
+                  AECC GLOBAL Industrial Visit
+                </h1>
+                <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10] bg-slate-800 rounded-xl">
+                  <img
+                    className="my-auto object-cover w-full h-full rounded-xl"
+                    src={aecc}
+                    alt="photo"
+                  />
+                </div>
+                <p className="font-light text-white text-sm mt-2">
+                  The industrial visit provided participants with comprehensive insights into opportunities for studying abroad and its associated processes. Attendees were able to gain a clear understanding of various study programs, application procedures, and potential career benefits through one-on-one counseling. The visit aimed at helping participants make choices regarding pursuing international academic endeavors.
+                </p>
               </div>
-              <p className="font-light text-white text-sm mt-2">
-                The industrial visit provided participants with comprehensive insights into opportunities for studying abroad and its associated processes. Attendees were able to gain a clear understanding of various study programs, application procedures, and potential career benefits through one-on-one counseling. The visit aimed at helping participants make choices regarding pursuing international academic endeavors. 
-              </p>
-            </div>
-            <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl">
-              <img className="rounded-md w-[90vh]" src={aecc} alt="AECC " /> 
+              <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl">
+                <img className="rounded-md w-[90vh]" src={aecc} alt="AECC " />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="gap-4 mx-5 mt-10">
-          <div className="flex items-center gap-14"> 
-            <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3 ">
-              <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
-                Career Clash: Battle of Professions
-              </h1>
-              <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10]  bg-slate-800 rounded-xl">
-                <img
-                  className="my-auto object-cover w-full h-full rounded-xl"
-                  src= {careerClash}
-                  alt="photo"
-                />
+          <div className="gap-4 mx-5 mt-10">
+            <div className="flex items-center gap-14">
+              <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3 ">
+                <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
+                  Career Clash: Battle of Professions
+                </h1>
+                <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10]  bg-slate-800 rounded-xl">
+                  <img
+                    className="my-auto object-cover w-full h-full rounded-xl"
+                    src={careerClash}
+                    alt="photo"
+                  />
+                </div>
+                <p className="font-light text-white text-sm mt-2">
+                  The goal of Career Clash: Battle of Professions is to give students a fun way to learn about different careers while improving their debating and thinking skills. The event helps participants explore various jobs and understand what they involve. Through exciting quizzes and debates, students will work together, think quickly, and confidently present their ideas. It's a great chance to learn, compete, and have fun at the same time!
+                </p>
               </div>
-              <p className="font-light text-white text-sm mt-2">
-                The goal of Career Clash: Battle of Professions is to give students a fun way to learn about different careers while improving their debating and thinking skills. The event helps participants explore various jobs and understand what they involve. Through exciting quizzes and debates, students will work together, think quickly, and confidently present their ideas. It's a great chance to learn, compete, and have fun at the same time!
-              </p>
-            </div>
-            <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl">
-              <img className="rounded-md w-[90vh]" src={careerClash} alt="AECC " /> 
+              <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl">
+                <img className="rounded-md w-[90vh]" src={careerClash} alt="AECC " />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="gap-4 mx-5 mt-10">
-          <div className="flex items-center gap-14">
-            <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3">
-              <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
-                Crack the Success Code
-              </h1>
-              <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10] bg-slate-800 rounded-xl">
-                <img
-                  className="my-auto object-cover w-full h-full rounded-xl"
-                  src={crackSuccess}
-                  alt="photo"
-                />
+          <div className="gap-4 mx-5 mt-10">
+            <div className="flex items-center gap-14">
+              <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3">
+                <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
+                  Crack the Success Code
+                </h1>
+                <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10] bg-slate-800 rounded-xl">
+                  <img
+                    className="my-auto object-cover w-full h-full rounded-xl"
+                    src={crackSuccess}
+                    alt="photo"
+                  />
+                </div>
+                <p className="font-light text-white text-sm mt-2">
+                  The primary objective of  Crack the Success Code was to empower participants with the essential skills and strategies needed to achieve greater success in their personal and professional lives. The goal was for participants to leave with a renewed sense of purpose, a clear action plan, and the necessary tools and techniques to crack the code to their success. The workshop aimed to provide attendees with practical, actionable insights across four key areas: Clear goal setting, Effective time management, Communication Mastery, and Self-empowerment techniques.
+                </p>
               </div>
-              <p className="font-light text-white text-sm mt-2">
-                The primary objective of  Crack the Success Code was to empower participants with the essential skills and strategies needed to achieve greater success in their personal and professional lives. The goal was for participants to leave with a renewed sense of purpose, a clear action plan, and the necessary tools and techniques to crack the code to their success. The workshop aimed to provide attendees with practical, actionable insights across four key areas: Clear goal setting, Effective time management, Communication Mastery, and Self-empowerment techniques. 
-              </p>
-            </div>
-            <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10] bg-slate-800 bg-opacity-30 rounded-xl">
-              <img className="rounded-md w-[90vh]" src={crackSuccess} alt="AECC " /> 
+              <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10] bg-slate-800 bg-opacity-30 rounded-xl">
+                <img className="rounded-md w-[90vh]" src={crackSuccess} alt="AECC " />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="gap-4 mx-5 mt-10">
-          <div className="flex items-center gap-14"> 
-            <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3 ">
-              <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
-                Pre-Placement Boot Camp 3.0
-              </h1>
-              <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10]  bg-slate-800 rounded-xl">
-                <img
-                  className="my-auto object-cover w-full h-full rounded-xl"
-                  src={bootcamp3}
-                  alt="photo"
-                />
+          <div className="gap-4 mx-5 mt-10">
+            <div className="flex items-center gap-14">
+              <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3 ">
+                <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
+                  Pre-Placement Boot Camp 3.0
+                </h1>
+                <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10]  bg-slate-800 rounded-xl">
+                  <img
+                    className="my-auto object-cover w-full h-full rounded-xl"
+                    src={bootcamp3}
+                    alt="photo"
+                  />
+                </div>
+                <p className="font-light text-white text-sm mt-2">
+                  The event aimed to bridge the gap between academic knowledge and industry expectations by providing hands-on exposure to technical concepts, problem-solving approaches, and real-world interview scenarios. It focused on boosting confidence, enhancing decision-making abilities, and developing analytical thinking to prepare students for diverse career opportunities.
+                </p>
               </div>
-              <p className="font-light text-white text-sm mt-2">
-                The event aimed to bridge the gap between academic knowledge and industry expectations by providing hands-on exposure to technical concepts, problem-solving approaches, and real-world interview scenarios. It focused on boosting confidence, enhancing decision-making abilities, and developing analytical thinking to prepare students for diverse career opportunities.
-              </p>
-            </div>
-            <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl mr-7">
-              <img className="rounded-md w-[90vh]" src={bootcamp3} alt="AECC " /> 
+              <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl mr-7">
+                <img className="rounded-md w-[90vh]" src={bootcamp3} alt="AECC " />
+              </div>
             </div>
           </div>
-        </div>
-      </>
+        </>
       )}
 
 
 
-    {year === "2023-2024" && (
+      {year === "2023-2024" && (
         <>
-        <div className="gap-4 mx-5 mt-10">
-          <div className="flex items-center gap-14">
-            <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3">
-              <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
-                FRESH ON CAMPUS
-              </h1>
-              <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10] bg-slate-800 rounded-xl">
-                <img
-                  className="my-auto object-cover w-full h-full rounded-xl"
-                  src={fresher}
-                  alt="photo"
-                />
+          <div className="gap-4 mx-5 mt-10">
+            <div className="flex items-center gap-14">
+              <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3">
+                <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
+                  FRESH ON CAMPUS
+                </h1>
+                <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10] bg-slate-800 rounded-xl">
+                  <img
+                    className="my-auto object-cover w-full h-full rounded-xl"
+                    src={fresher}
+                    alt="photo"
+                  />
+                </div>
+                <p className="font-light text-white text-sm mt-2">
+                  To welcome the freshers to the new life of college and introduce them to college an induction program was organised by Bharati Vidyapeeth College of Engineering namely Fresh On Campus. Under the program schedule societies were tasked to conduct interviews and events for freshers and recruit them.
+                </p>
               </div>
-              <p className="font-light text-white text-sm mt-2">
-                To welcome the freshers to the new life of college and introduce them to college an induction program was organised by Bharati Vidyapeeth College of Engineering namely Fresh On Campus. Under the program schedule societies were tasked to conduct interviews and events for freshers and recruit them. 
-              </p>
-            </div>
-            <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl">
-              <img className="rounded-md w-[90vh]" src={fresher} alt="AECC " /> 
+              <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl">
+                <img className="rounded-md w-[90vh]" src={fresher} alt="AECC " />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="gap-4 mx-5 mt-10">
-          <div className="flex items-center gap-14">
-            <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3 ">
-              <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
-                EduMinerva Defence Bootcamp
-              </h1>
-              <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10]  bg-slate-800 rounded-xl">
-                <img
-                  className="my-auto object-cover w-full h-full rounded-xl"
-                  src={defenseBootcamp}
-                  alt="photo"
-                />
+          <div className="gap-4 mx-5 mt-10">
+            <div className="flex items-center gap-14">
+              <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3 ">
+                <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
+                  EduMinerva Defence Bootcamp
+                </h1>
+                <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10]  bg-slate-800 rounded-xl">
+                  <img
+                    className="my-auto object-cover w-full h-full rounded-xl"
+                    src={defenseBootcamp}
+                    alt="photo"
+                  />
+                </div>
+                <p className="font-light text-white text-sm mt-2">
+                  This event was designed to create a comprehensive learning experience for the participants. By bringing in experienced speakers to share their insights, conducting mock interviews to enhance interview skills, facilitating group discussions to foster teamwork, and guidance on how to give defence exams, the bootcamp aimed to empower attendees with the knowledge, skills, and confidence needed for their holistic preparation for their defence career.
+                </p>
               </div>
-              <p className="font-light text-white text-sm mt-2">
-                This event was designed to create a comprehensive learning experience for the participants. By bringing in experienced speakers to share their insights, conducting mock interviews to enhance interview skills, facilitating group discussions to foster teamwork, and guidance on how to give defence exams, the bootcamp aimed to empower attendees with the knowledge, skills, and confidence needed for their holistic preparation for their defence career.
-              </p>
-            </div>
-            <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl mr-7">
-              <img className="rounded-md w-[90vh]" src={defenseBootcamp} alt="AECC " /> 
+              <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl mr-7">
+                <img className="rounded-md w-[90vh]" src={defenseBootcamp} alt="AECC " />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="gap-4 mx-5 mt-10">
-          <div className="flex items-center gap-14">
-            <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3">
-              <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
-              AECC CAREER FAIR 
-              </h1>
-              <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10] bg-slate-800 rounded-xl">
-                <img
-                  className="my-auto object-cover w-full h-full rounded-xl"
-                  src={aecc23}
-                  alt="photo"
-                />
+          <div className="gap-4 mx-5 mt-10">
+            <div className="flex items-center gap-14">
+              <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3">
+                <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
+                  AECC CAREER FAIR
+                </h1>
+                <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10] bg-slate-800 rounded-xl">
+                  <img
+                    className="my-auto object-cover w-full h-full rounded-xl"
+                    src={aecc23}
+                    alt="photo"
+                  />
+                </div>
+                <p className="font-light text-white text-sm mt-2">
+                  EduMinerva was invited to an event namely CAREER FAIR on 8th October 2023. It was a one-hour session that was conducted in offline mode at AECC India Pvt  Ltd’s office at The  International Trade Tower, Nehru Place which included one-on-one counseling with the the counselors from AECC India Pvt  Ltd. The event’s main purpose was to help students who want to pursue education out of India and help them with proper guidance regarding universities best in town for the desired course.
+                </p>
               </div>
-              <p className="font-light text-white text-sm mt-2">
-                EduMinerva was invited to an event namely CAREER FAIR on 8th October 2023. It was a one-hour session that was conducted in offline mode at AECC India Pvt  Ltd’s office at The  International Trade Tower, Nehru Place which included one-on-one counseling with the the counselors from AECC India Pvt  Ltd. The event’s main purpose was to help students who want to pursue education out of India and help them with proper guidance regarding universities best in town for the desired course.
-              </p>
-            </div>
-            <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10] bg-slate-800 bg-opacity-30 rounded-xl">
-              <img className="rounded-md w-[90vh]" src={aecc23} alt="AECC " /> 
+              <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10] bg-slate-800 bg-opacity-30 rounded-xl">
+                <img className="rounded-md w-[90vh]" src={aecc23} alt="AECC " />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="gap-4 mx-5 mt-10">
-          <div className="flex items-center gap-14">
-            <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3 ">
-              <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
-                Skill Synergy
-              </h1>
-              <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10]  bg-slate-800 rounded-xl">
-                <img
-                  className="my-auto object-cover w-full h-full rounded-xl"
-                  src={skillSynergy}
-                  alt="photo"
-                />
+          <div className="gap-4 mx-5 mt-10">
+            <div className="flex items-center gap-14">
+              <div className="lg:text-left text-centre lg:w-[45%] col-span-1 minmd:col-span-3 ">
+                <h1 className="text-xl bg-gradient-to-r brightness-150 font-semibold flex justify-evenly bg-clip-text text-white mt-3">
+                  Skill Synergy
+                </h1>
+                <div className=" lg:hidden col-span-2 minmd:col-span-3 my-5 aspect-[16/10]  bg-slate-800 rounded-xl">
+                  <img
+                    className="my-auto object-cover w-full h-full rounded-xl"
+                    src={skillSynergy}
+                    alt="photo"
+                  />
+                </div>
+                <p className="font-light text-white text-sm mt-2">
+                  This event was organized for third-year students with a primary focus on aiding them in navigating the challenging landscape of placements, particularly within the IT sector. We aimed to provide attendees with a comprehensive roadmap and invaluable personal insights from esteemed alumni, equipping them with the tools and knowledge needed to excel in their chosen career path.
+                </p>
               </div>
-              <p className="font-light text-white text-sm mt-2">
-                This event was organized for third-year students with a primary focus on aiding them in navigating the challenging landscape of placements, particularly within the IT sector. We aimed to provide attendees with a comprehensive roadmap and invaluable personal insights from esteemed alumni, equipping them with the tools and knowledge needed to excel in their chosen career path.
-              </p>
-            </div>
-            <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl mr-7">
-              <img className="rounded-md w-[90vh]" src={skillSynergy} alt="AECC " /> 
+              <div className="z-10 minlg:hidden col-span-2 minmd:col-span-3 aspect-[16/10]  bg-slate-800 bg-opacity-30 rounded-xl mr-7">
+                <img className="rounded-md w-[90vh]" src={skillSynergy} alt="AECC " />
+              </div>
             </div>
           </div>
-        </div>
-      </>
+        </>
       )}
-      
+
       {year === "2022-2023" && (
         <>
           <h1 className="text-2xl bg-gradient-to-r brightness-150 from-[#0CF996] to-[#E61AA1] bg-clip-text text-transparent mt-8 mb-3">

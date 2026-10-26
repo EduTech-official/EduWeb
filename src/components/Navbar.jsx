@@ -59,11 +59,12 @@ const Navbar = () => {
 
   return (
     <header className={`site-nav ${stuck ? "is-stuck" : ""}`}>
-      {/* Desktop bar. minlg is a max-width breakpoint, so this hides at <=1023px. */}
-      <nav className="site-nav__inner minlg:hidden">
+      <nav className="site-nav__inner">
+        {/* Single Logo for both mobile and desktop */}
         {renderLogo()}
 
-        <ul className="nav-list">
+        {/* Desktop links (hidden on mobile, visible on desktop >= 1024px) */}
+        <ul className="nav-list hidden lg:flex">
           {links.map((link, i) => (
             <li key={link.url} className="nav-list__item">
               <NavLink
@@ -80,50 +81,43 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-      </nav>
 
-      {/* Mobile bar. The logo used to be missing entirely below 1023px. */}
-      <nav className="site-nav__inner hidden minlg:flex">
-        {renderLogo()}
+        {/* Mobile menu sheet (visible on mobile < 1024px, hidden on desktop) */}
+        <div className="flex items-center lg:hidden">
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger aria-label="Open menu" className="nav-burger">
+              <span className={`nav-burger__box ${open ? "is-open" : ""}`}>
+                <span className="nav-burger__bar" />
+                <span className="nav-burger__bar" />
+                <span className="nav-burger__bar" />
+              </span>
+            </SheetTrigger>
 
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger aria-label="Open menu" className="nav-burger">
-            <span className={`nav-burger__box ${open ? "is-open" : ""}`}>
-              <span className="nav-burger__bar" />
-              <span className="nav-burger__bar" />
-              <span className="nav-burger__bar" />
-            </span>
-          </SheetTrigger>
+            <SheetContent className="bg-[rgba(7,11,20,0.97)] backdrop-blur-xl border-l border-white/10">
+              <SheetHeader>
+                <SheetTitle className="text-white">Menu</SheetTitle>
+              </SheetHeader>
 
-          {/* ui/sheet.jsx defaults to `bg-white bg-opacity-20`, which renders as a
-              washed out translucent panel on this dark site and lets the page
-              show through the menu. An explicit rgba background overrides it
-              without editing the shared sheet component, because bg-opacity-*
-              only affects colours that use the --tw-bg-opacity variable. */}
-          <SheetContent className="bg-[rgba(7,11,20,0.97)] backdrop-blur-xl border-l border-white/10">
-            <SheetHeader>
-              <SheetTitle className="text-white">Menu</SheetTitle>
-            </SheetHeader>
-
-            <ul className="nav-sheet">
-              {links.map((link, i) => (
-                <li key={link.url} style={{ "--i": i }} className="nav-sheet__item">
-                  <SheetClose asChild>
-                    <NavLink
-                      to={link.url}
-                      end={link.url === "/"}
-                      className={({ isActive }) =>
-                        `nav-sheet__link ${isActive ? "is-active" : ""}`
-                      }
-                    >
-                      {link.name}
-                    </NavLink>
-                  </SheetClose>
-                </li>
-              ))}
-            </ul>
-          </SheetContent>
-        </Sheet>
+              <ul className="nav-sheet">
+                {links.map((link, i) => (
+                  <li key={link.url} style={{ "--i": i }} className="nav-sheet__item">
+                    <SheetClose asChild>
+                      <NavLink
+                        to={link.url}
+                        end={link.url === "/"}
+                        className={({ isActive }) =>
+                          `nav-sheet__link ${isActive ? "is-active" : ""}`
+                        }
+                      >
+                        {link.name}
+                      </NavLink>
+                    </SheetClose>
+                  </li>
+                ))}
+              </ul>
+            </SheetContent>
+          </Sheet>
+        </div>
       </nav>
     </header>
   );
