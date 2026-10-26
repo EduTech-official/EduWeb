@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { ArrowLeft, LogIn, UserPlus, Lock, Mail, User as UserIcon } from "lucide-react";
+import {
+  ArrowLeft,
+  LogIn,
+  UserPlus,
+  Lock,
+  Mail,
+  User as UserIcon,
+  GraduationCap,
+  Layers,
+} from "lucide-react";
 import LogoImg from "../../assets/logot.png";
 import { BRANCHES, DOMAINS, signupUser, loginUser } from "./authUtils";
 
@@ -200,8 +209,9 @@ const AuthCard = ({ onAuthSuccess, onCancel }) => {
             )}
 
             <form onSubmit={handleSignup} className="w-full space-y-4">
-
+              {/* Name Input with UserIcon */}
               <div className="relative w-full">
+                <UserIcon className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <input
                   id="name"
                   name="name"
@@ -209,18 +219,19 @@ const AuthCard = ({ onAuthSuccess, onCancel }) => {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Full Name"
-                  className="block w-full box-border rounded-full border border-white/10 bg-[#070c16]/80 pl-11 pr-4 py-2.5 text-base sm:text-lg font-medium text-white placeholder:text-slate-500 placeholder:opacity-100 outline-none transition-all focus:border-[#0CF996]/60 focus:bg-[#091120] focus:shadow-[0_0_15px_rgba(12,249,150,0.15)]"
+                  className="w-full rounded-xl border border-white/10 bg-[#070c16]/80 pl-10 pr-4 py-3 text-xs sm:text-sm font-medium text-white placeholder-slate-500 outline-none transition-all focus:border-[#0CF996]/60 focus:bg-[#091120] focus:shadow-[0_0_15px_rgba(12,249,150,0.15)]"
                 />
               </div>
 
-
+              {/* Branch Select with GraduationCap */}
               <div className="relative">
+                <GraduationCap className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <select
                   id="branch"
                   name="branch"
                   value={formData.branch}
                   onChange={handleInputChange}
-                  className="w-full appearance-none rounded-xl border border-white/10 bg-[#070c16] pl-3 py-3 text-xs sm:text-sm text-slate-300 outline-none transition-all focus:border-[#0CF996]/60 focus:bg-[#091120] cursor-pointer"
+                  className="w-full appearance-none rounded-xl border border-white/10 bg-[#070c16] pl-10 pr-9 py-3 text-xs sm:text-sm text-slate-300 outline-none transition-all focus:border-[#0CF996]/60 focus:bg-[#091120] cursor-pointer"
                 >
                   <option value="" disabled className="text-slate-500">
                     Select Branch
@@ -231,18 +242,20 @@ const AuthCard = ({ onAuthSuccess, onCancel }) => {
                     </option>
                   ))}
                 </select>
-                <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs">
+                <div className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs">
                   ▼
                 </div>
               </div>
 
+              {/* Domain Select with Layers */}
               <div className="relative">
+                <Layers className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <select
                   id="domain"
                   name="domain"
                   value={formData.domain}
                   onChange={handleInputChange}
-                  className="w-full appearance-none rounded-xl border border-white/10 bg-[#070c16] pl-3 py-3 text-xs sm:text-sm text-slate-300 outline-none transition-all focus:border-[#0CF996]/60 focus:bg-[#091120] cursor-pointer"
+                  className="w-full appearance-none rounded-xl border border-white/10 bg-[#070c16] pl-10 pr-9 py-3 text-xs sm:text-sm text-slate-300 outline-none transition-all focus:border-[#0CF996]/60 focus:bg-[#091120] cursor-pointer"
                 >
                   <option value="" disabled className="text-slate-500">
                     Select Domain
@@ -253,12 +266,14 @@ const AuthCard = ({ onAuthSuccess, onCancel }) => {
                     </option>
                   ))}
                 </select>
-                <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs">
+                <div className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs">
                   ▼
                 </div>
               </div>
 
+              {/* Email Input with Mail */}
               <div className="relative">
+                <Mail className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <input
                   id="email"
                   name="email"
@@ -266,11 +281,13 @@ const AuthCard = ({ onAuthSuccess, onCancel }) => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Email"
-                  className="w-full rounded-xl border border-white/10 bg-[#070c16]/80 pl-11 pr-4 py-3 text-xs sm:text-sm font-medium text-white placeholder-slate-500 outline-none transition-all focus:border-[#0CF996]/60 focus:bg-[#091120] focus:shadow-[0_0_15px_rgba(12,249,150,0.15)]"
+                  className="w-full rounded-xl border border-white/10 bg-[#070c16]/80 pl-10 pr-4 py-3 text-xs sm:text-sm font-medium text-white placeholder-slate-500 outline-none transition-all focus:border-[#0CF996]/60 focus:bg-[#091120] focus:shadow-[0_0_15px_rgba(12,249,150,0.15)]"
                 />
               </div>
 
+              {/* Password Input with Lock */}
               <div className="relative">
+                <Lock className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <input
                   id="password"
                   name="password"
@@ -278,7 +295,7 @@ const AuthCard = ({ onAuthSuccess, onCancel }) => {
                   value={formData.password}
                   onChange={handleInputChange}
                   placeholder="Password"
-                  className="w-full rounded-xl border border-white/10 bg-[#070c16]/80 pl-11 pr-4 py-3 text-xs sm:text-sm font-medium text-white placeholder-slate-500 outline-none transition-all focus:border-[#0CF996]/60 focus:bg-[#091120] focus:shadow-[0_0_15px_rgba(12,249,150,0.15)]"
+                  className="w-full rounded-xl border border-white/10 bg-[#070c16]/80 pl-10 pr-4 py-3 text-xs sm:text-sm font-medium text-white placeholder-slate-500 outline-none transition-all focus:border-[#0CF996]/60 focus:bg-[#091120] focus:shadow-[0_0_15px_rgba(12,249,150,0.15)]"
                 />
               </div>
 
@@ -324,7 +341,9 @@ const AuthCard = ({ onAuthSuccess, onCancel }) => {
             )}
 
             <form onSubmit={handleLogin} className="w-full space-y-4">
+              {/* Login Email with Mail icon */}
               <div className="relative">
+                <Mail className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <input
                   id="login-email"
                   name="email"
@@ -332,11 +351,13 @@ const AuthCard = ({ onAuthSuccess, onCancel }) => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Email"
-                  className="w-full rounded-xl border border-white/10 bg-[#070c16]/80 pl-11 pr-4 py-3 text-xs text-white placeholder-slate-500 outline-none transition-all focus:border-[#0CF996]/60 focus:bg-[#091120] focus:shadow-[0_0_15px_rgba(12,249,150,0.15)]"
+                  className="w-full rounded-xl border border-white/10 bg-[#070c16]/80 pl-10 pr-4 py-3 text-xs sm:text-sm font-medium text-white placeholder-slate-500 outline-none transition-all focus:border-[#0CF996]/60 focus:bg-[#091120] focus:shadow-[0_0_15px_rgba(12,249,150,0.15)]"
                 />
               </div>
 
+              {/* Login Password with Lock icon */}
               <div className="relative">
+                <Lock className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <input
                   id="login-password"
                   name="password"
@@ -344,7 +365,7 @@ const AuthCard = ({ onAuthSuccess, onCancel }) => {
                   value={formData.password}
                   onChange={handleInputChange}
                   placeholder="Password"
-                  className="w-full rounded-xl border border-white/10 bg-[#070c16]/80 pl-11 pr-4 py-3 text-xs text-white placeholder-slate-500 outline-none transition-all focus:border-[#0CF996]/60 focus:bg-[#091120] focus:shadow-[0_0_15px_rgba(12,249,150,0.15)]"
+                  className="w-full rounded-xl border border-white/10 bg-[#070c16]/80 pl-10 pr-4 py-3 text-xs sm:text-sm font-medium text-white placeholder-slate-500 outline-none transition-all focus:border-[#0CF996]/60 focus:bg-[#091120] focus:shadow-[0_0_15px_rgba(12,249,150,0.15)]"
                 />
               </div>
 
