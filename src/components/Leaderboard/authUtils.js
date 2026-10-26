@@ -10,8 +10,87 @@ export const BRANCHES = [
   "CS BS",
 ];
 
+export const DOMAINS = [
+  "Data Structure",
+  "Web Development",
+  "Data Engineering",
+];
+
 const STORAGE_USERS_KEY = "eduminerva_skillcircle_users";
 const STORAGE_CURRENT_USER_KEY = "eduminerva_skillcircle_current_user";
+const STORAGE_ADMIN_KEY = "eduminerva_skillcircle_admin";
+
+export const rankLeaderboardEntries = (list) => {
+  const sorted = [...list].sort((a, b) => (b.score || 0) - (a.score || 0));
+  let currentRank = 1;
+  return sorted.map((user, index) => {
+    if (index > 0 && (user.score || 0) < (sorted[index - 1].score || 0)) {
+      currentRank = index + 1;
+    }
+    return { ...user, rank: currentRank };
+  });
+};
+
+export const getCurrentAdmin = () => {
+  try {
+    const raw = localStorage.getItem(STORAGE_ADMIN_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch (err) {
+    console.error("Error reading admin session:", err);
+    return null;
+  }
+};
+
+export const setCurrentAdmin = (admin) => {
+  try {
+    if (!admin) {
+      localStorage.removeItem(STORAGE_ADMIN_KEY);
+    } else {
+      localStorage.setItem(STORAGE_ADMIN_KEY, JSON.stringify(admin));
+    }
+  } catch (err) {
+    console.error("Error saving admin session:", err);
+  }
+};
+
+export const clearCurrentAdmin = () => {
+  try {
+    localStorage.removeItem(STORAGE_ADMIN_KEY);
+  } catch (err) {
+    console.error("Error clearing admin session:", err);
+  }
+};
+
+export const loginAdmin = async ({ email, password }) => {
+  const normalizedEmail = email.trim().toLowerCase();
+
+  if (!isSupabaseConfigured() || !supabase) {
+    throw new Error("Admin login requires Supabase. Run supabase/skill_circle_schema.sql and add an admin row.");
+  }
+
+  const { data: admin, error } = await supabase
+    .from("skill_circle_admins")
+    .select("*")
+    .eq("email", normalizedEmail)
+    .maybeSingle();
+
+  if (error) {
+    throw new Error(error.message || "Failed to verify admin credentials.");
+  }
+
+  if (!admin || admin.password !== password) {
+    throw new Error("Invalid admin email or password.");
+  }
+
+  const session = {
+    id: admin.id,
+    email: admin.email,
+    name: admin.name || "Admin",
+    role: "admin",
+  };
+  setCurrentAdmin(session);
+  return session;
+};
 
 export const getStoredUsers = () => {
   try {
@@ -54,7 +133,7 @@ export const clearCurrentUser = () => {
 };
 
 // Signup: Stores in Supabase database and local session
-export const signupUser = async ({ name, branch, email, password }) => {
+export const signupUser = async ({ name, branch, domain, email, password }) => {
   const normalizedEmail = email.trim().toLowerCase();
 
   // If Supabase is connected, interact with the remote database
@@ -77,11 +156,12 @@ export const signupUser = async ({ name, branch, email, password }) => {
     const newUserPayload = {
       name: name.trim(),
       branch,
+      domain: domain || "Web Development",
       email: normalizedEmail,
       password, // Stored for verification
-      score: 150, // Initial welcome points
-      contribution: "1 quiz · Skill Circle Starter",
-      quizzes_completed: 1,
+      score: 0,
+      contribution: domain ? `${domain} Track` : "Skill Circle Member",
+      quizzes_completed: 0,
     };
 
     const { data: insertedUser, error: insertError } = await supabase
@@ -98,10 +178,11 @@ export const signupUser = async ({ name, branch, email, password }) => {
       id: insertedUser.id,
       name: insertedUser.name,
       branch: insertedUser.branch,
+      domain: insertedUser.domain || domain,
       email: insertedUser.email,
       score: insertedUser.score,
-      contribution: insertedUser.contribution,
-      quizzesCompleted: insertedUser.quizzes_completed || 1,
+      contribution: insertedUser.contribution || (domain ? `${domain} Track` : "Skill Circle Member"),
+      quizzesCompleted: insertedUser.quizzes_completed || 0,
       createdAt: insertedUser.created_at,
     };
 
@@ -121,11 +202,12 @@ export const signupUser = async ({ name, branch, email, password }) => {
     id: `user-${Date.now()}`,
     name: name.trim(),
     branch,
+    domain: domain || "Web Development",
     email: normalizedEmail,
     password,
-    score: 150,
-    contribution: "1 quiz · Skill Circle Starter",
-    quizzesCompleted: 1,
+    score: 0,
+    contribution: domain ? `${domain} Track` : "Skill Circle Member",
+    quizzesCompleted: 0,
     createdAt: new Date().toISOString(),
   };
 
@@ -161,10 +243,11 @@ export const loginUser = async ({ email, password }) => {
         id: user.id,
         name: user.name,
         branch: user.branch,
+        domain: user.domain || "Web Development",
         email: user.email,
-        score: user.score,
+        score: user.score ?? 0,
         contribution: user.contribution,
-        quizzesCompleted: user.quizzes_completed || 1,
+        quizzesCompleted: user.quizzes_completed || 0,
         createdAt: user.created_at,
       };
 
@@ -212,25 +295,14 @@ export const fetchLiveLeaderboard = async () => {
         id: item.id,
         name: item.name,
         branch: item.branch,
+        domain: item.domain || "Web Development",
         email: item.email,
         score: item.score || 0,
         contribution: item.contribution || "Skill Circle Member",
-        quizzesCompleted: item.quizzes_completed || 1,
+        quizzesCompleted: item.quizzes_completed || 0,
       }));
 
-      // Sort descending by score
-      mapped.sort((a, b) => (b.score || 0) - (a.score || 0));
-
-      let currentRank = 1;
-      return mapped.map((user, index) => {
-        if (index > 0 && (user.score || 0) < (mapped[index - 1].score || 0)) {
-          currentRank = index + 1;
-        }
-        return {
-          ...user,
-          rank: currentRank,
-        };
-      });
+      return rankLeaderboardEntries(mapped);
     } catch (err) {
       console.warn("Could not fetch from Supabase:", err);
       return [];
@@ -242,18 +314,5 @@ export const fetchLiveLeaderboard = async () => {
 
 export const getLeaderboardList = () => {
   const customUsers = getStoredUsers();
-  const list = [...customUsers];
-
-  list.sort((a, b) => (b.score || 0) - (a.score || 0));
-
-  let currentRank = 1;
-  return list.map((user, index) => {
-    if (index > 0 && (user.score || 0) < (list[index - 1].score || 0)) {
-      currentRank = index + 1;
-    }
-    return {
-      ...user,
-      rank: currentRank,
-    };
-  });
+  return rankLeaderboardEntries(customUsers);
 };

@@ -1,7 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/* Tailwind v4: entry point is @import "tailwindcss" in index.css.
+   The @tailwind base/components/utilities directives below are v3 syntax
+   and do not exist in v4 — they were causing Preflight to run a second time,
+   which reset button { padding: 0 } and wiped all utility padding on buttons. */
 
 @layer base {
   :root {

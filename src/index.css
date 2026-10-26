@@ -1,7 +1,5 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@config "../tailwind.config.js";
 
 /* Body is intentionally transparent. The page colour is set on html (App.css and
    the Chakra theme), because an opaque body background paints over the
